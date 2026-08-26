@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Amenities - Harmony Harikesh</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            luxury: {
+              gold: '#C5A368',
+              goldLight: '#E8DCC4',
+              bronze: '#B69D7A',
+              bgDark: '#0D1117',
+              bgCard: '#161D2A',
+              accent: '#D9C5A0',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body {
+      background-color: #0D1117;
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0D1117;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A368;
+      border-radius: 4px;
+    }
+    /* Glassmorphism utility */
+    .glass-nav {
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(197, 163, 104, 0.25);
+    }
+    .glass-card {
+      background: rgba(22, 29, 42, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(197, 163, 104, 0.15);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #B69D7A 0%, #C5A368 50%, #90764C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hover-zoom img {
+      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .hover-zoom:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Nav Bar -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass-nav py-5" id="main-nav">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex flex-col">
+        <span class="font-serif text-2xl font-bold tracking-widest gold-gradient-text">HARMONY</span>
+        <span class="text-xs uppercase tracking-[0.25em] text-slate-400">Harikesh</span>
+      </a>
+      
+      <!-- Back to Main Page -->
+      <a href="index.html" class="px-5 py-2 border border-luxury-gold/40 hover:border-luxury-gold text-white font-medium text-xs tracking-widest uppercase transition-all duration-300 rounded flex items-center gap-2">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="pt-40 pb-20 relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-luxury-bgCard via-luxury-bgDark to-luxury-bgDark">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="text-xs uppercase tracking-[0.4em] text-luxury-gold font-semibold mb-3 block">Elevated Lifestyle Experiences</span>
+      <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-wider leading-tight mb-6">
+        Curated Luxury Amenities
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+        Discover the detailed collection of private retreats, fitness spaces, sky decks, and green sanctuaries engineered for the ultimate standard of living at Harmony Harikesh.
+      </p>
+      <div class="w-20 h-[1px] bg-luxury-gold/50 mx-auto mt-8"></div>
+    </div>
+  </header>
+
+  <!-- Showcase Sections -->
+  <main class="py-12 space-y-32 max-w-7xl mx-auto px-6 pb-32">
+
+    <!-- Category 1: Sky Bridge & High Rise Observations -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex px-3 py-1 bg-luxury-gold/10 border border-luxury-gold/20 rounded text-[10px] uppercase tracking-widest text-luxury-gold font-semibold">
+          High-Altitude Sky Life
+        </div>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+          Sky Walk & Observation Bridge
+        </h2>
+        <p class="text-slate-300 font-light leading-relaxed">
+          Suspended high above Sola's skyline, our signature skywalk links the 31-storey residential towers. Residents enjoy private access to a fully secure, open-air walkway designed with premium wind-tunnel resilience and structural isolation joints, ensuring a smooth breeze and breathtaking panoramic views of the city.
+        </p>
+        <ul class="space-y-3 text-sm text-slate-400 font-light">
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Inter-tower panoramic pedestrian sky deck
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> RWDI Wind-tunnel certified safety railings and structure
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Beautiful seating alcoves with designer ambient up-lighting
+          </li>
+        </ul>
+      </div>
+      <div class="relative group hover-zoom rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl">
+        <img src="./assets/images/towers-skywalk.jpg" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';"
+             alt="Towers connected by Skywalk" class="w-full aspect-[4/3] object-cover">
+      </div>
+    </section>
+
+    <!-- Category 2: Private Balcony Gardens & Sky Views -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="lg:order-2 space-y-6">
+        <div class="inline-flex px-3 py-1 bg-luxury-gold/10 border border-luxury-gold/20 rounded text-[10px] uppercase tracking-widest text-luxury-gold font-semibold">
+          In-Home Sanctuary
+        </div>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+          Private Balcony & Living Decks
+        </h2>
+        <p class="text-slate-300 font-light leading-relaxed">
+          Every apartment opens up to deep, double-height living decks. Designed to bring the outdoors in, these wide balconies feature structural load provisions for vertical gardens, customized wood-panel accent cladding, and premium glass balustrades to preserve clear views of the Ahmedabad plains below.
+        </p>
+        <ul class="space-y-3 text-sm text-slate-400 font-light">
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Deep balcony decks with architectural timber-look accents
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Lifetime open skyline view looking off toward Science City
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Waterproof structural engineering perfect for vertical green landscaping
+          </li>
+        </ul>
+      </div>
+      <!-- Combined Balcony Images (Carousel / Grid Style) -->
+      <div class="lg:order-1 grid grid-cols-2 gap-4">
+        <div class="rounded-xl overflow-hidden border border-luxury-gold/15 shadow-lg group hover-zoom">
+          <img src="./assets/images/balcony-garden.png" alt="Balcony Garden Lounge" class="w-full aspect-[3/4] object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden border border-luxury-gold/15 shadow-lg group hover-zoom pt-8">
+          <img src="./assets/images/balcony-view.png" alt="View from Balcony" class="w-full aspect-[3/4] object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Category 3: The Harikesh Clubhouse -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex px-3 py-1 bg-luxury-gold/10 border border-luxury-gold/20 rounded text-[10px] uppercase tracking-widest text-luxury-gold font-semibold">
+          Social Community
+        </div>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+          Clubhouse & Executive Lounge
+        </h2>
+        <p class="text-slate-300 font-light leading-relaxed">
+          The heart of resident community life. The Club Harikesh offers an indoor gaming zone, formal business lounge, private banquet dining options, and high-end fitness gym machinery. Meticulously detailed interior finishes of imported marble, brass trim, and bespoke lighting create an unforgettable hotel-tier experience.
+        </p>
+        <ul class="space-y-3 text-sm text-slate-400 font-light">
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Private dining area for resident banquets & events
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Business centre and high-speed Wi-Fi workstation hub
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Billiards, table tennis, and cards recreation tables
+          </li>
+        </ul>
+      </div>
+      <div class="relative group hover-zoom rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl">
+        <img src="./assets/images/clubhouse-lounge.jpg" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1200&q=80';"
+             alt="Clubhouse Lounge" class="w-full aspect-[4/3] object-cover">
+      </div>
+    </section>
+
+    <!-- Category 4: Children's Creche & Early Childhood Sanctuary -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="lg:order-2 space-y-6">
+        <div class="inline-flex px-3 py-1 bg-luxury-gold/10 border border-luxury-gold/20 rounded text-[10px] uppercase tracking-widest text-luxury-gold font-semibold">
+          Junior Sanctuary
+        </div>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+          Children's Creche & Play Zone
+        </h2>
+        <p class="text-slate-300 font-light leading-relaxed">
+          Harmony Harikesh nurtures early childhood creativity and safety. A thoughtfully appointed, fully air-conditioned playroom with soft-padded safety flooring, educational Montessori kits, and 24/7 CCTV surveillance connection for absolute peace of mind.
+        </p>
+        <ul class="space-y-3 text-sm text-slate-400 font-light">
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Fully air-conditioned indoor playroom with soft padding
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> 24/7 Monitored CCTV security connection
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Montessori learning toys, activity kits, and creative drawing spaces
+          </li>
+        </ul>
+      </div>
+      <div class="lg:order-1 relative group hover-zoom rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl">
+        <img src="./assets/images/kids-creche.jpg" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1566856515286-50567f8b9ecf?auto=format&fit=crop&w=1200&q=80';"
+             alt="Children Play Area" class="w-full aspect-[4/3] object-cover">
+      </div>
+    </section>
+
+    <!-- Category 5: Indoor Games & Recreation Activity Room -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex px-3 py-1 bg-luxury-gold/10 border border-luxury-gold/20 rounded text-[10px] uppercase tracking-widest text-luxury-gold font-semibold">
+          Kids & Recreation
+        </div>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+          Indoor Games & Activity Room
+        </h2>
+        <p class="text-slate-300 font-light leading-relaxed">
+          An interactive, all-weather recreation sanctuary designed for kids and families. Outfitted with tournament-standard table tennis facilities, polished wooden carrom boards, and toddler soft-play structures, this vibrant space ensures engaging leisure and healthy entertainment for all generations.
+        </p>
+        <ul class="space-y-3 text-sm text-slate-400 font-light">
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Professional-grade Table Tennis setup with accessories
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Premium wooden carrom boards and traditional indoor games
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Safe indoor slide and colorful developmental toddler zone
+          </li>
+        </ul>
+      </div>
+      <div class="relative group hover-zoom rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl">
+        <img src="./assets/images/amenity-indoor-games.png" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80';"
+             alt="Indoor Games and Activity Room" class="w-full aspect-[4/3] object-cover">
+      </div>
+    </section>
+
+    <!-- Category 6: Cognitive Sports & Mind Games Chess Lounge -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="lg:order-2 space-y-6">
+        <div class="inline-flex px-3 py-1 bg-luxury-gold/10 border border-luxury-gold/20 rounded text-[10px] uppercase tracking-widest text-luxury-gold font-semibold">
+          Cognitive Sports
+        </div>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">
+          Mind Games & Chess Lounge
+        </h2>
+        <p class="text-slate-300 font-light leading-relaxed">
+          Sharpen intellect and focus in an ambient, distraction-free environment. The dedicated chess and strategy games room offers custom inlaid tables, tournament timers, and professional chess boards suitable for hosting friendly matches, junior training programs, and resident tournaments.
+        </p>
+        <ul class="space-y-3 text-sm text-slate-400 font-light">
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Custom chess stations with tournament-grade pieces and clocks
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Acoustically balanced, serene environment tailored for deep focus
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Hosting zone for community board game leagues and workshops
+          </li>
+        </ul>
+      </div>
+      <div class="lg:order-1 relative group hover-zoom rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl">
+        <img src="./assets/images/amenity-chess.jpg" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1200&q=80';"
+             alt="Mind Games and Chess Lounge" class="w-full aspect-[4/3] object-cover">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CTA back to home -->
+  <section class="py-20 border-t border-luxury-gold/15 bg-luxury-bgCard/40 text-center">
+    <div class="max-w-3xl mx-auto px-6 space-y-8">
+      <h2 class="font-serif text-3xl md:text-4xl text-white">Experience Harmony Harikesh In Person</h2>
+      <p class="text-slate-400 font-light text-sm max-w-md mx-auto">
+        Schedule your private preview tour to explore our architecture, site plan, and show apartment layouts.
+      </p>
+      <a href="index.html" class="inline-flex px-8 py-4 bg-gradient-to-r from-luxury-gold to-luxury-bronze text-luxury-bgDark hover:from-luxury-bronze hover:to-luxury-gold font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded shadow-xl shadow-luxury-gold/15 items-center gap-2">
+        Return to Home Page
+      </a>
+    </div>
+  </section>
+
+  <!-- Floating Sticky Action Bar -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
+    <!-- WhatsApp Action -->
+    <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20please%20provide%20more%20info%20about%20Harmony%20Harikesh%20(3%20%26%204%20BHK%20Luxury%20Sky%20Living%20in%20Sola%2C%20Ahmedabad)." target="_blank" class="p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center border border-[#25D366]/20" title="Chat on WhatsApp">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.457 5.704 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#080B10] border-t border-luxury-gold/15 py-12 text-slate-500 text-center text-xs">
+    <div class="max-w-7xl mx-auto px-6">
+      <p>&copy; 2026 Mahaprabhu Residency LLP. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lucide Script -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

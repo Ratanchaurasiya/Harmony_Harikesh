@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Background Style -->
+  <style>
+    .grid-line { stroke: rgba(212, 175, 55, 0.08); stroke-width: 1; }
+    .wall { stroke: #D4AF37; stroke-width: 3.5; fill: none; stroke-linejoin: round; }
+    .thin-wall { stroke: #C5A880; stroke-width: 1.8; fill: none; }
+    .door { stroke: #C5A880; stroke-width: 1.5; fill: none; }
+    .text-title { font-family: 'Cormorant Garamond', serif; fill: #D4AF37; font-size: 20px; font-weight: bold; letter-spacing: 2px; }
+    .text-room { font-family: 'Plus Jakarta Sans', sans-serif; fill: #1E293B; font-size: 11px; letter-spacing: 1px; font-weight: 500; }
+    .text-dim { font-family: 'Plus Jakarta Sans', sans-serif; fill: #64748B; font-size: 9px; }
+    .furniture { stroke: rgba(30, 41, 59, 0.15); stroke-width: 1; fill: none; }
+    .balcony-flow { stroke: #D4AF37; stroke-width: 1; stroke-dasharray: 4,4; fill: none; }
+  </style>
+
+  <!-- Blueprint Grid -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <path d="M 20 0 L 0 0 0 20" fill="none" class="grid-line"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- External Boundaries / Walls (4 BHK Layout) -->
+  <path d="M 80 80 L 720 80 L 720 520 L 80 520 Z" class="wall" />
+  
+  <!-- Living Room -->
+  <path d="M 80 200 L 400 200 M 400 80 L 400 320" class="wall" />
+  <text x="100" y="120" class="text-room">GRAND VESTIBULE &amp; FOYER</text>
+  <text x="100" y="135" class="text-dim">8'0" X 10'0"</text>
+
+  <text x="240" y="150" class="text-room">DRAWING &amp; LIVING ROOM</text>
+  <text x="240" y="165" class="text-dim">18'0" X 24'0"</text>
+  <!-- Sofa Furniture Placement -->
+  <rect x="220" y="85" width="120" height="30" rx="3" class="furniture"/>
+  <rect x="200" y="100" width="30" height="60" rx="3" class="furniture"/>
+
+  <!-- Balcony Deck -->
+  <path d="M 80 80 L 80 40 H 400" class="wall"/>
+  <line x1="80" y1="40" x2="400" y2="40" class="wall"/>
+  <path d="M 100 60 H 380" class="balcony-flow"/>
+  <text x="220" y="60" class="text-room" fill="#D4AF37">SUITE BALCONY DECK</text>
+
+  <!-- Kitchen & Dining -->
+  <path d="M 400 220 H 720" class="wall" />
+  <text x="440" y="130" class="text-room">DINING AREA</text>
+  <text x="440" y="145" class="text-dim">12'0" X 14'0"</text>
+  
+  <path d="M 580 80 L 580 220" class="thin-wall" />
+  <text x="600" y="130" class="text-room">KITCHEN</text>
+  <text x="600" y="145" class="text-dim">10'0" X 14'0"</text>
+  <rect x="670" y="90" width="40" height="80" rx="2" class="furniture"/> <!-- Platform -->
+
+  <!-- Master Suite 1 (Bottom Left) -->
+  <path d="M 240 320 H 80" class="wall" />
+  <path d="M 240 320 V 520" class="wall" />
+  <text x="100" y="360" class="text-room" fill="#D4AF37">MASTER BEDROOM 01</text>
+  <text x="100" y="375" class="text-dim">14'0" X 18'0"</text>
+  <rect x="100" y="440" width="80" height="70" rx="4" class="furniture"/> <!-- Bed -->
+
+  <!-- Master Suite 2 (Bottom Right) -->
+  <path d="M 520 320 H 720" class="wall" />
+  <path d="M 520 320 V 520" class="wall" />
+  <text x="550" y="360" class="text-room" fill="#D4AF37">MASTER BEDROOM 02</text>
+  <text x="550" y="375" class="text-dim">14'0" X 16'0"</text>
+  <rect x="600" y="440" width="80" height="70" rx="4" class="furniture"/> <!-- Bed -->
+
+  <!-- Bedrooms 3 & 4 (Middle Center) -->
+  <path d="M 240 380 H 520" class="thin-wall" />
+  <path d="M 380 320 V 520" class="thin-wall" />
+  <text x="260" y="420" class="text-room">BEDROOM 03</text>
+  <text x="260" y="435" class="text-dim">11'0" X 13'0"</text>
+  
+  <text x="400" y="420" class="text-room">BEDROOM 04</text>
+  <text x="400" y="435" class="text-dim">11'0" X 13'0"</text>
+
+  <!-- Door swings -->
+  <path d="M 120 200 A 40 40 0 0 1 160 200" class="door" />
+  <path d="M 540 220 A 40 40 0 0 1 500 220" class="door" />
+
+  <!-- Title block -->
+  <rect x="420" y="460" width="280" height="50" fill="#FFFFFF" stroke="#D4AF37" stroke-width="1.5" rx="4"/>
+  <text x="440" y="490" class="text-title">4 BHK TYPICAL FLOOR PLAN</text>
+</svg>

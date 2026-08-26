@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Background Style -->
+  <style>
+    .grid-line { stroke: rgba(212, 175, 55, 0.08); stroke-width: 1; }
+    .wall { stroke: #D4AF37; stroke-width: 3.5; fill: none; stroke-linejoin: round; }
+    .thin-wall { stroke: #C5A880; stroke-width: 1.8; fill: none; }
+    .door { stroke: #C5A880; stroke-width: 1.5; fill: none; }
+    .text-title { font-family: 'Cormorant Garamond', serif; fill: #D4AF37; font-size: 20px; font-weight: bold; letter-spacing: 2px; }
+    .text-room { font-family: 'Plus Jakarta Sans', sans-serif; fill: #1E293B; font-size: 11px; letter-spacing: 1px; font-weight: 500; }
+    .text-dim { font-family: 'Plus Jakarta Sans', sans-serif; fill: #64748B; font-size: 9px; }
+    .furniture { stroke: rgba(30, 41, 59, 0.15); stroke-width: 1; fill: none; }
+    .balcony-flow { stroke: #D4AF37; stroke-width: 1; stroke-dasharray: 4,4; fill: none; }
+  </style>
+
+  <!-- Blueprint Grid -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <path d="M 20 0 L 0 0 0 20" fill="none" class="grid-line"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- External Boundaries / Walls (3 BHK Layout) -->
+  <path d="M 100 100 L 700 100 L 700 500 L 100 500 Z" class="wall" />
+  
+  <!-- Living Room -->
+  <path d="M 100 240 L 420 240 M 420 100 L 420 340" class="wall" />
+  <text x="120" y="150" class="text-room">VESTIBULE &amp; ENTRY</text>
+  <text x="120" y="165" class="text-dim">6'0" X 8'0"</text>
+
+  <text x="230" y="170" class="text-room">DRAWING &amp; LIVING ROOM</text>
+  <text x="230" y="185" class="text-dim">15'0" X 22'0"</text>
+  <!-- Sofa Furniture Placement -->
+  <rect x="220" y="105" width="100" height="25" rx="3" class="furniture"/>
+
+  <!-- Kitchen & Dining -->
+  <path d="M 420 220 H 700" class="wall" />
+  <text x="450" y="150" class="text-room">DINING AREA</text>
+  <text x="450" y="165" class="text-dim">11'0" X 12'0"</text>
+  
+  <path d="M 560 100 L 560 220" class="thin-wall" />
+  <text x="580" y="150" class="text-room">KITCHEN</text>
+  <text x="580" y="165" class="text-dim">9'0" X 12'0"</text>
+
+  <!-- Master Suite (Bottom Left) -->
+  <path d="M 280 340 H 100" class="wall" />
+  <path d="M 280 340 V 500" class="wall" />
+  <text x="120" y="380" class="text-room" fill="#D4AF37">MASTER BEDROOM 01</text>
+  <text x="120" y="395" class="text-dim">13'0" X 16'0"</text>
+  <rect x="120" y="420" width="70" height="60" rx="4" class="furniture"/> <!-- Bed -->
+
+  <!-- Bedroom 2 (Bottom Right) -->
+  <path d="M 480 340 H 700" class="wall" />
+  <path d="M 480 340 V 500" class="wall" />
+  <text x="510" y="380" class="text-room" fill="#D4AF37">BEDROOM 02</text>
+  <text x="510" y="395" class="text-dim">12'0" X 14'0"</text>
+
+  <!-- Bedroom 3 (Bottom Center) -->
+  <path d="M 280 400 H 480" class="thin-wall" />
+  <text x="310" y="440" class="text-room">BEDROOM 03</text>
+  <text x="310" y="455" class="text-dim">10'0" X 12'0"</text>
+
+  <!-- Title block -->
+  <rect x="440" y="430" width="240" height="50" fill="#FFFFFF" stroke="#D4AF37" stroke-width="1.5" rx="4"/>
+  <text x="460" y="460" class="text-title">3 BHK TYPICAL FLOOR PLAN</text>
+</svg>
