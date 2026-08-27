@@ -29,8 +29,8 @@
               gold: '#C5A368',
               goldLight: '#E8DCC4',
               bronze: '#B69D7A',
-              bgDark: '#FDFBF7',
-              bgCard: '#FFFFFF',
+              bgDark: '#090D14',
+              bgCard: '#161D2A',
               accent: '#D9C5A0',
             }
           }
@@ -146,12 +146,24 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-luxury-bgDark border-b border-luxury-gold/20 p-6 flex flex-col space-y-4">
-      <a href="#about" onclick="toggleMobileMenu()" class="text-lg font-serif hover:text-luxury-gold transition-colors">Architecture</a>
-      <a href="#amenities" onclick="toggleMobileMenu()" class="text-lg font-serif hover:text-luxury-gold transition-colors">Amenities</a>
-      <a href="#floor-plans" onclick="toggleMobileMenu()" class="text-lg font-serif hover:text-luxury-gold transition-colors">Floor Plans</a>
-      <a href="#location" onclick="toggleMobileMenu()" class="text-lg font-serif hover:text-luxury-gold transition-colors">Location</a>
-      <button onclick="toggleMobileMenu(); openModal();" class="w-full py-3 bg-gradient-to-r from-luxury-gold to-luxury-bronze text-luxury-bgDark font-semibold tracking-wider uppercase rounded">
+    <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#090D14]/95 backdrop-blur-xl border-b border-luxury-gold/20 p-6 flex flex-col space-y-3 shadow-2xl transition-all duration-300">
+      <a href="#about" onclick="toggleMobileMenu()" class="text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-3 border-b border-white/5 flex items-center justify-between">
+        <span>Architecture</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+      </a>
+      <a href="#amenities" onclick="toggleMobileMenu()" class="text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-3 border-b border-white/5 flex items-center justify-between">
+        <span>Amenities</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+      </a>
+      <a href="#floor-plans" onclick="toggleMobileMenu()" class="text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-3 border-b border-white/5 flex items-center justify-between">
+        <span>Floor Plans</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+      </a>
+      <a href="#location" onclick="toggleMobileMenu()" class="text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-3 border-b border-white/5 flex items-center justify-between">
+        <span>Location</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+      </a>
+      <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-3 py-3.5 bg-gradient-to-r from-luxury-gold to-luxury-bronze hover:from-luxury-bronze hover:to-luxury-gold text-[#090D14] font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-lg shadow-lg shadow-luxury-gold/20 cursor-pointer">
         Enquire Now
       </button>
     </div>
@@ -1082,9 +1094,16 @@
     // Mobile menu toggle helper
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      if (!menu) return;
       menu.classList.toggle('hidden');
+      const isHidden = menu.classList.contains('hidden');
+      if (btn) {
+        btn.innerHTML = isHidden ? '<i data-lucide="menu" class="w-6 h-6"></i>' : '<i data-lucide="x" class="w-6 h-6"></i>';
+        if (window.lucide) lucide.createIcons();
+      }
     }
-    document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
 
     // Nav Background transition on scroll
     window.addEventListener('scroll', () => {
@@ -1775,6 +1794,11 @@
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
               mobileMenu.classList.add('hidden');
+              const btn = document.getElementById('mobile-menu-btn');
+              if (btn) {
+                btn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                if (window.lucide) lucide.createIcons();
+              }
             }
             
             // Perform smooth scroll with offset for fixed nav bar height
