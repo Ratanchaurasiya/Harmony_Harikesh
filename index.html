@@ -475,7 +475,7 @@
   </header>
 
   <!-- STAGE 1: HERO SECTION WITH THREE.JS & KEN BURNS SLIDER -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="hero">
+  <section class="relative flex flex-col items-center justify-center overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-14" id="hero">
     
     <!-- Three.js WebGL 3D GPU Background Canvas -->
     <div id="three-webgl-canvas" class="absolute inset-0 z-[6] pointer-events-none w-full h-full opacity-40"></div>
@@ -518,15 +518,15 @@
     </div>
 
     <!-- Content (Zero Jitter, Perfectly Structured Typography) -->
-    <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center py-16 md:py-24" id="hero-content">
+    <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-6 pb-4 sm:pt-10 sm:pb-6" id="hero-content">
       <!-- Luxury Location Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 border border-luxury-gold/40 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-bold backdrop-blur-md mb-6 shadow-xl" id="hero-badge">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 border border-luxury-gold/40 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-bold backdrop-blur-md mb-5 sm:mb-6 shadow-xl" id="hero-badge">
         <span class="w-2 h-2 rounded-full bg-luxury-gold animate-pulse"></span>
         <span>Science City Road, Sola • 3 & 4 BHK Sky Living</span>
       </div>
 
       <!-- ULTRA-SMOOTH JITTER-FREE HERO HEADLINE -->
-      <div class="mb-6 sm:mb-8" id="hero-title">
+      <div class="mb-5 sm:mb-7" id="hero-title">
         <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight text-white">
           Where Your Address
         </h1>
@@ -537,7 +537,7 @@
         </div>
       </div>
       
-      <p class="text-slate-300 text-sm sm:text-base md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 font-light leading-relaxed px-2" id="hero-subtext">
+      <p class="text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 font-light leading-relaxed px-2" id="hero-subtext">
         Rise above the ordinary and live among the clouds. An architectural masterpiece by Mahaprabhu Residency LLP in Sola, Ahmedabad.
       </p>
       
@@ -555,18 +555,10 @@
         </div>
       </div>
     </div>
-
-    <!-- Mouse Scroll Down Indicator -->
-    <a href="#pillars" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-80 hover:opacity-100 transition-opacity z-20 cursor-pointer group">
-      <span class="text-[9px] uppercase tracking-[0.3em] text-luxury-gold font-bold group-hover:text-white transition-colors">Scroll to Explore</span>
-      <div class="w-5 h-8 rounded-full border border-luxury-gold/50 flex items-start justify-center p-1 group-hover:border-luxury-gold transition-colors shadow-[0_0_10px_rgba(197,163,104,0.2)]">
-        <div class="w-1 h-2 rounded-full bg-luxury-gold animate-bounce mt-0.5"></div>
-      </div>
-    </a>
   </section>
 
   <!-- LUXURY STRIP: THE PILLARS OF EXCLUSIVITY -->
-  <section class="py-12 bg-[#080C14] border-y border-luxury-gold/20 relative z-20" id="pillars">
+  <section class="py-8 sm:py-10 bg-[#080C14] border-y border-luxury-gold/20 relative z-20" id="pillars">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         
@@ -623,7 +615,7 @@
   </section>
 
   <!-- STAGE 2: ARCHITECTURAL STATEMENT & COUNTERS -->
-  <section class="py-20 md:py-32 relative overflow-hidden bg-[#0D121D]" id="about">
+  <section class="py-14 md:py-24 relative overflow-hidden bg-[#0D121D]" id="about">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Section Header -->
