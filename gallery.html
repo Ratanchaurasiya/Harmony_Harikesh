@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Architectural Gallery | Harmony Harikesh - 31-Storey Luxury Sky Living</title>
+  
+  <meta name="description" content="Explore the full architectural render gallery of Harmony Harikesh in Sola, Ahmedabad. 31-storey skyscraper, suspended skywalk, and world-class resident amenities.">
+  <meta name="theme-color" content="#080C14">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            luxury: {
+              gold: '#C5A368',
+              goldLight: '#E8DCC4',
+              goldPale: '#FFF5DF',
+              bronze: '#B69D7A',
+              bgDark: '#080C14',
+              bgCard: '#121824',
+              bgSurface: '#161D2A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+    body {
+      background-color: #080C14;
+      color: #F8FAFC;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Custom Clean Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080C14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A368;
+      border-radius: 3px;
+    }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #B69D7A, #C5A368, #FFE8B8, #C5A368);
+      z-index: 1000;
+      box-shadow: 0 0 12px rgba(197, 163, 104, 0.8);
+      transition: width 0.1s ease-out;
+      pointer-events: none;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF5DF 0%, #E8DCC4 30%, #C5A368 70%, #90764C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .spotlight-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(197, 163, 104, 0.6);
+      box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(197, 163, 104, 0.15);
+    }
+
+    /* Luxury Gold Button Shimmering Sheen (Subtle & Purposeful) */
+    @keyframes goldSheen {
+      0% { transform: translateX(-120%) skewX(-20deg); }
+      30%, 100% { transform: translateX(220%) skewX(-20deg); }
+    }
+    .btn-gold-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold-shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        transparent 100%
+      );
+      transform: translateX(-120%) skewX(-20deg);
+      animation: goldSheen 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+
+    /* Smooth Mobile Tap & Haptic Feedback */
+    @media (hover: none) and (pointer: coarse) {
+      .spotlight-card:active {
+        transform: scale(0.985);
+        transition: transform 0.15s ease;
+      }
+      button:active, a:active {
+        transform: scale(0.97);
+        transition: transform 0.12s ease;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-[#080C14] text-slate-100 selection:bg-luxury-gold selection:text-luxury-bgDark">
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Floating Minimal Luxury Capsule Navbar -->
+  <header class="fixed top-4 inset-x-0 mx-auto max-w-5xl w-[92%] z-50 transition-all duration-300" id="navbar-wrapper">
+    <nav class="bg-[#090E18]/90 backdrop-blur-xl border border-luxury-gold/30 rounded-full px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_20px_rgba(197,163,104,0.12)] transition-all duration-300" id="main-nav">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 group cursor-pointer">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-luxury-gold/15 border border-luxury-gold/60 flex items-center justify-center text-luxury-gold group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(197,163,104,0.3)]">
+          <span class="font-serif text-sm sm:text-base font-bold gold-gradient-text">H</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-base sm:text-lg font-bold tracking-widest gold-gradient-text leading-none">HARMONY</span>
+          <span class="text-[8px] uppercase tracking-[0.3em] text-luxury-gold/80 font-semibold mt-0.5">Harikesh</span>
+        </div>
+      </a>
+      
+      <!-- Clean Minimal Links (Desktop) -->
+      <div class="hidden md:flex items-center space-x-7 lg:space-x-8">
+        <a href="index.html#about" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Architecture</a>
+        <a href="index.html#tower-odyssey" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">The Ascent</a>
+        <a href="amenities.html" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Amenities</a>
+        <a href="index.html#floor-plans" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Floor Plans</a>
+        <a href="index.html#location" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Location</a>
+      </div>
+
+      <!-- Back to Home Action Button -->
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="btn-gold-shimmer inline-flex items-center gap-2 px-5 py-2 sm:py-2.5 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold hover:opacity-95 text-luxury-bgDark font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-lg shadow-luxury-gold/25 hover:scale-105 active:scale-95">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Banner Header -->
+  <section class="relative pt-36 pb-16 md:pt-44 md:pb-24 overflow-hidden bg-gradient-to-b from-[#121824] to-[#080C14] border-b border-luxury-gold/15 text-center px-4">
+    <!-- Ambient Gold Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-luxury-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto space-y-4 relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-luxury-gold/40 text-luxury-gold text-xs uppercase tracking-[0.25em] font-bold shadow-xl">
+        <span class="w-2 h-2 rounded-full bg-luxury-gold animate-ping"></span>
+        <span>High-Resolution Architectural Archive</span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold gold-gradient-text">Architectural Showcase</h1>
+      
+      <p class="text-slate-300 text-xs sm:text-base font-light max-w-2xl mx-auto leading-relaxed">
+        Explore high-resolution perspectives of the 31-storey landmark, suspended skywalk, double-height arrival foyer, and curated private spaces.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="pt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <button onclick="filterGallery('all')" class="gallery-tab active px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-luxury-gold bg-luxury-gold text-luxury-bgDark transition-all duration-300 cursor-pointer shadow-md">
+          All Renders (12)
+        </button>
+        <button onclick="filterGallery('architecture')" class="gallery-tab px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-white/10 bg-white/5 hover:border-luxury-gold/50 text-slate-300 hover:text-white transition-all duration-300 cursor-pointer">
+          Tower & Facade
+        </button>
+        <button onclick="filterGallery('sky')" class="gallery-tab px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-white/10 bg-white/5 hover:border-luxury-gold/50 text-slate-300 hover:text-white transition-all duration-300 cursor-pointer">
+          Sky Life & Terrace
+        </button>
+        <button onclick="filterGallery('interiors')" class="gallery-tab px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-white/10 bg-white/5 hover:border-luxury-gold/50 text-slate-300 hover:text-white transition-all duration-300 cursor-pointer">
+          Lobbies & Lounges
+        </button>
+        <button onclick="filterGallery('recreation')" class="gallery-tab px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-white/10 bg-white/5 hover:border-luxury-gold/50 text-slate-300 hover:text-white transition-all duration-300 cursor-pointer">
+          Junior Care & Sports
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Full-Page Architectural Gallery Grid -->
+  <main class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="gallery-grid">
+      
+      <!-- Card 1 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="architecture" onclick="openLightbox(0)">
+        <img src="./assets/images/hero-towers-straight.jpg" alt="31-Storey Tower Elevation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Tower Elevation</span>
+            <h4 class="font-serif text-lg text-white font-semibold">31-Storey Landmark Skyscraper</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="sky" onclick="openLightbox(1)">
+        <img src="./assets/images/sky-deck-aerial.jpg" alt="Suspended Skywalk Bridge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Suspended Skywalk</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Level 15 Inter-Tower Bridge</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="interiors" onclick="openLightbox(2)">
+        <img src="./assets/images/entrance-foyer.jpg" alt="Grand Entrance Foyer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Arrival Foyer</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Double-Height Marble Reception</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="interiors" onclick="openLightbox(3)">
+        <img src="./assets/images/clubhouse-lounge.jpg" alt="Executive Resident Clubhouse" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Private Club</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Harikesh Executive Resident Lounge</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="sky" onclick="openLightbox(4)">
+        <img src="./assets/images/balcony-view.png" alt="Balcony Sky Living" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Sky Horizon</span>
+            <h4 class="font-serif text-lg text-white font-semibold">11-Ft Balcony Panoramic View</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="architecture" onclick="openLightbox(5)">
+        <img src="./assets/images/hero-towers-front.jpg" alt="Front Facade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Architectural Facade</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Towers A, B & C Harmony</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="architecture" onclick="openLightbox(6)">
+        <img src="./assets/images/hero-towers-angled.jpg" alt="Angled Skyscraper Profile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Exterior Perspective</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Angled Skyscraper Profile</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="sky" onclick="openLightbox(7)">
+        <img src="./assets/images/towers-skywalk.jpg" alt="Mid-Air Skywalk Promenade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Level 15 Promenade</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Mid-Air Architectural Skywalk</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="recreation" onclick="openLightbox(8)">
+        <img src="./assets/images/kids-creche.jpg" alt="Children's Montessori Creche" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Junior Sanctuary</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Children's Montessori Creche</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="recreation" onclick="openLightbox(9)">
+        <img src="./assets/images/amenity-indoor-games.png" alt="Indoor Games Arena" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Active Recreation</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Indoor Sports & Table Tennis</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="recreation" onclick="openLightbox(10)">
+        <img src="./assets/images/amenity-chess.jpg" alt="Mind Games Lounge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Cognitive Sports</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Mind Games & Chess Sanctuary</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <div class="gallery-card spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[4/3] bg-black group relative cursor-pointer" data-category="architecture" onclick="openLightbox(11)">
+        <img src="./assets/images/hero-towers-straight.jpg" alt="Twilight Skyline Vista" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-90 saturate-125">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Atmospheric Horizon</span>
+            <h4 class="font-serif text-lg text-white font-semibold">Twilight Architectural Vista</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA Bar -->
+    <div class="mt-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-[#121824] via-[#161D2A] to-[#121824] border border-luxury-gold/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <span class="text-[10px] uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-1">Harmony Harikesh Showcase</span>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Experience The 31-Storey Ascent In Person</h3>
+        <p class="text-xs sm:text-sm text-slate-300 mt-1 font-light">Schedule a private site briefing and high-floor panoramic walkthrough.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20would%20like%20to%20schedule%20a%20private%20tour." target="_blank" class="px-8 py-3.5 bg-[#25D366] text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all">
+          WhatsApp Concierge
+        </a>
+        <a href="index.html" class="px-8 py-3.5 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold text-luxury-bgDark font-bold text-xs uppercase tracking-widest rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all">
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Full-Screen Interactive Lightbox Gallery Modal -->
+  <div id="gallery-lightbox-modal" class="fixed inset-0 z-[103] hidden items-center justify-center p-4 bg-black/95 backdrop-blur-2xl transition-opacity duration-300">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-slate-300 hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 z-50 cursor-pointer" aria-label="Close gallery lightbox">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    
+    <!-- Previous & Next Navigation Buttons -->
+    <button onclick="navigateLightbox(-1)" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-white transition-colors p-3 bg-black/70 hover:bg-luxury-gold hover:text-luxury-bgDark rounded-full border border-luxury-gold/40 z-50 cursor-pointer" aria-label="Previous Image">
+      <i data-lucide="chevron-left" class="w-6 h-6"></i>
+    </button>
+    <button onclick="navigateLightbox(1)" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-white transition-colors p-3 bg-black/70 hover:bg-luxury-gold hover:text-luxury-bgDark rounded-full border border-luxury-gold/40 z-50 cursor-pointer" aria-label="Next Image">
+      <i data-lucide="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <div class="max-w-5xl w-full flex flex-col items-center justify-center relative z-20">
+      <img id="lightbox-img" src="" alt="Gallery Preview" class="max-h-[75vh] w-auto object-contain rounded-2xl border border-luxury-gold/30 shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
+      <div class="mt-4 text-center">
+        <p id="lightbox-title" class="font-serif text-xl sm:text-2xl font-bold gold-gradient-text"></p>
+        <p id="lightbox-cat" class="text-xs uppercase tracking-widest text-slate-400 mt-1"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#06090F] border-t border-luxury-gold/20 py-12 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="font-serif text-lg text-white font-bold tracking-widest gold-gradient-text mb-2">HARMONY HARIKESH</p>
+      <p>&copy; 2026 Mahaprabhu Residency LLP. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progressPercent = (scrollPos / totalHeight) * 100;
+      const bar = document.getElementById('scroll-progress');
+      if (bar) bar.style.width = progressPercent + '%';
+    }, { passive: true });
+
+    // Category Filter System
+    function filterGallery(category) {
+      const tabs = document.querySelectorAll('.gallery-tab');
+      tabs.forEach(t => {
+        t.className = 'gallery-tab px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-white/10 bg-white/5 hover:border-luxury-gold/50 text-slate-300 hover:text-white transition-all duration-300 cursor-pointer';
+      });
+      event.currentTarget.className = 'gallery-tab active px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-luxury-gold bg-luxury-gold text-luxury-bgDark transition-all duration-300 cursor-pointer shadow-md';
+
+      const cards = document.querySelectorAll('.gallery-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+          gsap.fromTo(card, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.35 });
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Lightbox Data
+    const galleryItems = [
+      { src: './assets/images/hero-towers-straight.jpg', title: '31-Storey Landmark Skyscraper', category: 'Tower Elevation' },
+      { src: './assets/images/sky-deck-aerial.jpg', title: 'Level 15 Inter-Tower Bridge', category: 'Suspended Skywalk' },
+      { src: './assets/images/entrance-foyer.jpg', title: 'Double-Height Marble Reception', category: 'Arrival Foyer' },
+      { src: './assets/images/clubhouse-lounge.jpg', title: 'Harikesh Executive Resident Lounge', category: 'Private Club' },
+      { src: './assets/images/balcony-view.png', title: '11-Ft Balcony Panoramic View', category: 'Sky Horizon' },
+      { src: './assets/images/hero-towers-front.jpg', title: 'Towers A, B & C Harmony', category: 'Architectural Facade' },
+      { src: './assets/images/hero-towers-angled.jpg', title: 'Angled Skyscraper Profile', category: 'Exterior Perspective' },
+      { src: './assets/images/towers-skywalk.jpg', title: 'Mid-Air Architectural Skywalk', category: 'Level 15 Promenade' },
+      { src: './assets/images/kids-creche.jpg', title: "Children's Montessori Creche", category: 'Junior Sanctuary' },
+      { src: './assets/images/amenity-indoor-games.png', title: 'Indoor Sports & Table Tennis', category: 'Active Recreation' },
+      { src: './assets/images/amenity-chess.jpg', title: 'Mind Games & Chess Sanctuary', category: 'Cognitive Sports' },
+      { src: './assets/images/hero-towers-straight.jpg', title: 'Twilight Architectural Vista', category: 'Atmospheric Horizon' }
+    ];
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const modal = document.getElementById('gallery-lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const title = document.getElementById('lightbox-title');
+      const cat = document.getElementById('lightbox-cat');
+
+      img.src = galleryItems[index].src;
+      img.onerror = () => {
+        img.src = 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';
+      };
+      title.textContent = galleryItems[index].title;
+      cat.textContent = galleryItems[index].category;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.25 });
+    }
+
+    function navigateLightbox(dir) {
+      currentIndex = (currentIndex + dir + galleryItems.length) % galleryItems.length;
+      const img = document.getElementById('lightbox-img');
+      const title = document.getElementById('lightbox-title');
+      const cat = document.getElementById('lightbox-cat');
+
+      gsap.to(img, {
+        opacity: 0,
+        scale: 0.96,
+        duration: 0.15,
+        onComplete: () => {
+          img.src = galleryItems[currentIndex].src;
+          title.textContent = galleryItems[currentIndex].title;
+          cat.textContent = galleryItems[currentIndex].category;
+          gsap.to(img, { opacity: 1, scale: 1, duration: 0.25 });
+        }
+      });
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('gallery-lightbox-modal');
+      gsap.to(modal, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+  </script>
+</body>
+</html>
