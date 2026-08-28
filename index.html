@@ -474,11 +474,11 @@
     </div>
   </header>
 
-  <!-- STAGE 1: HERO SECTION WITH THREE.JS & KEN BURNS SLIDER -->
-  <section class="relative flex flex-col items-center justify-center overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-14" id="hero">
+  <!-- STAGE 1: CINEMATIC HERO SHOWROOM -->
+  <section class="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 sm:py-24" id="hero">
     
-    <!-- Three.js WebGL 3D GPU Background Canvas -->
-    <div id="three-webgl-canvas" class="absolute inset-0 z-[6] pointer-events-none w-full h-full opacity-40"></div>
+    <!-- Three.js WebGL 3D GPU Background Particle Canvas -->
+    <div id="three-webgl-canvas" class="absolute inset-0 z-[6] pointer-events-none w-full h-full opacity-35"></div>
 
     <!-- Hero Image Slider Container (Ken Burns Cinematic Fade) -->
     <div class="absolute inset-0 z-0 bg-black overflow-hidden" id="hero-bg-wrapper">
@@ -513,43 +513,43 @@
              alt="Clubhouse Lounge">
       </div>
       
-      <!-- Vignette Overlay -->
-      <div id="dynamic-lighting-layer" class="absolute inset-0 bg-gradient-to-t from-[#080C14] via-[#080C14]/55 to-black/75 z-10 pointer-events-none"></div>
+      <!-- Vignette Overlay: Smooth Gradient into #080C14 -->
+      <div id="dynamic-lighting-layer" class="absolute inset-0 bg-gradient-to-t from-[#080C14] via-[#080C14]/65 to-black/75 z-10 pointer-events-none"></div>
     </div>
 
     <!-- Content (Zero Jitter, Perfectly Structured Typography) -->
-    <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-6 pb-4 sm:pt-10 sm:pb-6" id="hero-content">
+    <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center py-8" id="hero-content">
       <!-- Luxury Location Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 border border-luxury-gold/40 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-bold backdrop-blur-md mb-5 sm:mb-6 shadow-xl" id="hero-badge">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/80 border border-luxury-gold/50 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold backdrop-blur-md mb-4 sm:mb-6 shadow-xl" id="hero-badge">
         <span class="w-2 h-2 rounded-full bg-luxury-gold animate-pulse"></span>
         <span>Science City Road, Sola • 3 & 4 BHK Sky Living</span>
       </div>
 
       <!-- ULTRA-SMOOTH JITTER-FREE HERO HEADLINE -->
       <div class="mb-5 sm:mb-7" id="hero-title">
-        <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight text-white">
+        <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight text-white drop-shadow-lg">
           Where Your Address
         </h1>
-        <div class="h-12 sm:h-16 md:h-20 flex items-center justify-center mt-1 sm:mt-2">
+        <div class="h-10 sm:h-14 md:h-16 flex items-center justify-center mt-1">
           <span class="font-serif text-xl sm:text-3xl md:text-5xl lg:text-6xl gold-gradient-text italic font-normal tracking-wide inline-flex items-center">
             <span id="hero-typewriter">Is The Skyscraper Of The City</span><span class="typewriter-cursor">|</span>
           </span>
         </div>
       </div>
       
-      <p class="text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 font-light leading-relaxed px-2" id="hero-subtext">
+      <p class="text-slate-200 text-xs sm:text-base md:text-lg max-w-xl mx-auto mb-6 sm:mb-8 font-light leading-relaxed px-4 drop-shadow" id="hero-subtext">
         Rise above the ordinary and live among the clouds. An architectural masterpiece by Mahaprabhu Residency LLP in Sola, Ahmedabad.
       </p>
       
-      <!-- CTA buttons (With Magnetic Pull Physics) -->
+      <!-- CTA Buttons (Balanced & Luxury) -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 px-4" id="hero-ctas">
         <div class="btn-magnetic w-full sm:w-auto">
-          <button onclick="openModal()" class="btn-gold-shimmer w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold text-luxury-bgDark font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/25 hover:scale-105 active:scale-95 cursor-pointer">
+          <button onclick="openModal()" class="btn-gold-shimmer w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold text-luxury-bgDark font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/25 hover:scale-105 active:scale-95 cursor-pointer">
             Schedule Private Tour
           </button>
         </div>
         <div class="btn-magnetic w-full sm:w-auto">
-          <a href="#about" class="w-full sm:w-auto px-8 py-4 border border-luxury-gold/50 hover:border-luxury-gold text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl backdrop-blur-sm flex items-center justify-center gap-2 hover:bg-white/10 hover:scale-105 active:scale-95">
+          <a href="#about" class="w-full sm:w-auto px-8 py-3.5 sm:py-4 border border-luxury-gold/50 hover:border-luxury-gold text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl backdrop-blur-md flex items-center justify-center gap-2 hover:bg-white/10 hover:scale-105 active:scale-95">
             Explore Architecture <i data-lucide="arrow-down" class="w-4 h-4 text-luxury-gold animate-bounce"></i>
           </a>
         </div>
@@ -557,56 +557,56 @@
     </div>
   </section>
 
-  <!-- LUXURY STRIP: THE PILLARS OF EXCLUSIVITY -->
-  <section class="py-8 sm:py-10 bg-[#080C14] border-y border-luxury-gold/20 relative z-20" id="pillars">
+  <!-- STAGE 1.5: THE 4 PILLARS OF EXCLUSIVITY (CRISP & HIGH CONTRAST) -->
+  <section class="py-10 md:py-12 bg-[#080C14] relative z-20" id="pillars-section">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5" id="pillars">
         
         <!-- Pillar 1 -->
-        <div class="p-5 rounded-2xl bg-[#121824]/60 border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 flex items-start gap-4 group">
-          <div class="p-3 rounded-xl bg-luxury-gold/10 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex items-start gap-4 shadow-xl">
+          <div class="p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="building-2" class="w-5 h-5"></i>
           </div>
           <div>
             <span class="text-[10px] uppercase tracking-[0.25em] text-luxury-gold font-bold block mb-0.5">Skyline Apex</span>
             <h4 class="font-serif text-lg font-bold text-white group-hover:text-luxury-gold transition-colors">31 Storeys Tall</h4>
-            <p class="text-[11px] text-slate-400 font-light mt-1">Sola's iconic landmark residential skyscraper</p>
+            <p class="text-xs text-slate-400 font-light mt-1">Sola's iconic landmark residential skyscraper</p>
           </div>
         </div>
 
         <!-- Pillar 2 -->
-        <div class="p-5 rounded-2xl bg-[#121824]/60 border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 flex items-start gap-4 group">
-          <div class="p-3 rounded-xl bg-luxury-gold/10 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex items-start gap-4 shadow-xl">
+          <div class="p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="maximize-2" class="w-5 h-5"></i>
           </div>
           <div>
             <span class="text-[10px] uppercase tracking-[0.25em] text-luxury-gold font-bold block mb-0.5">Vertical Volume</span>
             <h4 class="font-serif text-lg font-bold text-white group-hover:text-luxury-gold transition-colors">11-Ft Clear Heights</h4>
-            <p class="text-[11px] text-slate-400 font-light mt-1">Soaring grand ceilings with expansive vistas</p>
+            <p class="text-xs text-slate-400 font-light mt-1">Soaring grand ceilings with expansive vistas</p>
           </div>
         </div>
 
         <!-- Pillar 3 -->
-        <div class="p-5 rounded-2xl bg-[#121824]/60 border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 flex items-start gap-4 group">
-          <div class="p-3 rounded-xl bg-luxury-gold/10 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex items-start gap-4 shadow-xl">
+          <div class="p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="shield-check" class="w-5 h-5"></i>
           </div>
           <div>
             <span class="text-[10px] uppercase tracking-[0.25em] text-luxury-gold font-bold block mb-0.5">Structural Safety</span>
             <h4 class="font-serif text-lg font-bold text-white group-hover:text-luxury-gold transition-colors">RWDI Certified</h4>
-            <p class="text-[11px] text-slate-400 font-light mt-1">Wind-tunnel engineered global safety benchmark</p>
+            <p class="text-xs text-slate-400 font-light mt-1">Wind-tunnel engineered global safety benchmark</p>
           </div>
         </div>
 
         <!-- Pillar 4 -->
-        <div class="p-5 rounded-2xl bg-[#121824]/60 border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 flex items-start gap-4 group">
-          <div class="p-3 rounded-xl bg-luxury-gold/10 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex items-start gap-4 shadow-xl">
+          <div class="p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="sparkles" class="w-5 h-5"></i>
           </div>
           <div>
             <span class="text-[10px] uppercase tracking-[0.25em] text-luxury-gold font-bold block mb-0.5">Suspended Bridge</span>
             <h4 class="font-serif text-lg font-bold text-white group-hover:text-luxury-gold transition-colors">Mid-Air Skywalk</h4>
-            <p class="text-[11px] text-slate-400 font-light mt-1">Inter-tower pedestrian connection in the clouds</p>
+            <p class="text-xs text-slate-400 font-light mt-1">Inter-tower pedestrian connection in the clouds</p>
           </div>
         </div>
 
@@ -615,7 +615,7 @@
   </section>
 
   <!-- STAGE 2: ARCHITECTURAL STATEMENT & COUNTERS -->
-  <section class="py-14 md:py-24 relative overflow-hidden bg-[#0D121D]" id="about">
+  <section class="py-16 md:py-24 relative overflow-hidden bg-[#0D121D] border-t border-luxury-gold/15" id="about">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Section Header -->
@@ -1922,18 +1922,6 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
       container.appendChild(renderer.domElement);
 
-      // Architectural 3D Skyscraper Cylinder Wireframe
-      const geometry = new THREE.CylinderGeometry(16, 22, 65, isMobile ? 14 : 20, 10, true);
-      const wireframe = new THREE.WireframeGeometry(geometry);
-      const lineMaterial = new THREE.LineBasicMaterial({
-        color: 0xC5A368,
-        transparent: true,
-        opacity: isMobile ? 0.12 : 0.16,
-        blending: THREE.AdditiveBlending
-      });
-      const towerMesh = new THREE.LineSegments(wireframe, lineMaterial);
-      scene.add(towerMesh);
-
       // Floating 3D Golden Star Dust Particle Cloud
       const particleCount = isMobile ? 35 : 110;
       const particleGeo = new THREE.BufferGeometry();
@@ -1948,9 +1936,9 @@
 
       const particleMat = new THREE.PointsMaterial({
         color: 0xE8DCC4,
-        size: isMobile ? 0.9 : 1.1,
+        size: isMobile ? 1.0 : 1.2,
         transparent: true,
-        opacity: 0.45,
+        opacity: 0.5,
         blending: THREE.AdditiveBlending
       });
       const particleCloud = new THREE.Points(particleGeo, particleMat);
@@ -1987,13 +1975,10 @@
         requestAnimationFrame(animate);
         if (!isHeroVisible) return; // Skip rendering when user scrolls down!
 
-        // Calm slow rotation
-        towerMesh.rotation.y += 0.0005;
-        particleCloud.rotation.y -= 0.00025;
-
-        // Smooth Parallax
-        towerMesh.rotation.x += (mouseY * 0.15 - towerMesh.rotation.x) * 0.03;
-        towerMesh.rotation.z += (mouseX * 0.15 - towerMesh.rotation.z) * 0.03;
+        // Calm slow rotation & smooth parallax
+        particleCloud.rotation.y -= 0.0003;
+        particleCloud.rotation.x += (mouseY * 0.1 - particleCloud.rotation.x) * 0.02;
+        particleCloud.rotation.z += (mouseX * 0.1 - particleCloud.rotation.z) * 0.02;
 
         renderer.render(scene, camera);
       }
@@ -2186,18 +2171,6 @@
     // ==========================================
     // 9. SCROLLTRIGGER SECTION REVEALS & ASCENT MILESTONES
     // ==========================================
-    gsap.from('#pillars .grid > div', {
-      y: 35,
-      opacity: 0,
-      duration: 0.9,
-      stagger: 0.12,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '#pillars',
-        start: 'top 90%',
-        once: true
-      }
-    });
 
     gsap.utils.toArray('.section-header').forEach(header => {
       gsap.from(header, {
