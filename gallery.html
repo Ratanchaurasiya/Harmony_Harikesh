@@ -310,6 +310,9 @@
     </div>
   </header>
 
+  <!-- SPA MAIN CONTENT ROOT CONTAINER -->
+  <div id="spa-content">
+
   <!-- Hero Banner Header -->
   <section class="relative pt-28 pb-12 sm:pt-36 sm:pb-16 md:pt-44 md:pb-24 overflow-hidden bg-[#040711] border-b border-white/5 text-center px-4">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-luxury-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
@@ -533,6 +536,7 @@
       <p>&copy; 2026 Mahaprabhu Residency LLP. All Rights Reserved.</p>
     </div>
   </footer>
+  </div> <!-- /spa-content -->
 
   <!-- FLOATING ACTIONS & WHATSAPP TRIGGER -->
   <div class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex flex-col items-center space-y-3 pointer-events-auto">
@@ -827,5 +831,8 @@
       if (e.key === 'ArrowRight') navigateLightbox(1);
     });
   </script>
+
+  <!-- Client-Side Instant SPA Router -->
+  <script src="./assets/js/spa-router.js"></script>
 </body>
 </html>
