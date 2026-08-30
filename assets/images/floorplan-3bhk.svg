@@ -5,9 +5,9 @@
     .wall { stroke: #D4AF37; stroke-width: 3.5; fill: none; stroke-linejoin: round; }
     .thin-wall { stroke: #C5A880; stroke-width: 1.8; fill: none; }
     .door { stroke: #C5A880; stroke-width: 1.5; fill: none; }
-    .text-title { font-family: 'Cormorant Garamond', serif; fill: #D4AF37; font-size: 20px; font-weight: bold; letter-spacing: 2px; }
-    .text-room { font-family: 'Plus Jakarta Sans', sans-serif; fill: #1E293B; font-size: 11px; letter-spacing: 1px; font-weight: 500; }
-    .text-dim { font-family: 'Plus Jakarta Sans', sans-serif; fill: #64748B; font-size: 9px; }
+    .text-title { font-family: 'Inter', sans-serif; fill: #D4AF37; font-size: 20px; font-weight: bold; letter-spacing: 2px; }
+    .text-room { font-family: 'Inter', sans-serif; fill: #1E293B; font-size: 11px; letter-spacing: 1px; font-weight: 600; }
+    .text-dim { font-family: 'Inter', sans-serif; fill: #64748B; font-size: 9px; font-weight: 400; }
     .furniture { stroke: rgba(30, 41, 59, 0.15); stroke-width: 1; fill: none; }
     .balcony-flow { stroke: #D4AF37; stroke-width: 1; stroke-dasharray: 4,4; fill: none; }
   </style>

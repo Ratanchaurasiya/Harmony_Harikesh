@@ -49,10 +49,10 @@
   }
   </script>
 
-  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Neutral) -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -61,8 +61,8 @@
       theme: {
         extend: {
           fontFamily: {
-            serif: ['Cormorant Garamond', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Inter', 'sans-serif'],
           },
           colors: {
             luxury: {
@@ -108,6 +108,10 @@
       --bg-surface: #0F1A34;
     }
 
+    html, body, button, input, select, textarea {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
     html {
       background-color: #030712;
       color: #F8FAFC;
@@ -121,6 +125,23 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       cursor: auto;
+    }
+
+    /* Clean, Professional Number Typography & Tabular Figures */
+    .tabular-nums,
+    [data-counter],
+    #count-storeys,
+    #count-ceilings,
+    #count-lifts,
+    #count-views,
+    #gallery-lightbox-count,
+    .stat-number,
+    .numeric-badge,
+    .distance-tag,
+    .spec-value {
+      font-variant-numeric: tabular-nums lining-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
+      letter-spacing: -0.01em;
     }
 
     /* Native Clean Custom Scrollbar */
@@ -831,37 +852,7 @@
           </div>
         </div>
 
-        <!-- Level 25 -->
-        <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
-          <div class="md:col-span-5 md:text-right space-y-2 sm:space-y-3">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
-              <i data-lucide="sun" class="w-3 h-3 md:hidden text-luxury-gold"></i>
-              <span>Level 25 • 265 FT Elevation</span>
-            </div>
-            <h3 class="font-serif text-lg sm:text-2xl text-white font-bold">Panoramic Balcony Sky Living</h3>
-            <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
-              Expansive 11-foot clear ceiling residences with deep outdoor view decks, acoustic glass balustrades, and lifelong unobstructed vistas.
-            </p>
-            <div class="inline-flex flex-wrap gap-2 sm:gap-3 text-[11px] sm:text-xs text-luxury-gold font-semibold pt-0.5">
-              <span>• 11 Ft Ceilings</span>
-              <span>• 100% Open Horizons</span>
-            </div>
-          </div>
-
-          <div class="hidden md:flex md:col-span-2 items-center justify-center relative">
-            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
-              <i data-lucide="sun" class="w-5 h-5"></i>
-            </div>
-          </div>
-
-          <div class="md:col-span-5">
-            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
-              <img src="./assets/images/balcony-view.png" alt="Balcony Sky Living" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-            </div>
-          </div>
-        </div>
-
-        <!-- Button Under The 3 Milestones To Open Full Ascent Page -->
+        <!-- Button Under The 2 Milestones To Open Full Ascent Page -->
         <div class="text-center pt-8 sm:pt-12 z-20 relative" id="ascent-cta-wrapper">
           <a href="ascent.html" class="btn-gold-shimmer inline-flex items-center gap-3 px-8 sm:px-10 py-4 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs sm:text-sm uppercase tracking-widest rounded-full transition-all duration-300 shadow-2xl shadow-luxury-gold/30 hover:scale-105 active:scale-95 cursor-pointer min-h-[48px]">
             <i data-lucide="compass" class="w-4 sm:w-5 h-4 sm:h-5"></i>

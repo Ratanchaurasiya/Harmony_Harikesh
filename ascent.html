@@ -9,10 +9,10 @@
   <meta name="description" content="Explore the full 31-Storey Vertical Odyssey at Harmony Harikesh, Sola, Ahmedabad. Double-Height Foyer, Level 15 Suspended Skywalk, Level 25 Sky Residences, and Level 31 Crown Star Lounge.">
   <meta name="theme-color" content="#040711">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,8 +21,8 @@
       theme: {
         extend: {
           fontFamily: {
-            serif: ['Cormorant Garamond', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Inter', 'sans-serif'],
           },
           colors: {
             luxury: {
@@ -65,6 +65,10 @@
       --bg-surface: #0F1A34;
     }
 
+    html, body, button, input, select, textarea {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
     html {
       font-size: 16px;
       background-color: #030712;
@@ -87,6 +91,16 @@
       position: relative;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Clean, Professional Number Typography & Tabular Figures */
+    .tabular-nums,
+    .stat-number,
+    .numeric-badge,
+    .spec-value {
+      font-variant-numeric: tabular-nums lining-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
+      letter-spacing: -0.01em;
     }
 
     button, a, input, select, textarea {
