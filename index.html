@@ -8,12 +8,46 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="Harmony Harikesh by Mahaprabhu Residency LLP. An architectural icon offering ultra-luxury 3 & 4 BHK sky residences in Sola, Ahmedabad. Features 31 storeys, 11-ft clear ceilings, suspended skywalk, and wind-tunnel certified engineering by RWDI.">
   <meta name="keywords" content="Harmony Harikesh, Luxury Apartments Sola, 3 BHK Ahmedabad, 4 BHK Sola, Skyscraper Ahmedabad, Mahaprabhu Residency, Skywalk Ahmedabad">
-  <meta name="theme-color" content="#080C14">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Harmony Harikesh - 31-Storey Ultra-Luxury Sky Living">
+  <meta property="og:title" content="Harmony Harikesh - 31-Storey Ultra-Luxury Sky Living | Sola, Ahmedabad">
   <meta property="og:description" content="Experience elevated living in Sola, Ahmedabad. 31 storeys, 11-foot heights, suspended skywalk, and lifelong panoramic views.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:8000">
+
+  <!-- Structured Data JSON-LD for Real Estate & Architecture SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "name": "Harmony Harikesh",
+    "description": "Ultra-Luxury 31-Storey Sky Residences offering 3 & 4 BHK apartments in Sola, Ahmedabad by Mahaprabhu Residency LLP.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Science City Road, near Super Bungalows, Sola",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "380060",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.0768,
+      "longitude": 72.5186
+    },
+    "telephone": "+919998906506",
+    "numberOfRooms": "31",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Suspended Skywalk", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "RWDI Wind-Tunnel Tested", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Harikesh Clubhouse & Lounge", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "11-Ft Clear Ceiling Heights", "value": true }
+    ]
+  }
+  </script>
 
   <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Neutral) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +66,19 @@
           },
           colors: {
             luxury: {
-              gold: '#C5A368',
-              goldLight: '#E8DCC4',
-              goldPale: '#FFF5DF',
-              bronze: '#B69D7A',
-              bgDark: '#080C14',
-              bgCard: '#121824',
-              bgSurface: '#161D2A',
-              accent: '#D9C5A0',
+              gold: '#D4AF37',
+              goldLight: '#FDF4DC',
+              goldPale: '#FFFDF9',
+              goldDark: '#8F6E14',
+              bronze: '#B8860B',
+              cyan: '#0EA5E9',
+              cyanLight: '#38BDF8',
+              emerald: '#10B981',
+              bgDark: '#030712',
+              bgCanvas: '#060B19',
+              bgCard: '#0B1326',
+              bgSurface: '#0F1A34',
+              accent: '#E5C378',
             }
           }
         }
@@ -59,22 +98,24 @@
 
   <style>
     :root {
-      --gold-primary: #C5A368;
-      --gold-light: #E8DCC4;
-      --gold-pale: #FFF5DF;
-      --gold-dark: #90764C;
-      --bg-dark: #080C14;
-      --bg-card: #121824;
+      --gold-primary: #D4AF37;
+      --gold-light: #FDF4DC;
+      --gold-dark: #8F6E14;
+      --cyan-light: #38BDF8;
+      --bg-dark: #030712;
+      --bg-canvas: #060B19;
+      --bg-card: #0B1326;
+      --bg-surface: #0F1A34;
     }
 
     html {
-      background-color: #080C14;
+      background-color: #030712;
       color: #F8FAFC;
       scroll-behavior: smooth;
     }
 
     body {
-      background-color: #080C14;
+      background-color: #060B19;
       color: #F8FAFC;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
@@ -87,14 +128,14 @@
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #080C14;
+      background: #030712;
     }
     ::-webkit-scrollbar-thumb {
-      background: #C5A368;
+      background: linear-gradient(180deg, #D4AF37, #0EA5E9);
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #E8DCC4;
+      background: #8F6E14;
     }
 
     /* Scroll Progress Bar at Top */
@@ -104,36 +145,30 @@
       left: 0;
       height: 3px;
       width: 0%;
-      background: linear-gradient(90deg, #B69D7A, #C5A368, #FFE8B8, #C5A368);
+      background: linear-gradient(90deg, #8F6E14, #D4AF37, #FDF4DC, #38BDF8);
       z-index: 1000;
-      box-shadow: 0 0 12px rgba(197, 163, 104, 0.8);
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.9);
       transition: width 0.1s ease-out;
       pointer-events: none;
     }
 
     /* Glassmorphism Classes */
     .glass-nav {
-      background: rgba(8, 12, 20, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(197, 163, 104, 0.2);
+      background: rgba(6, 11, 25, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     }
     .glass-card {
-      background: rgba(18, 24, 36, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(197, 163, 104, 0.2);
-    }
-    .glass-card-dark {
-      background: rgba(18, 24, 36, 0.65);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(197, 163, 104, 0.15);
+      background: rgba(11, 19, 38, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
     }
 
     /* Text Gold Gradient */
     .gold-gradient-text {
-      background: linear-gradient(135deg, #FFF5DF 0%, #E8DCC4 30%, #C5A368 70%, #90764C 100%);
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDF4DC 25%, #D4AF37 65%, #C5A059 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -145,18 +180,18 @@
     }
     .spotlight-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(197, 163, 104, 0.6);
-      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(197, 163, 104, 0.15);
+      border-color: rgba(212, 175, 55, 0.55);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.2);
     }
 
     /* Stable Typewriter & Blinking Cursor */
     .typewriter-cursor {
       display: inline-block;
       font-weight: 300;
-      color: #C5A368;
+      color: #D4AF37;
       animation: cursorBlink 0.9s ease infinite;
       margin-left: 4px;
-      text-shadow: 0 0 12px rgba(197, 163, 104, 0.9);
+      text-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
       vertical-align: middle;
     }
     @keyframes cursorBlink {
@@ -186,13 +221,6 @@
       transform: scale(1.07);
     }
 
-    /* Magnetic Button Wrapper */
-    .btn-magnetic {
-      display: inline-flex;
-      transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
-      will-change: transform;
-    }
-
     /* Preloader Styles */
     #preloader {
       position: fixed;
@@ -209,7 +237,7 @@
       left: 0;
       width: 100%;
       height: 50.5%;
-      background-color: #080C14;
+      background-color: #040711;
       z-index: 1;
     }
     #preloader-top { top: 0; }
@@ -236,9 +264,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #C5A368, #FFFFFF, #C5A368, transparent);
-      box-shadow: 0 0 15px #C5A368, 0 0 30px rgba(197, 163, 104, 0.8);
+      height: 2.5px;
+      background: linear-gradient(90deg, transparent, #0EA5E9, #D4AF37, transparent);
+      box-shadow: 0 0 10px #0EA5E9, 0 0 20px rgba(212, 175, 55, 0.6);
       opacity: 0;
       pointer-events: none;
       z-index: 25;
@@ -269,60 +297,7 @@
       animation: sonarPing 3s cubic-bezier(0, 0.2, 0.8, 1) infinite 2s;
     }
 
-    /* Blueprint Dimension Tag */
-    .dim-tag {
-      position: absolute;
-      padding: 4px 8px;
-      background: rgba(8, 12, 20, 0.9);
-      border: 1px solid rgba(197, 163, 104, 0.5);
-      border-radius: 6px;
-      font-size: 10px;
-      color: #E8DCC4;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      transition: all 0.3s ease;
-      z-index: 20;
-    }
-    .dim-tag:hover {
-      background: #C5A368;
-      color: #080C14;
-      border-color: #FFF;
-      transform: scale(1.08);
-    }
-
-    /* Day / Sunset / Night Lighting Mode Shader Overlays */
-    .lighting-overlay-sunset {
-      background: radial-gradient(circle at 30% 40%, rgba(245, 158, 11, 0.28), transparent 70%),
-                  linear-gradient(to top, rgba(180, 83, 9, 0.35), transparent 80%) !important;
-      filter: saturate(1.35) contrast(1.1);
-    }
-    .lighting-overlay-night {
-      background: radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.22), transparent 70%),
-                  linear-gradient(to top, rgba(2, 6, 23, 0.8), rgba(8, 12, 20, 0.5)) !important;
-      filter: contrast(1.25) brightness(0.85);
-    }
-
-    /* Audio Soundwave Animation */
-    .soundwave-bar {
-      display: inline-block;
-      width: 2px;
-      height: 12px;
-      background-color: #C5A368;
-      border-radius: 1px;
-      transition: height 0.2s ease;
-    }
-    .sound-active .soundwave-bar:nth-child(1) { animation: soundWave 0.8s ease infinite 0.1s; }
-    .sound-active .soundwave-bar:nth-child(2) { animation: soundWave 0.8s ease infinite 0.3s; }
-    .sound-active .soundwave-bar:nth-child(3) { animation: soundWave 0.8s ease infinite 0.2s; }
-    .sound-active .soundwave-bar:nth-child(4) { animation: soundWave 0.8s ease infinite 0.4s; }
-    @keyframes soundWave {
-      0%, 100% { height: 4px; }
-      50% { height: 14px; }
-    }
-
-    /* Luxury Gold Button Shimmering Sheen (Subtle & Purposeful) */
+    /* Luxury Gold Button Shimmering Sheen */
     @keyframes goldSheen {
       0% { transform: translateX(-120%) skewX(-20deg); }
       30%, 100% { transform: translateX(220%) skewX(-20deg); }
@@ -341,7 +316,7 @@
       background: linear-gradient(
         90deg,
         transparent 0%,
-        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0.4) 50%,
         transparent 100%
       );
       transform: translateX(-120%) skewX(-20deg);
@@ -349,25 +324,110 @@
       pointer-events: none;
     }
 
-    /* Smooth Mobile Tap & Haptic Feedback */
-    @media (hover: none) and (pointer: coarse) {
-      .spotlight-card:active {
-        transform: scale(0.985);
-        transition: transform 0.15s ease;
-      }
-      button:active, a:active {
-        transform: scale(0.97);
-        transition: transform 0.12s ease;
-      }
-    }
-
     /* Safe padding for bottom bar on mobile phones */
     .safe-area-pb {
       padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
     }
+
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Mobile-First Responsive Typography & Touch Engineering */
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    @media (max-width: 640px) {
+      html {
+        font-size: 14.5px;
+      }
+    }
+
+    button, a, input, select, textarea {
+      touch-action: manipulation;
+    }
+
+    /* Prevent mobile horizontal overflow */
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Hero Background Responsive Focal Point */
+    @media (max-width: 768px) {
+      .hero-bg-slide img {
+        object-position: center 30% !important;
+      }
+    }
+
+    /* Mobile Navigation & Layout Rules */
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 5.5rem;
+      }
+      #navbar-wrapper {
+        top: 0.5rem !important;
+        left: 0.5rem !important;
+        right: 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+        max-width: 100% !important;
+      }
+      #main-nav {
+        padding: 0.35rem 0.65rem !important;
+      }
+      #hero-title h1 {
+        font-size: clamp(1.85rem, 6.5vw, 3rem) !important;
+        line-height: 1.18 !important;
+      }
+      #hero-typewriter {
+        font-size: clamp(1.2rem, 4.5vw, 2rem) !important;
+      }
+      .ascent-milestone .spotlight-card img {
+        max-height: 240px !important;
+        object-fit: cover !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #hero {
+        padding-top: 6.5rem !important;
+        padding-bottom: 3.5rem !important;
+        min-height: 90svh !important;
+      }
+      #hero-badge {
+        font-size: 9px !important;
+        padding: 0.3rem 0.75rem !important;
+      }
+      #hero-badge span {
+        letter-spacing: 0.15em !important;
+      }
+      #hero-ctas button,
+      #hero-ctas a {
+        min-height: 48px !important;
+        font-size: 11.5px !important;
+      }
+      .section-header h2 {
+        font-size: clamp(1.5rem, 5.5vw, 2.25rem) !important;
+      }
+      .inpage-amenity-card .relative {
+        height: 12rem !important;
+      }
+    }
   </style>
 </head>
-<body class="font-sans antialiased bg-[#080C14] text-slate-100 selection:bg-luxury-gold selection:text-luxury-bgDark">
+<body class="font-sans antialiased bg-[#060B19] text-slate-100 selection:bg-luxury-gold selection:text-luxury-bgDark">
 
   <!-- Top Scroll Progress Bar -->
   <div id="scroll-progress"></div>
@@ -379,10 +439,8 @@
     
     <div id="preloader-content" class="text-center px-4">
       <div class="relative w-24 h-24 mb-6 flex items-center justify-center">
-        <!-- Outer rotating luxury ring -->
-        <div class="absolute inset-0 rounded-full border-2 border-dashed border-luxury-gold/40 rotating-ring"></div>
-        <!-- Inner glowing monogram -->
-        <div class="w-16 h-16 rounded-full bg-luxury-gold/10 border border-luxury-gold/60 flex items-center justify-center backdrop-blur-md shadow-[0_0_25px_rgba(197,163,104,0.3)]">
+        <div class="absolute inset-0 rounded-full border-2 border-dashed border-luxury-gold/40 rotating-ring shadow-[0_0_20px_rgba(212,175,55,0.2)]"></div>
+        <div class="w-16 h-16 rounded-full bg-luxury-gold/15 border border-luxury-gold/60 flex items-center justify-center backdrop-blur-md shadow-lg shadow-luxury-gold/20">
           <span class="font-serif text-3xl font-bold gold-gradient-text">H</span>
         </div>
       </div>
@@ -392,26 +450,27 @@
         <p class="text-[10px] md:text-xs uppercase tracking-[0.35em] text-slate-400">Sky Living Redefined • Sola, Ahmedabad</p>
       </div>
 
-      <!-- Loading Progress Bar & Percentage Counter -->
       <div class="mt-8 w-48 max-w-xs mx-auto">
-        <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden mb-2">
-          <div id="preloader-bar" class="h-full bg-gradient-to-r from-luxury-bronze to-luxury-gold w-0 rounded-full transition-all duration-100"></div>
+        <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden mb-2 border border-white/10">
+          <div id="preloader-bar" class="h-full bg-gradient-to-r from-luxury-gold via-[#F3E5AB] to-luxury-cyan w-0 rounded-full transition-all duration-100 shadow-[0_0_12px_rgba(212,175,55,0.7)]"></div>
         </div>
-        <span id="preloader-num" class="text-xs font-mono tracking-widest text-luxury-gold font-semibold">0%</span>
+        <span id="preloader-num" class="text-xs font-mono tracking-widest text-luxury-gold font-bold">0%</span>
       </div>
     </div>
-  </div>  <!-- Floating Minimal Luxury Capsule Navbar -->
+  </div>
+
+  <!-- Floating Minimal Luxury Capsule Navbar -->
   <header class="fixed top-4 inset-x-0 mx-auto max-w-5xl w-[92%] z-50 transition-all duration-300" id="navbar-wrapper">
-    <nav class="bg-[#090E18]/90 backdrop-blur-xl border border-luxury-gold/30 rounded-full px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_20px_rgba(197,163,104,0.12)] transition-all duration-300" id="main-nav">
+    <nav class="bg-[#060B19]/85 backdrop-blur-2xl border border-white/10 rounded-full px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_20px_rgba(212,175,55,0.12)] transition-all duration-300" id="main-nav">
       
       <!-- Brand Logo -->
       <a href="#" class="flex items-center gap-2.5 group cursor-pointer">
-        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-luxury-gold/15 border border-luxury-gold/60 flex items-center justify-center text-luxury-gold group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(197,163,104,0.3)]">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-luxury-gold/15 border border-luxury-gold/60 flex items-center justify-center text-luxury-gold group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(212,175,55,0.35)]">
           <span class="font-serif text-sm sm:text-base font-bold gold-gradient-text">H</span>
         </div>
         <div class="flex flex-col">
           <span class="font-serif text-base sm:text-lg font-bold tracking-widest gold-gradient-text leading-none">HARMONY</span>
-          <span class="text-[8px] uppercase tracking-[0.3em] text-luxury-gold/80 font-semibold mt-0.5">Harikesh</span>
+          <span class="text-[8px] uppercase tracking-[0.3em] text-luxury-gold/90 font-semibold mt-0.5">Harikesh</span>
         </div>
       </a>
       
@@ -426,48 +485,48 @@
 
       <!-- Single Elegant CTA & Mobile Trigger -->
       <div class="flex items-center space-x-3">
-        <button onclick="openModal()" class="btn-gold-shimmer px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold hover:opacity-95 text-luxury-bgDark font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-full shadow-lg shadow-luxury-gold/25 hover:scale-105 active:scale-95 cursor-pointer">
+        <button onclick="openModal()" class="btn-gold-shimmer px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-full shadow-lg shadow-luxury-gold/25 hover:scale-105 active:scale-95 cursor-pointer">
           Enquire
         </button>
 
         <!-- Mobile Menu Toggle -->
-        <button class="md:hidden p-2 text-luxury-gold hover:text-white transition-colors rounded-full bg-white/5 border border-white/10" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+        <button class="md:hidden p-2 text-slate-300 hover:text-luxury-gold transition-colors rounded-full bg-white/5 border border-white/10" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
           <i data-lucide="menu" class="w-4 h-4"></i>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Curved Luxury Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden mt-2 w-full bg-[#090E18]/95 backdrop-blur-2xl border border-luxury-gold/30 rounded-3xl p-5 flex flex-col space-y-2 shadow-2xl transition-all duration-300">
-      <a href="#about" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+    <div id="mobile-menu" class="hidden md:hidden mt-2 w-full bg-[#060B19]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 flex flex-col space-y-2 shadow-2xl transition-all duration-300">
+      <a href="#about" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
         <span>Architecture</span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
       </a>
-      <a href="#tower-odyssey" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+      <a href="#tower-odyssey" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
         <span>The 31-Storey Ascent</span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
       </a>
-      <a href="#amenities" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+      <a href="#amenities" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
         <span>Amenities</span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
       </a>
-      <a href="#floor-plans" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+      <a href="#floor-plans" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
         <span>Floor Plans</span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
       </a>
-      <a href="#gallery" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
-        <span>Gallery</span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+      <a href="gallery.html" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+        <span>Gallery Page</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
       </a>
-      <a href="#location" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-200 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+      <a href="#location" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
         <span>Location</span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/50"></i>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
       </a>
       <div class="pt-2 grid grid-cols-2 gap-2">
-        <a href="tel:+919998906506" class="py-2.5 bg-white/5 hover:bg-white/10 text-white font-bold text-xs tracking-widest uppercase rounded-full border border-white/10 flex items-center justify-center gap-1.5">
+        <a href="tel:+919998906506" class="py-2.5 bg-white/10 hover:bg-white/15 text-white font-bold text-xs tracking-widest uppercase rounded-full border border-white/10 flex items-center justify-center gap-1.5">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-luxury-gold"></i> Call
         </a>
-        <button onclick="toggleMobileMenu(); openModal();" class="btn-gold-shimmer py-2.5 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold text-[#080C14] font-bold text-xs tracking-widest uppercase rounded-full shadow-lg shadow-luxury-gold/20 cursor-pointer">
+        <button onclick="toggleMobileMenu(); openModal();" class="btn-gold-shimmer py-2.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs tracking-widest uppercase rounded-full shadow-lg shadow-luxury-gold/25 cursor-pointer">
           Enquire
         </button>
       </div>
@@ -478,93 +537,90 @@
   <section class="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 sm:py-24" id="hero">
     
     <!-- Three.js WebGL 3D GPU Background Particle Canvas -->
-    <div id="three-webgl-canvas" class="absolute inset-0 z-[6] pointer-events-none w-full h-full opacity-35"></div>
+    <div id="three-webgl-canvas" class="absolute inset-0 z-[6] pointer-events-none w-full h-full opacity-40"></div>
 
     <!-- Hero Image Slider Container (Ken Burns Cinematic Fade) -->
     <div class="absolute inset-0 z-0 bg-black overflow-hidden" id="hero-bg-wrapper">
-      <!-- Slide 1: Straight Road View Render -->
       <div class="hero-bg-slide active">
-        <img src="./assets/images/hero-towers-straight.jpg" 
-             id="hero-main-render"
-             alt="Harmony Harikesh Towers Straight Road View">
+        <img src="./assets/images/hero-towers-straight.jpg" id="hero-main-render" alt="Harmony Harikesh Towers Straight Road View">
       </div>
-      <!-- Slide 2: Front Tower Render -->
       <div class="hero-bg-slide">
-        <img src="./assets/images/hero-towers-front.jpg" 
-             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';"
-             alt="Harmony Harikesh Towers Front View">
+        <img src="./assets/images/hero-towers-front.jpg" alt="Harmony Harikesh Towers Front View">
       </div>
-      <!-- Slide 3: Angled Tower Render -->
       <div class="hero-bg-slide">
-        <img src="./assets/images/hero-towers-angled.jpg" 
-             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';"
-             alt="Harmony Harikesh Towers Angled View">
+        <img src="./assets/images/hero-towers-angled.jpg" alt="Harmony Harikesh Towers Angled View">
       </div>
-      <!-- Slide 4: Skydeck Aerial -->
       <div class="hero-bg-slide">
-        <img src="./assets/images/sky-deck-aerial.jpg" 
-             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579725942955-4d8377f8c66a?auto=format&fit=crop&w=1200&q=80';"
-             alt="Sky Deck Aerial">
+        <img src="./assets/images/sky-deck-aerial.jpg" alt="Sky Deck Aerial">
       </div>
-      <!-- Slide 5: Clubhouse -->
       <div class="hero-bg-slide">
-        <img src="./assets/images/clubhouse-lounge.jpg" 
-             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1200&q=80';"
-             alt="Clubhouse Lounge">
+        <img src="./assets/images/clubhouse-lounge.jpg" alt="Clubhouse Lounge">
       </div>
       
-      <!-- Vignette Overlay: Smooth Gradient into #080C14 -->
-      <div id="dynamic-lighting-layer" class="absolute inset-0 bg-gradient-to-t from-[#080C14] via-[#080C14]/65 to-black/75 z-10 pointer-events-none"></div>
+      <!-- Seamless Cinematic Dark Vignette Overlay -->
+      <div id="dynamic-lighting-layer" class="absolute inset-0 bg-gradient-to-t from-[#060B19] via-[#060B19]/50 to-[#030712]/80 z-10 pointer-events-none"></div>
     </div>
 
-    <!-- Content (Zero Jitter, Perfectly Structured Typography) -->
+    <!-- Hero Content -->
     <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center py-8" id="hero-content">
       <!-- Luxury Location Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/80 border border-luxury-gold/50 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold backdrop-blur-md mb-4 sm:mb-6 shadow-xl" id="hero-badge">
-        <span class="w-2 h-2 rounded-full bg-luxury-gold animate-pulse"></span>
-        <span>Science City Road, Sola • 3 & 4 BHK Sky Living</span>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-luxury-gold/40 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.22em] font-bold backdrop-blur-xl mb-4 sm:mb-6 shadow-[0_0_20px_rgba(212,175,55,0.2)]" id="hero-badge">
+        <span class="w-2 h-2 rounded-full bg-luxury-gold animate-ping"></span>
+        <span class="text-slate-200">Science City Road, Sola • <span class="text-luxury-gold font-bold">3 & 4 BHK Sky Residences</span></span>
       </div>
 
-      <!-- ULTRA-SMOOTH JITTER-FREE HERO HEADLINE -->
+      <!-- HERO HEADLINE -->
       <div class="mb-5 sm:mb-7" id="hero-title">
-        <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight text-white drop-shadow-lg">
+        <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
           Where Your Address
         </h1>
         <div class="h-10 sm:h-14 md:h-16 flex items-center justify-center mt-1">
-          <span class="font-serif text-xl sm:text-3xl md:text-5xl lg:text-6xl gold-gradient-text italic font-normal tracking-wide inline-flex items-center">
+          <span class="font-serif text-xl sm:text-3xl md:text-5xl lg:text-6xl gold-gradient-text italic font-medium tracking-wide inline-flex items-center">
             <span id="hero-typewriter">Is The Skyscraper Of The City</span><span class="typewriter-cursor">|</span>
           </span>
         </div>
       </div>
       
-      <p class="text-slate-200 text-xs sm:text-base md:text-lg max-w-xl mx-auto mb-6 sm:mb-8 font-light leading-relaxed px-4 drop-shadow" id="hero-subtext">
+      <p class="text-slate-300 text-xs sm:text-base md:text-lg max-w-xl mx-auto mb-6 sm:mb-8 font-light leading-relaxed px-4 drop-shadow" id="hero-subtext">
         Rise above the ordinary and live among the clouds. An architectural masterpiece by Mahaprabhu Residency LLP in Sola, Ahmedabad.
       </p>
       
-      <!-- CTA Buttons (Balanced & Luxury) -->
+      <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 px-4" id="hero-ctas">
         <div class="btn-magnetic w-full sm:w-auto">
-          <button onclick="openModal()" class="btn-gold-shimmer w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold text-luxury-bgDark font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/25 hover:scale-105 active:scale-95 cursor-pointer">
-            Schedule Private Tour
+          <button onclick="openModal()" class="btn-gold-shimmer w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-[0_10px_30px_rgba(212,175,55,0.35)] hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Schedule Private Tour</span>
           </button>
         </div>
         <div class="btn-magnetic w-full sm:w-auto">
-          <a href="#about" class="w-full sm:w-auto px-8 py-3.5 sm:py-4 border border-luxury-gold/50 hover:border-luxury-gold text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl backdrop-blur-md flex items-center justify-center gap-2 hover:bg-white/10 hover:scale-105 active:scale-95">
-            Explore Architecture <i data-lucide="arrow-down" class="w-4 h-4 text-luxury-gold animate-bounce"></i>
+          <a href="#about" class="w-full sm:w-auto px-8 py-3.5 sm:py-4 border border-white/20 hover:border-luxury-gold text-white hover:text-luxury-gold font-semibold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl backdrop-blur-md bg-white/5 hover:bg-white/10 flex items-center justify-center gap-2 hover:scale-105 active:scale-95 group">
+            <span>Explore Residence</span>
+            <i data-lucide="arrow-down" class="w-4 h-4 text-luxury-gold group-hover:translate-y-1 transition-transform"></i>
           </a>
         </div>
+      </div>
+
+      <!-- Subtle Luxury Animated Scroll Indicator -->
+      <div class="pt-8 sm:pt-12 flex flex-col items-center justify-center opacity-80 hover:opacity-100 transition-opacity pointer-events-auto">
+        <a href="#pillars-section" class="flex flex-col items-center gap-1.5 text-slate-400 hover:text-luxury-gold transition-colors group">
+          <span class="text-[9px] uppercase tracking-[0.3em] font-bold">Scroll to Discover</span>
+          <div class="w-5 h-8 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-luxury-gold animate-bounce"></div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- STAGE 1.5: THE 4 PILLARS OF EXCLUSIVITY (CRISP & HIGH CONTRAST) -->
-  <section class="py-8 sm:py-12 bg-[#080C14] relative z-20" id="pillars-section">
+  <!-- STAGE 1.5: THE 4 PILLARS OF EXCLUSIVITY -->
+  <section class="py-8 sm:py-12 bg-[#060B19] relative z-20" id="pillars-section">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5" id="pillars">
         
         <!-- Pillar 1 -->
-        <div class="spotlight-card p-3.5 sm:p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
-          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-4 sm:p-5 rounded-2xl bg-[#0B1326]/80 backdrop-blur-xl border border-white/10 hover:border-luxury-gold/50 transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
+          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="building-2" class="w-4 sm:w-5 h-4 sm:h-5"></i>
           </div>
           <div>
@@ -575,8 +631,8 @@
         </div>
 
         <!-- Pillar 2 -->
-        <div class="spotlight-card p-3.5 sm:p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
-          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-4 sm:p-5 rounded-2xl bg-[#0B1326]/80 backdrop-blur-xl border border-white/10 hover:border-luxury-gold/50 transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
+          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="maximize-2" class="w-4 sm:w-5 h-4 sm:h-5"></i>
           </div>
           <div>
@@ -587,8 +643,8 @@
         </div>
 
         <!-- Pillar 3 -->
-        <div class="spotlight-card p-3.5 sm:p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
-          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-4 sm:p-5 rounded-2xl bg-[#0B1326]/80 backdrop-blur-xl border border-white/10 hover:border-luxury-gold/50 transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
+          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="shield-check" class="w-4 sm:w-5 h-4 sm:h-5"></i>
           </div>
           <div>
@@ -599,8 +655,8 @@
         </div>
 
         <!-- Pillar 4 -->
-        <div class="spotlight-card p-3.5 sm:p-5 rounded-2xl bg-[#121824] border border-luxury-gold/30 hover:border-luxury-gold transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
-          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/40 shrink-0 group-hover:scale-110 transition-transform">
+        <div class="spotlight-card p-4 sm:p-5 rounded-2xl bg-[#0B1326]/80 backdrop-blur-xl border border-white/10 hover:border-luxury-gold/50 transition-all duration-300 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4 shadow-xl">
+          <div class="p-2.5 sm:p-3 rounded-xl bg-luxury-gold/15 text-luxury-gold border border-luxury-gold/30 shrink-0 group-hover:scale-110 transition-transform">
             <i data-lucide="sparkles" class="w-4 sm:w-5 h-4 sm:h-5"></i>
           </div>
           <div>
@@ -615,33 +671,31 @@
   </section>
 
   <!-- STAGE 2: ARCHITECTURAL STATEMENT & COUNTERS -->
-  <section class="py-14 sm:py-24 scroll-mt-20 relative overflow-hidden bg-[#0D121D] border-t border-luxury-gold/15" id="about">
+  <section class="py-14 sm:py-24 scroll-mt-20 relative overflow-hidden bg-[#040711] border-t border-white/5" id="about">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Section Header -->
       <div class="text-center mb-10 sm:mb-16 section-header">
-        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-semibold block mb-2">The Architectural Icon</span>
-        <h2 class="font-serif text-2xl sm:text-4xl md:text-6xl font-bold gold-gradient-text">Designed to Touch the Sky</h2>
-        <div class="w-16 sm:w-20 h-[1px] bg-luxury-gold/50 mx-auto mt-4 sm:mt-5"></div>
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-2">The Architectural Icon</span>
+        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-white">Designed to Touch the Sky</h2>
+        <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
       </div>
 
       <!-- Split Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
-        <!-- Image Card Left (Hardware Accelerated Hover) -->
-        <div class="spotlight-card rounded-2xl overflow-hidden shadow-2xl border border-luxury-gold/20 luxury-glow group cursor-pointer" id="arch-image-card" onclick="openAmenityModal('clubhouse')">
-          <div class="relative overflow-hidden aspect-[16/10] sm:aspect-[4/3]">
+        <!-- Image Card Left -->
+        <div class="spotlight-card rounded-2xl overflow-hidden shadow-2xl border border-white/10 group cursor-pointer" id="arch-image-card" onclick="openAmenityModal('clubhouse')">
+          <div class="relative overflow-hidden aspect-[16/10] sm:aspect-[4/3] bg-black">
             <img src="./assets/images/entrance-foyer.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80';"
                  alt="Grand Entrance Lobby" 
                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <!-- Glass Banner -->
-            <div class="absolute bottom-0 inset-x-0 p-3.5 sm:p-6 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex items-center justify-between z-10">
+            <div class="absolute bottom-0 inset-x-0 p-3.5 sm:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between z-10">
               <div>
                 <p class="text-[9px] sm:text-xs uppercase tracking-widest text-luxury-gold font-bold">Entrance Foyer</p>
                 <h4 class="font-serif text-sm sm:text-xl text-white font-semibold">Double Height Grand Entrance Lobby</h4>
               </div>
-              <div class="p-2 sm:p-3 bg-luxury-gold/20 rounded-full border border-luxury-gold/40 text-luxury-gold">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-5 sm:h-5"></i>
+              <div class="p-2 sm:p-3 bg-white/20 backdrop-blur-md rounded-full border border-white/30 text-white">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-5 sm:h-5 text-luxury-gold"></i>
               </div>
             </div>
           </div>
@@ -649,18 +703,16 @@
 
         <!-- Right Content & Counter Grid -->
         <div class="flex flex-col justify-center space-y-4 sm:space-y-6 md:space-y-8">
-          <div class="p-4 sm:p-8 rounded-2xl bg-gradient-to-br from-[#161D2A] via-[#121824] to-[#0A0E17] border border-luxury-gold/30 shadow-[0_15px_35px_rgba(0,0,0,0.6),0_0_20px_rgba(197,163,104,0.15)] relative overflow-hidden group">
-            <!-- Ambient Corner Glow -->
-            <div class="absolute top-0 right-0 w-32 h-32 bg-luxury-gold/10 blur-3xl rounded-full pointer-events-none"></div>
+          <div class="p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[#0B1326] via-[#0F1B38] to-[#080E1E] border border-luxury-gold/30 shadow-2xl relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-luxury-gold/15 blur-3xl rounded-full pointer-events-none"></div>
 
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-luxury-gold/10 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold mb-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-luxury-gold/20 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold mb-3">
               <i data-lucide="shield-check" class="w-3 h-3 text-luxury-gold"></i>
               <span>Engineering Excellence</span>
             </div>
 
-            <h3 class="font-serif text-lg sm:text-2xl md:text-3xl font-bold leading-snug mb-2 sm:mb-3">
-              <span class="text-white">Uncompromising structural engineering</span>
-              <span class="gold-gradient-text block mt-0.5">meets sublime luxury.</span>
+            <h3 class="font-serif text-lg sm:text-2xl md:text-3xl font-bold leading-snug mb-2 sm:mb-3 text-white">
+              Uncompromising structural engineering meets <span class="gold-gradient-text">sublime luxury.</span>
             </h3>
 
             <p class="text-slate-300 font-light text-xs sm:text-base leading-relaxed">
@@ -670,31 +722,27 @@
 
           <!-- Counters Grid -->
           <div class="grid grid-cols-2 gap-2.5 sm:gap-4 pt-1" id="counter-grid">
-            <!-- Counter 1 -->
-            <div class="spotlight-card glass-card-dark border border-luxury-gold/20 p-3 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center luxury-glow">
+            <div class="spotlight-card bg-[#0B1326]/90 border border-white/10 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center shadow-lg">
               <span class="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-gold mb-0.5" id="count-storeys">0</span>
-              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-medium">Storeys of Grandeur</span>
+              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-bold">Storeys of Grandeur</span>
             </div>
-            <!-- Counter 2 -->
-            <div class="spotlight-card glass-card-dark border border-luxury-gold/20 p-3 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center luxury-glow">
+            <div class="spotlight-card bg-[#0B1326]/90 border border-white/10 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center shadow-lg">
               <div class="flex items-baseline">
                 <span class="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-gold mb-0.5" id="count-ceilings">0</span>
                 <span class="text-sm sm:text-lg font-serif text-luxury-gold ml-1 font-semibold">Ft</span>
               </div>
-              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-medium">Ceiling Height</span>
+              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-bold">Ceiling Height</span>
             </div>
-            <!-- Counter 3 -->
-            <div class="spotlight-card glass-card-dark border border-luxury-gold/20 p-3 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center luxury-glow">
+            <div class="spotlight-card bg-[#0B1326]/90 border border-white/10 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center shadow-lg">
               <span class="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-gold mb-0.5" id="count-lifts">0</span>
-              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-medium">High-Speed Lifts/Tower</span>
+              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-bold">High-Speed Lifts/Tower</span>
             </div>
-            <!-- Counter 4 -->
-            <div class="spotlight-card glass-card-dark border border-luxury-gold/20 p-3 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center luxury-glow">
+            <div class="spotlight-card bg-[#0B1326]/90 border border-white/10 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl flex flex-col justify-center shadow-lg">
               <div class="flex items-baseline">
                 <span class="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-gold mb-0.5" id="count-views">0</span>
                 <span class="text-sm sm:text-lg font-serif text-luxury-gold ml-1 font-semibold">%</span>
               </div>
-              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-medium">Lifelong Open Views</span>
+              <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-300 font-bold">Lifelong Open Views</span>
             </div>
           </div>
         </div>
@@ -702,34 +750,31 @@
     </div>
   </section>
 
-  <!-- STAGE 3: THE 31-STOREY VERTICAL ASCENT (THE VERTICAL JOURNEY) -->
-  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 relative bg-[#080C14] overflow-hidden border-t border-luxury-gold/15" id="tower-odyssey">
-    
-    <!-- Ambient Gold Glow in Background -->
+  <!-- STAGE 3: THE 31-STOREY VERTICAL ASCENT -->
+  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 relative bg-[#060B19] overflow-hidden border-t border-white/5" id="tower-odyssey">
     <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-luxury-gold/5 blur-[160px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
       
       <!-- Section Header -->
       <div class="text-center mb-12 sm:mb-20 section-header">
-        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-semibold block mb-2">Vertical Architecture</span>
-        <h2 class="font-serif text-2xl sm:text-4xl md:text-6xl font-bold gold-gradient-text">The 31-Storey Ascent</h2>
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-2">Vertical Architecture</span>
+        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-white">The 31-Storey Ascent</h2>
         <p class="text-slate-400 text-xs sm:text-sm font-light max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed">
           Ascend through the signature milestones of Harmony Harikesh from the grand arrival court to the high-sky terrace.
         </p>
-        <div class="w-16 sm:w-20 h-[1px] bg-luxury-gold/50 mx-auto mt-4 sm:mt-5"></div>
+        <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
       </div>
 
-      <!-- Vertical Elevator Timeline Container -->
       <div class="relative max-w-5xl mx-auto space-y-8 sm:space-y-16 md:space-y-20">
         
-        <!-- Central Glowing Laser Beam (Visible across all screens) -->
-        <div class="absolute top-0 bottom-0 left-4 md:left-1/2 w-[2px] bg-gradient-to-b from-luxury-gold/10 via-luxury-gold to-luxury-gold/10 -translate-x-1/2 shadow-[0_0_10px_rgba(197,163,104,0.5)] z-0"></div>
+        <!-- Central Glowing Laser Beam -->
+        <div class="absolute top-0 bottom-0 left-4 md:left-1/2 w-[2px] bg-gradient-to-b from-luxury-gold/20 via-luxury-gold to-luxury-gold/20 -translate-x-1/2 shadow-[0_0_12px_rgba(212,175,55,0.6)] z-0"></div>
 
-        <!-- Level 00: Arrival Sanctuary -->
+        <!-- Level 00 -->
         <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
           <div class="md:col-span-5 md:text-right space-y-2 sm:space-y-3">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/10 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
               <i data-lucide="building" class="w-3 h-3 md:hidden text-luxury-gold"></i>
               <span>Level 00 • 0 FT Elevation</span>
             </div>
@@ -743,24 +788,23 @@
             </div>
           </div>
 
-          <!-- Center Altitude Badge Icon (Desktop & Tablet) -->
           <div class="hidden md:flex md:col-span-2 items-center justify-center relative">
-            <div class="w-12 h-12 rounded-full bg-[#161D2A] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-[0_0_20px_rgba(197,163,104,0.4)] z-20">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
               <i data-lucide="building" class="w-5 h-5"></i>
             </div>
           </div>
 
           <div class="md:col-span-5">
-            <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
               <img src="./assets/images/entrance-foyer.jpg" alt="Ground Level Foyer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
             </div>
           </div>
         </div>
 
-        <!-- Level 15: The Cloudwalk -->
+        <!-- Level 15 -->
         <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
           <div class="md:col-span-5 md:order-3 md:text-left space-y-2 sm:space-y-3">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/10 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
               <i data-lucide="footprints" class="w-3 h-3 md:hidden text-luxury-gold"></i>
               <span>Level 15 • 150+ FT Elevation</span>
             </div>
@@ -774,26 +818,23 @@
             </div>
           </div>
 
-          <!-- Center Altitude Badge Icon -->
           <div class="hidden md:flex md:col-span-2 md:order-2 items-center justify-center relative">
-            <div class="w-12 h-12 rounded-full bg-[#161D2A] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-[0_0_20px_rgba(197,163,104,0.4)] z-20">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
               <i data-lucide="footprints" class="w-5 h-5"></i>
             </div>
           </div>
 
           <div class="md:col-span-5 md:order-1">
-            <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl aspect-[16/10] sm:aspect-[4/3] bg-black">
-              <img src="./assets/images/towers-skywalk.jpg" 
-                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';"
-                   alt="Skywalk Bridge" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+              <img src="./assets/images/towers-skywalk.jpg" alt="Skywalk Bridge" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
             </div>
           </div>
         </div>
 
-        <!-- Level 25: Sky Sanctuaries -->
+        <!-- Level 25 -->
         <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
           <div class="md:col-span-5 md:text-right space-y-2 sm:space-y-3">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/10 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
               <i data-lucide="sun" class="w-3 h-3 md:hidden text-luxury-gold"></i>
               <span>Level 25 • 265 FT Elevation</span>
             </div>
@@ -807,24 +848,23 @@
             </div>
           </div>
 
-          <!-- Center Altitude Badge Icon -->
           <div class="hidden md:flex md:col-span-2 items-center justify-center relative">
-            <div class="w-12 h-12 rounded-full bg-[#161D2A] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-[0_0_20px_rgba(197,163,104,0.4)] z-20">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
               <i data-lucide="sun" class="w-5 h-5"></i>
             </div>
           </div>
 
           <div class="md:col-span-5">
-            <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
               <img src="./assets/images/balcony-view.png" alt="Balcony Sky Living" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
             </div>
           </div>
         </div>
 
-        <!-- Level 31: The Crown -->
+        <!-- Level 31 -->
         <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
           <div class="md:col-span-5 md:order-3 md:text-left space-y-2 sm:space-y-3">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/10 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
               <i data-lucide="crown" class="w-3 h-3 md:hidden text-luxury-gold"></i>
               <span>Level 31 • 330 FT Apex</span>
             </div>
@@ -833,25 +873,22 @@
               The highest residential vantage point in Sola. An open-air midnight observation deck offering celestial views and private community gatherings.
             </p>
             <div class="pt-1.5">
-              <button onclick="openModal()" class="btn-gold-shimmer w-full sm:w-auto px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center gap-2">
+              <button onclick="openModal()" class="btn-gold-shimmer w-full sm:w-auto px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center gap-2">
                 <i data-lucide="compass" class="w-4 h-4"></i>
                 <span>Book A Private Ascent Tour</span>
               </button>
             </div>
           </div>
 
-          <!-- Center Altitude Badge Icon -->
           <div class="hidden md:flex md:col-span-2 md:order-2 items-center justify-center relative">
-            <div class="w-12 h-12 rounded-full bg-[#161D2A] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-[0_0_20px_rgba(197,163,104,0.4)] z-20">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
               <i data-lucide="crown" class="w-5 h-5"></i>
             </div>
           </div>
 
           <div class="md:col-span-5 md:order-1">
-            <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 shadow-2xl aspect-[16/10] sm:aspect-[4/3] bg-black">
-              <img src="./assets/images/sky-deck-aerial.jpg" 
-                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579725942955-4d8377f8c66a?auto=format&fit=crop&w=1200&q=80';"
-                   alt="The Crown Sky Deck" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+              <img src="./assets/images/sky-deck-aerial.jpg" alt="The Crown Sky Deck" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
             </div>
           </div>
         </div>
@@ -860,33 +897,30 @@
     </div>
   </section>
 
-  <!-- STAGE 4: CURATED LUXURY AMENITIES (IN-PAGE FULL SUITE) -->
-  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 relative bg-[#0D121D] border-t border-luxury-gold/10" id="amenities">
+  <!-- STAGE 4: CURATED LUXURY AMENITIES -->
+  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 relative bg-[#040711] border-t border-white/5" id="amenities">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Section Header -->
       <div class="text-center mb-10 sm:mb-16 section-header">
-        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-semibold block mb-2">Elevated Lifestyle</span>
-        <h2 class="font-serif text-2xl sm:text-4xl md:text-6xl font-bold gold-gradient-text">Curated Luxury Amenities</h2>
-        <div class="w-16 sm:w-20 h-[1px] bg-luxury-gold/50 mx-auto mt-4 sm:mt-5"></div>
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-2">Elevated Lifestyle</span>
+        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-white">Curated Luxury Amenities</h2>
+        <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
       </div>
 
-      <!-- Row 1: High-Altitude & Social Signature Amenities (2-Column Grid) -->
+      <!-- Row 1: High-Altitude & Social Amenities -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 mb-4 sm:mb-8">
         
         <!-- Card 1: Sky Walk Bridge -->
-        <div onclick="openAmenityModal('skywalk')" class="spotlight-card inpage-amenity-card bg-[#121824] rounded-2xl overflow-hidden border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl shadow-black/40">
+        <div onclick="openAmenityModal('skywalk')" class="spotlight-card inpage-amenity-card bg-[#0B1326]/90 rounded-2xl overflow-hidden border border-white/10 hover:border-luxury-gold transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-2xl">
           <div class="relative h-44 sm:h-72 overflow-hidden bg-black">
-            <img src="./assets/images/sky-deck-aerial.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579725942955-4d8377f8c66a?auto=format&fit=crop&w=1200&q=80';"
-                 alt="Skydeck Aerial View" 
-                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-black/20 to-transparent"></div>
-            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-lg">
+            <img src="./assets/images/sky-deck-aerial.jpg" alt="Skydeck Aerial View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/50 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
               Signature Sky Walk
             </div>
           </div>
-          <div class="p-4 sm:p-8 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
+          <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
             <div>
               <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-luxury-gold font-bold block mb-1">High-Altitude Sky Life</span>
               <h3 class="font-serif text-lg sm:text-2xl font-bold text-white mb-1.5 sm:mb-2 group-hover:text-luxury-gold transition-colors">Sky Walk & Terrace Observation Deck</h3>
@@ -895,8 +929,8 @@
               </p>
             </div>
             <div class="pt-3 sm:pt-4 border-t border-white/10 flex items-center justify-between">
-              <span class="text-[11px] sm:text-xs text-slate-300 font-medium flex items-center gap-1.5">
-                <i data-lucide="wind" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-luxury-gold"></i> RWDI Wind-Tunnel Tested
+              <span class="text-[11px] sm:text-xs text-slate-400 font-medium flex items-center gap-1.5">
+                <i data-lucide="wind" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-luxury-cyan"></i> RWDI Wind-Tunnel Tested
               </span>
               <span class="text-[11px] sm:text-xs text-luxury-gold font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 View Details <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
@@ -906,18 +940,15 @@
         </div>
 
         <!-- Card 2: The Harikesh Clubhouse -->
-        <div onclick="openAmenityModal('clubhouse')" class="spotlight-card inpage-amenity-card bg-[#121824] rounded-2xl overflow-hidden border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl shadow-black/40">
+        <div onclick="openAmenityModal('clubhouse')" class="spotlight-card inpage-amenity-card bg-[#0B1326]/90 rounded-2xl overflow-hidden border border-white/10 hover:border-luxury-gold transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-2xl">
           <div class="relative h-44 sm:h-72 overflow-hidden bg-black">
-            <img src="./assets/images/clubhouse-lounge.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1200&q=80';"
-                 alt="Clubhouse Lounge" 
-                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-black/20 to-transparent"></div>
-            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-lg">
+            <img src="./assets/images/clubhouse-lounge.jpg" alt="Clubhouse Lounge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/50 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
               Exclusive Club
             </div>
           </div>
-          <div class="p-4 sm:p-8 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
+          <div class="p-5 sm:p-8 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
             <div>
               <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-luxury-gold font-bold block mb-1">Social Community</span>
               <h3 class="font-serif text-lg sm:text-2xl font-bold text-white mb-1.5 sm:mb-2 group-hover:text-luxury-gold transition-colors">The Harikesh Clubhouse & Lounge</h3>
@@ -926,7 +957,7 @@
               </p>
             </div>
             <div class="pt-3 sm:pt-4 border-t border-white/10 flex items-center justify-between">
-              <span class="text-[11px] sm:text-xs text-slate-300 font-medium flex items-center gap-1.5">
+              <span class="text-[11px] sm:text-xs text-slate-400 font-medium flex items-center gap-1.5">
                 <i data-lucide="coffee" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-luxury-gold"></i> Banquet & Business Lounge
               </span>
               <span class="text-[11px] sm:text-xs text-luxury-gold font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
@@ -938,18 +969,15 @@
 
       </div>
 
-      <!-- Row 2: Kids, Recreation & Cognitive Sports Amenities (3-Column Grid) -->
+      <!-- Row 2: Kids, Recreation & Cognitive Sports Amenities -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
         
         <!-- Card 3: Children's Creche -->
-        <div onclick="openAmenityModal('creche')" class="spotlight-card inpage-amenity-card bg-[#121824] rounded-2xl overflow-hidden border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl shadow-black/40">
+        <div onclick="openAmenityModal('creche')" class="spotlight-card inpage-amenity-card bg-[#0B1326]/90 rounded-2xl overflow-hidden border border-white/10 hover:border-luxury-gold transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl">
           <div class="relative h-36 sm:h-56 overflow-hidden bg-black">
-            <img src="./assets/images/kids-creche.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1566856515286-50567f8b9ecf?auto=format&fit=crop&w=1200&q=80';"
-                 alt="Children Play Area" 
-                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-black/20 to-transparent"></div>
-            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-lg">
+            <img src="./assets/images/kids-creche.jpg" alt="Children Play Area" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
               Junior Care
             </div>
           </div>
@@ -962,8 +990,8 @@
               </p>
             </div>
             <div class="pt-3 border-t border-white/10 flex items-center justify-between">
-              <span class="text-[10px] sm:text-[11px] text-slate-300 font-medium flex items-center gap-1">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-luxury-gold"></i> 24/7 Live CCTV
+              <span class="text-[10px] sm:text-[11px] text-slate-400 font-medium flex items-center gap-1">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-luxury-emerald"></i> 24/7 Live CCTV
               </span>
               <span class="text-xs text-luxury-gold font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Explore <i data-lucide="arrow-right" class="w-3 h-3"></i>
@@ -973,14 +1001,11 @@
         </div>
 
         <!-- Card 4: Indoor Games -->
-        <div onclick="openAmenityModal('indoorgames')" class="spotlight-card inpage-amenity-card bg-[#121824] rounded-2xl overflow-hidden border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl shadow-black/40">
+        <div onclick="openAmenityModal('indoorgames')" class="spotlight-card inpage-amenity-card bg-[#0B1326]/90 rounded-2xl overflow-hidden border border-white/10 hover:border-luxury-gold transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl">
           <div class="relative h-36 sm:h-56 overflow-hidden bg-black">
-            <img src="./assets/images/amenity-indoor-games.png" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80';"
-                 alt="Indoor Games Room" 
-                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-110 contrast-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-black/20 to-transparent"></div>
-            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-lg">
+            <img src="./assets/images/amenity-indoor-games.png" alt="Indoor Games Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
               Recreation
             </div>
           </div>
@@ -993,7 +1018,7 @@
               </p>
             </div>
             <div class="pt-3 border-t border-white/10 flex items-center justify-between">
-              <span class="text-[10px] sm:text-[11px] text-slate-300 font-medium flex items-center gap-1">
+              <span class="text-[10px] sm:text-[11px] text-slate-400 font-medium flex items-center gap-1">
                 <i data-lucide="trophy" class="w-3.5 h-3.5 text-luxury-gold"></i> Table Tennis & Carrom
               </span>
               <span class="text-xs text-luxury-gold font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
@@ -1004,14 +1029,11 @@
         </div>
 
         <!-- Card 5: Mind Games & Chess -->
-        <div onclick="openAmenityModal('chess')" class="spotlight-card inpage-amenity-card bg-[#121824] rounded-2xl overflow-hidden border border-luxury-gold/20 hover:border-luxury-gold/60 transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl shadow-black/40">
+        <div onclick="openAmenityModal('chess')" class="spotlight-card inpage-amenity-card bg-[#0B1326]/90 rounded-2xl overflow-hidden border border-white/10 hover:border-luxury-gold transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl">
           <div class="relative h-36 sm:h-56 overflow-hidden bg-black">
-            <img src="./assets/images/amenity-chess.jpg" 
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1200&q=80';"
-                 alt="Mind Games and Chess Lounge" 
-                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-125 contrast-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-black/20 to-transparent"></div>
-            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-lg">
+            <img src="./assets/images/amenity-chess.jpg" alt="Mind Games and Chess Lounge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
               Cognitive Sports
             </div>
           </div>
@@ -1024,7 +1046,7 @@
               </p>
             </div>
             <div class="pt-3 border-t border-white/10 flex items-center justify-between">
-              <span class="text-[10px] sm:text-[11px] text-slate-300 font-medium flex items-center gap-1">
+              <span class="text-[10px] sm:text-[11px] text-slate-400 font-medium flex items-center gap-1">
                 <i data-lucide="zap" class="w-3.5 h-3.5 text-luxury-gold"></i> Tournament Chess
               </span>
               <span class="text-xs text-luxury-gold font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
@@ -1036,9 +1058,9 @@
 
       </div>
 
-      <!-- View Detailed Amenities Showcase Page Link -->
+      <!-- Link to full amenities page -->
       <div class="mt-8 sm:mt-12 text-center">
-        <a href="amenities.html" class="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl border border-luxury-gold/40 bg-white/5 hover:bg-luxury-gold hover:text-luxury-bgDark text-luxury-gold font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-black/50">
+        <a href="amenities.html" class="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl border border-white/15 bg-white/5 hover:bg-luxury-gold hover:text-[#030712] text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg">
           <span>View Full Amenities Gallery</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -1047,36 +1069,35 @@
   </section>
 
   <!-- STAGE 5: INTERACTIVE 3D BLUEPRINT FLOOR PLAN EXPLORER (ANIMATED) -->
-  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 relative bg-[#121824] border-t border-luxury-gold/10" id="floor-plans">
+  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 relative bg-[#060B19] border-t border-white/5" id="floor-plans">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Section Header -->
       <div class="text-center mb-10 sm:mb-16 section-header">
-        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-semibold block mb-2">Exquisite Layouts</span>
-        <h2 class="font-serif text-2xl sm:text-4xl md:text-6xl font-bold gold-gradient-text">Architectural Floor Plans</h2>
-        <div class="w-16 sm:w-20 h-[1px] bg-luxury-gold/50 mx-auto mt-4 sm:mt-5"></div>
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-2">Exquisite Layouts</span>
+        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-white">Architectural Floor Plans</h2>
+        <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
       </div>
 
       <!-- Tab Buttons for Plans -->
       <div class="flex justify-center mb-6 sm:mb-12">
-        <div class="inline-flex p-1 sm:p-1.5 bg-[#161D2A] border border-luxury-gold/30 rounded-xl sm:rounded-2xl shadow-xl w-full sm:w-auto">
-          <button onclick="switchFloorplan('4bhk')" id="btn-4bhk" class="flex-1 sm:flex-initial px-3 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 bg-luxury-gold text-luxury-bgDark cursor-pointer shadow-lg text-center">
+        <div class="inline-flex p-1 sm:p-1.5 bg-[#0B1326] border border-white/10 rounded-xl sm:rounded-2xl shadow-xl w-full sm:w-auto">
+          <button onclick="switchFloorplan('4bhk')" id="btn-4bhk" class="flex-1 sm:flex-initial px-4 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] cursor-pointer shadow-md text-center">
             4 BHK Sky Residence
           </button>
-          <button onclick="switchFloorplan('3bhk')" id="btn-3bhk" class="flex-1 sm:flex-initial px-3 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 text-slate-300 hover:text-white cursor-pointer text-center">
+          <button onclick="switchFloorplan('3bhk')" id="btn-3bhk" class="flex-1 sm:flex-initial px-4 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 text-slate-300 hover:text-white cursor-pointer text-center">
             3 BHK Sky Residence
           </button>
         </div>
       </div>
 
       <!-- Plan Preview Display Container -->
-      <div class="spotlight-card bg-[#121824] border border-luxury-gold/30 rounded-2xl sm:rounded-3xl p-4 sm:p-10 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-12 items-center shadow-2xl">
+      <div class="spotlight-card bg-[#0B1326]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-12 items-center shadow-2xl">
         
-        <!-- Floor plan Image (Pristine High-Resolution Architectural Display) -->
+        <!-- Floor plan Image -->
         <div class="lg:col-span-7 flex flex-col items-center">
-          <div class="relative overflow-hidden rounded-xl sm:rounded-2xl bg-white p-3 sm:p-8 border-2 border-luxury-gold/40 shadow-2xl cursor-zoom-in group w-full flex items-center justify-center min-h-[240px] sm:min-h-[440px]" id="blueprint-wrapper" onclick="openZoomModal()">
+          <div class="relative overflow-hidden rounded-xl sm:rounded-2xl bg-[#030610] p-3 sm:p-8 border border-luxury-gold/30 shadow-2xl cursor-zoom-in group w-full flex items-center justify-center min-h-[240px] sm:min-h-[440px]" id="blueprint-wrapper" onclick="openZoomModal()">
             
-            <!-- Animated Blueprint Laser Scan Line -->
             <div class="scan-laser"></div>
 
             <img id="floorplan-img" 
@@ -1085,8 +1106,7 @@
                  alt="Floor Plan" 
                  class="max-h-[220px] sm:max-h-[420px] w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] relative z-10">
             
-            <!-- Hover Zoom overlay badge -->
-            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-black/85 backdrop-blur-md border border-luxury-gold px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-bold text-luxury-gold uppercase tracking-wider flex items-center gap-1 shadow-lg group-hover:bg-luxury-gold group-hover:text-luxury-bgDark transition-all duration-300 z-20">
+            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-black/80 backdrop-blur-md border border-luxury-gold px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-bold text-luxury-gold uppercase tracking-wider flex items-center gap-1 shadow-md group-hover:bg-luxury-gold group-hover:text-black transition-all duration-300 z-20">
               <i data-lucide="zoom-in" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
               <span>Tap to Enlarge</span>
             </div>
@@ -1094,15 +1114,15 @@
 
           <!-- Clean Architectural Dimensions Ribbon -->
           <div class="grid grid-cols-3 gap-2 w-full mt-3 sm:mt-4 text-center">
-            <div class="p-2 sm:p-2.5 bg-black/40 rounded-lg sm:rounded-xl border border-luxury-gold/20">
+            <div class="p-2 sm:p-2.5 bg-[#060B18] rounded-lg sm:rounded-xl border border-white/10 shadow-sm">
               <p class="text-[8px] sm:text-[9px] uppercase tracking-wider text-luxury-gold font-bold">Master Suite</p>
               <p class="text-[11px] sm:text-xs font-semibold text-white mt-0.5">22' × 14' Space</p>
             </div>
-            <div class="p-2 sm:p-2.5 bg-black/40 rounded-lg sm:rounded-xl border border-luxury-gold/20">
+            <div class="p-2 sm:p-2.5 bg-[#060B18] rounded-lg sm:rounded-xl border border-white/10 shadow-sm">
               <p class="text-[8px] sm:text-[9px] uppercase tracking-wider text-luxury-gold font-bold">View Deck</p>
               <p class="text-[11px] sm:text-xs font-semibold text-white mt-0.5">Deep Balcony</p>
             </div>
-            <div class="p-2 sm:p-2.5 bg-black/40 rounded-lg sm:rounded-xl border border-luxury-gold/20">
+            <div class="p-2 sm:p-2.5 bg-[#060B18] rounded-lg sm:rounded-xl border border-white/10 shadow-sm">
               <p class="text-[8px] sm:text-[9px] uppercase tracking-wider text-luxury-gold font-bold">Living Ceiling</p>
               <p class="text-[11px] sm:text-xs font-semibold text-white mt-0.5">11-Ft Height</p>
             </div>
@@ -1112,7 +1132,7 @@
         <!-- Specifications Panel -->
         <div class="lg:col-span-5 space-y-4 sm:space-y-8">
           <div>
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/10 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full mb-2 sm:mb-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full mb-2 sm:mb-3">
               <i data-lucide="compass" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
               <span>Architectural Specifications</span>
             </div>
@@ -1120,27 +1140,27 @@
             <p class="text-luxury-gold text-xs sm:text-sm tracking-wider uppercase font-semibold" id="plan-towers">Towers A & C</p>
           </div>
           
-          <div class="grid grid-cols-2 gap-2.5 sm:gap-4 border-y border-luxury-gold/20 py-4 sm:py-6" id="plan-specs-grid">
-            <div class="p-2.5 sm:p-3.5 bg-black/40 rounded-lg sm:rounded-xl border border-white/5">
+          <div class="grid grid-cols-2 gap-2.5 sm:gap-4 border-y border-white/10 py-4 sm:py-6" id="plan-specs-grid">
+            <div class="p-2.5 sm:p-3.5 bg-[#060B18] rounded-lg sm:rounded-xl border border-white/10">
               <p class="text-[9px] sm:text-xs text-slate-400 uppercase tracking-widest mb-0.5 sm:mb-1">RERA Carpet Area</p>
-              <p class="text-sm sm:text-lg font-serif text-slate-100 font-semibold" id="plan-carpet">2,650 Sq. Ft.</p>
+              <p class="text-sm sm:text-lg font-serif text-white font-semibold" id="plan-carpet">2,650 Sq. Ft.</p>
             </div>
-            <div class="p-2.5 sm:p-3.5 bg-black/40 rounded-lg sm:rounded-xl border border-white/5">
+            <div class="p-2.5 sm:p-3.5 bg-[#060B18] rounded-lg sm:rounded-xl border border-white/10">
               <p class="text-[9px] sm:text-xs text-slate-400 uppercase tracking-widest mb-0.5 sm:mb-1">Foyer Height</p>
-              <p class="text-sm sm:text-lg font-serif text-slate-100 font-semibold">11 Feet Clear</p>
+              <p class="text-sm sm:text-lg font-serif text-white font-semibold">11 Feet Clear</p>
             </div>
-            <div class="p-2.5 sm:p-3.5 bg-black/40 rounded-lg sm:rounded-xl border border-white/5">
+            <div class="p-2.5 sm:p-3.5 bg-[#060B18] rounded-lg sm:rounded-xl border border-white/10">
               <p class="text-[9px] sm:text-xs text-slate-400 uppercase tracking-widest mb-0.5 sm:mb-1">Living Balcony</p>
-              <p class="text-sm sm:text-lg font-serif text-slate-100 font-semibold">Wide Deck View</p>
+              <p class="text-sm sm:text-lg font-serif text-white font-semibold">Wide Deck View</p>
             </div>
-            <div class="p-2.5 sm:p-3.5 bg-black/40 rounded-lg sm:rounded-xl border border-white/5">
+            <div class="p-2.5 sm:p-3.5 bg-[#060B18] rounded-lg sm:rounded-xl border border-white/10">
               <p class="text-[9px] sm:text-xs text-slate-400 uppercase tracking-widest mb-0.5 sm:mb-1">Kitchen & Wash</p>
-              <p class="text-sm sm:text-lg font-serif text-slate-100 font-semibold">Double Utility</p>
+              <p class="text-sm sm:text-lg font-serif text-white font-semibold">Double Utility</p>
             </div>
           </div>
 
           <div class="btn-magnetic w-full">
-            <button onclick="openModal()" class="btn-gold-shimmer w-full py-3.5 sm:py-4 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold hover:opacity-95 text-luxury-bgDark font-bold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 rounded-xl flex items-center justify-center gap-2 shadow-xl shadow-luxury-gold/25 hover:scale-[1.02] active:scale-98 cursor-pointer">
+            <button onclick="openModal()" class="btn-gold-shimmer w-full py-3.5 sm:py-4 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 rounded-xl flex items-center justify-center gap-2 shadow-xl shadow-luxury-gold/30 hover:scale-[1.02] active:scale-98 cursor-pointer">
               <i data-lucide="download" class="w-4 h-4"></i> Download E-Brochure & Floor Plans
             </button>
           </div>
@@ -1149,38 +1169,35 @@
 
       <!-- Construction Specification Accordion -->
       <div class="mt-16 sm:mt-20 max-w-4xl mx-auto">
-        <h3 class="font-serif text-2xl md:text-3xl text-center text-white mb-6 sm:mb-8">Technical & Structural Specifications</h3>
+        <h3 class="font-serif text-2xl md:text-3xl text-center text-white mb-6 sm:mb-8 font-bold">Technical & Structural Specifications</h3>
         <div class="space-y-3.5 sm:space-y-4">
           
-          <!-- Accordion Item 1 -->
-          <div class="glass-card-dark rounded-xl overflow-hidden border border-white/10">
+          <div class="bg-[#0B1326]/90 rounded-xl overflow-hidden border border-white/10 shadow-lg">
             <button onclick="toggleAccordion(1)" class="w-full p-4 sm:p-6 text-left flex items-center justify-between focus:outline-none cursor-pointer">
               <span class="font-serif text-base sm:text-xl font-semibold text-white">Structure & RCC Frames</span>
               <i data-lucide="chevron-down" id="acc-icon-1" class="w-5 h-5 text-luxury-gold transition-transform duration-300"></i>
             </button>
-            <div id="acc-content-1" class="hidden px-4 sm:px-6 pb-5 text-slate-300 font-light text-xs sm:text-sm leading-relaxed border-t border-luxury-gold/10 pt-4">
+            <div id="acc-content-1" class="hidden px-4 sm:px-6 pb-5 text-slate-300 font-light text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-4">
               Designed with high-strength concrete elements, fully tested at RWDI Wind Tunnel facility. Structural engineering utilizes advanced earthquake resistant shear wall technology for paramount safety and lifetime structural guarantees.
             </div>
           </div>
 
-          <!-- Accordion Item 2 -->
-          <div class="glass-card-dark rounded-xl overflow-hidden border border-white/10">
+          <div class="bg-[#0B1326]/90 rounded-xl overflow-hidden border border-white/10 shadow-lg">
             <button onclick="toggleAccordion(2)" class="w-full p-4 sm:p-6 text-left flex items-center justify-between focus:outline-none cursor-pointer">
               <span class="font-serif text-base sm:text-xl font-semibold text-white">Premium Elevators & Lifeline Systems</span>
               <i data-lucide="chevron-down" id="acc-icon-2" class="w-5 h-5 text-luxury-gold transition-transform duration-300"></i>
             </button>
-            <div id="acc-content-2" class="hidden px-4 sm:px-6 pb-5 text-slate-300 font-light text-xs sm:text-sm leading-relaxed border-t border-luxury-gold/10 pt-4">
+            <div id="acc-content-2" class="hidden px-4 sm:px-6 pb-5 text-slate-300 font-light text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-4">
               Each tower hosts 5 high-speed elevators (including dedicated service units) with rescue capability systems. Electrical substations and emergency generation provide complete power security backup for mechanical utilities.
             </div>
           </div>
 
-          <!-- Accordion Item 3 -->
-          <div class="glass-card-dark rounded-xl overflow-hidden border border-white/10">
+          <div class="bg-[#0B1326]/90 rounded-xl overflow-hidden border border-white/10 shadow-lg">
             <button onclick="toggleAccordion(3)" class="w-full p-4 sm:p-6 text-left flex items-center justify-between focus:outline-none cursor-pointer">
               <span class="font-serif text-base sm:text-xl font-semibold text-white">Premium Windows & Thermal Insulation</span>
               <i data-lucide="chevron-down" id="acc-icon-3" class="w-5 h-5 text-luxury-gold transition-transform duration-300"></i>
             </button>
-            <div id="acc-content-3" class="hidden px-4 sm:px-6 pb-5 text-slate-300 font-light text-xs sm:text-sm leading-relaxed border-t border-luxury-gold/10 pt-4">
+            <div id="acc-content-3" class="hidden px-4 sm:px-6 pb-5 text-slate-300 font-light text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-4">
               Equipped with architectural window frame profiles featuring double-glazed glass for thermal and noise reduction. Exterior cladding and texture systems offer lifelong insulation from monsoon and high summer heat loads.
             </div>
           </div>
@@ -1192,24 +1209,23 @@
   </section>
 
   <!-- STAGE 6: FULL-SCREEN ARCHITECTURAL LIGHTBOX GALLERY -->
-  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 bg-[#080C14] relative border-t border-luxury-gold/10" id="gallery">
+  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 bg-[#040711] relative border-t border-white/5" id="gallery">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Section Header -->
       <div class="text-center mb-10 sm:mb-16 section-header">
-        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-semibold block mb-2">Visual Showcase</span>
-        <h2 class="font-serif text-2xl sm:text-4xl md:text-6xl font-bold gold-gradient-text">Architectural Gallery</h2>
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-2">Visual Showcase</span>
+        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-white">Architectural Gallery</h2>
         <p class="text-slate-400 text-xs sm:text-sm font-light max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed">
           Immerse yourself in the high-resolution architectural renders, panoramic terraces, and curated resident spaces.
         </p>
-        <div class="w-16 sm:w-20 h-[1px] bg-luxury-gold/50 mx-auto mt-4 sm:mt-5"></div>
+        <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
       </div>
 
       <!-- Gallery Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Gallery Item 1 -->
-        <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(0)">
+        <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer shadow-xl" onclick="openGalleryModal(0)">
           <img src="./assets/images/hero-towers-straight.jpg" alt="Tower Skyline Elevation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
             <div>
@@ -1219,8 +1235,7 @@
           </div>
         </div>
 
-        <!-- Gallery Item 2 -->
-        <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(1)">
+        <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer shadow-xl" onclick="openGalleryModal(1)">
           <img src="./assets/images/sky-deck-aerial.jpg" alt="Sky Walk & Observation Deck" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
             <div>
@@ -1230,8 +1245,7 @@
           </div>
         </div>
 
-        <!-- Gallery Item 3 -->
-        <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(2)">
+        <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer shadow-xl" onclick="openGalleryModal(2)">
           <img src="./assets/images/entrance-foyer.jpg" alt="Grand Entrance Foyer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
             <div>
@@ -1241,8 +1255,7 @@
           </div>
         </div>
 
-        <!-- Gallery Item 4 -->
-        <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(3)">
+        <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer shadow-xl" onclick="openGalleryModal(3)">
           <img src="./assets/images/clubhouse-lounge.jpg" alt="Resident Clubhouse Lounge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
             <div>
@@ -1252,8 +1265,7 @@
           </div>
         </div>
 
-        <!-- Gallery Item 5 -->
-        <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(4)">
+        <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer shadow-xl" onclick="openGalleryModal(4)">
           <img src="./assets/images/balcony-view.png" alt="Balcony Panoramic Horizon" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
             <div>
@@ -1263,11 +1275,8 @@
           </div>
         </div>
 
-        <!-- Gallery Item 6 -->
-        <div class="spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(5)">
-          <img src="./assets/images/hero-towers-front.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';"
-               alt="Front Tower Elevation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer shadow-xl" onclick="openGalleryModal(5)">
+          <img src="./assets/images/hero-towers-front.jpg" alt="Front Tower Elevation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
             <div>
               <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Architectural Facade</span>
@@ -1276,89 +1285,10 @@
           </div>
         </div>
 
-        <!-- Extra Gallery Item 7 (Hidden Initially) -->
-        <div class="gallery-extra hidden spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(6)">
-          <img src="./assets/images/hero-towers-angled.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';"
-               alt="Angled Skyline Perspective" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
-            <div>
-              <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Exterior Perspective</span>
-              <h4 class="font-serif text-sm sm:text-lg text-white font-semibold">Angled Skyscraper Profile</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Extra Gallery Item 8 (Hidden Initially) -->
-        <div class="gallery-extra hidden spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(7)">
-          <img src="./assets/images/towers-skywalk.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80';"
-               alt="Inter-Tower Skywalk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
-            <div>
-              <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Level 15 Promenade</span>
-              <h4 class="font-serif text-sm sm:text-lg text-white font-semibold">Mid-Air Architectural Skywalk</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Extra Gallery Item 9 (Hidden Initially) -->
-        <div class="gallery-extra hidden spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(8)">
-          <img src="./assets/images/kids-creche.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1566856515286-50567f8b9ecf?auto=format&fit=crop&w=1200&q=80';"
-               alt="Children Care Sanctuary" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
-            <div>
-              <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Junior Sanctuary</span>
-              <h4 class="font-serif text-sm sm:text-lg text-white font-semibold">Children's Montessori Creche</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Extra Gallery Item 10 (Hidden Initially) -->
-        <div class="gallery-extra hidden spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(9)">
-          <img src="./assets/images/amenity-indoor-games.png" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80';"
-               alt="Indoor Games Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
-            <div>
-              <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Recreation Arena</span>
-              <h4 class="font-serif text-sm sm:text-lg text-white font-semibold">Indoor Sports & Table Tennis</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Extra Gallery Item 11 (Hidden Initially) -->
-        <div class="gallery-extra hidden spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(10)">
-          <img src="./assets/images/amenity-chess.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1200&q=80';"
-               alt="Mind Games Lounge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
-            <div>
-              <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Cognitive Sports</span>
-              <h4 class="font-serif text-sm sm:text-lg text-white font-semibold">Mind Games & Chess Sanctuary</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Extra Gallery Item 12 (Hidden Initially) -->
-        <div class="gallery-extra hidden spotlight-card rounded-2xl overflow-hidden border border-luxury-gold/20 aspect-[16/10] sm:aspect-[4/3] bg-black group relative cursor-pointer" onclick="openGalleryModal(11)">
-          <img src="./assets/images/balcony-garden.jpg" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80';"
-               alt="Balcony Garden Terrace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5 sm:p-6">
-            <div>
-              <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold">Atmospheric Horizon</span>
-              <h4 class="font-serif text-sm sm:text-lg text-white font-semibold">Twilight Architectural Vista</h4>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Load More Action Button Linking to gallery.html -->
       <div class="mt-12 text-center" id="gallery-load-more-wrapper">
-        <a href="gallery.html" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-luxury-gold/40 bg-white/5 hover:bg-gradient-to-r hover:from-luxury-gold hover:via-[#D4B57E] hover:to-luxury-gold text-luxury-gold hover:text-luxury-bgDark font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-xl shadow-luxury-gold/15 hover:scale-105 active:scale-95 cursor-pointer">
+        <a href="gallery.html" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-luxury-gold/40 bg-white/5 hover:bg-luxury-gold hover:text-[#030712] text-luxury-gold font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-xl hover:scale-105 active:scale-95 cursor-pointer">
           <i data-lucide="image" class="w-4 h-4"></i>
           <span>View Full Architectural Gallery</span>
           <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
@@ -1368,25 +1298,23 @@
   </section>
 
   <!-- STAGE 7: PROXIMITY RADAR & LIVE SONAR BEACON MAP -->
-  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 bg-[#0D121D] relative border-t border-luxury-gold/10" id="location">
+  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 bg-[#060B19] relative border-t border-white/5" id="location">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
-      <!-- Section Header -->
       <div class="text-center mb-10 sm:mb-16 section-header">
-        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-semibold block mb-2">Proximity Radar</span>
-        <h2 class="font-serif text-2xl sm:text-4xl md:text-6xl font-bold gold-gradient-text">Connected to Ahmedabad</h2>
-        <div class="w-16 sm:w-20 h-[1px] bg-luxury-gold/50 mx-auto mt-4 sm:mt-5"></div>
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-2">Proximity Radar</span>
+        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-white">Connected to Ahmedabad</h2>
+        <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
-        <!-- Radar Destinations Grid (Left) -->
+        <!-- Radar Destinations Grid -->
         <div class="lg:col-span-5 space-y-3.5 sm:space-y-4">
-          <h3 class="font-serif text-2xl md:text-3xl text-white mb-4 sm:mb-6">Travel Time Index</h3>
+          <h3 class="font-serif text-2xl md:text-3xl text-white mb-4 sm:mb-6 font-bold">Travel Time Index</h3>
           
-          <!-- Route Card 1 -->
-          <div class="spotlight-card bg-[#161D2A] p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-md flex items-center justify-between cursor-pointer group">
+          <div class="spotlight-card bg-[#0B1326]/90 p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-lg flex items-center justify-between cursor-pointer group">
             <div class="flex items-center gap-3.5 sm:gap-4">
-              <div class="p-2.5 sm:p-3 bg-luxury-gold/10 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
+              <div class="p-2.5 sm:p-3 bg-luxury-gold/15 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
                 <i data-lucide="rocket" class="w-5 h-5"></i>
               </div>
               <div>
@@ -1400,10 +1328,9 @@
             </div>
           </div>
 
-          <!-- Route Card 2 -->
-          <div class="spotlight-card bg-[#161D2A] p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-md flex items-center justify-between cursor-pointer group">
+          <div class="spotlight-card bg-[#0B1326]/90 p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-lg flex items-center justify-between cursor-pointer group">
             <div class="flex items-center gap-3.5 sm:gap-4">
-              <div class="p-2.5 sm:p-3 bg-luxury-gold/10 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
+              <div class="p-2.5 sm:p-3 bg-luxury-gold/15 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
                 <i data-lucide="graduation-cap" class="w-5 h-5"></i>
               </div>
               <div>
@@ -1417,10 +1344,9 @@
             </div>
           </div>
 
-          <!-- Route Card 3 -->
-          <div class="spotlight-card bg-[#161D2A] p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-md flex items-center justify-between cursor-pointer group">
+          <div class="spotlight-card bg-[#0B1326]/90 p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-lg flex items-center justify-between cursor-pointer group">
             <div class="flex items-center gap-3.5 sm:gap-4">
-              <div class="p-2.5 sm:p-3 bg-luxury-gold/10 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
+              <div class="p-2.5 sm:p-3 bg-luxury-gold/15 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
                 <i data-lucide="compass" class="w-5 h-5"></i>
               </div>
               <div>
@@ -1434,10 +1360,9 @@
             </div>
           </div>
 
-          <!-- Route Card 4 -->
-          <div class="spotlight-card bg-[#161D2A] p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-md flex items-center justify-between cursor-pointer group">
+          <div class="spotlight-card bg-[#0B1326]/90 p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-lg flex items-center justify-between cursor-pointer group">
             <div class="flex items-center gap-3.5 sm:gap-4">
-              <div class="p-2.5 sm:p-3 bg-luxury-gold/10 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
+              <div class="p-2.5 sm:p-3 bg-luxury-gold/15 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
                 <i data-lucide="train" class="w-5 h-5"></i>
               </div>
               <div>
@@ -1451,10 +1376,9 @@
             </div>
           </div>
 
-          <!-- Route Card 5 -->
-          <div class="spotlight-card bg-[#161D2A] p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-md flex items-center justify-between cursor-pointer group">
+          <div class="spotlight-card bg-[#0B1326]/90 p-4 sm:p-5 rounded-xl border border-white/10 hover:border-luxury-gold transition-all duration-300 shadow-lg flex items-center justify-between cursor-pointer group">
             <div class="flex items-center gap-3.5 sm:gap-4">
-              <div class="p-2.5 sm:p-3 bg-luxury-gold/10 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
+              <div class="p-2.5 sm:p-3 bg-luxury-gold/15 rounded-lg text-luxury-gold group-hover:scale-110 transition-transform">
                 <i data-lucide="plane" class="w-5 h-5"></i>
               </div>
               <div>
@@ -1470,29 +1394,24 @@
 
         </div>
 
-        <!-- Location Map & Animated Live Sonar Beacon (Right) -->
-        <div class="lg:col-span-7 relative rounded-2xl overflow-hidden border border-luxury-gold/30 shadow-2xl group min-h-[320px] sm:min-h-[420px]">
+        <!-- Location Map & Animated Live Sonar Beacon -->
+        <div class="lg:col-span-7 relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl group min-h-[320px] sm:min-h-[420px] bg-black">
           <img src="./assets/images/location-map.png" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80';"
                alt="Harmony Harikesh Location Map" 
-               class="w-full aspect-video object-cover filter brightness-[0.65] contrast-[1.15] transition-transform duration-700 group-hover:scale-105">
+               class="w-full aspect-video object-cover filter brightness-[0.8] contrast-[1.1] transition-transform duration-700 group-hover:scale-105">
           
-          <!-- Vignette overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0D121D] via-transparent to-black/30 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
 
-          <!-- Pulsating Multi-Ring Sonar Beacon (Harmony Harikesh Location) -->
+          <!-- Pulsating Multi-Ring Sonar Beacon -->
           <a href="https://maps.app.goo.gl/nip9LvoDkG8MxWst5" target="_blank" class="absolute top-[45%] left-[52%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center group/marker cursor-pointer z-20">
-            <!-- Triple Concentric Sonar Waves -->
             <span class="absolute inline-flex h-20 w-20 rounded-full border border-luxury-gold/50 bg-luxury-gold/10 sonar-ring"></span>
             <span class="absolute inline-flex h-20 w-20 rounded-full border border-luxury-gold/40 bg-luxury-gold/10 sonar-ring-2"></span>
             <span class="absolute inline-flex h-20 w-20 rounded-full border border-luxury-gold/30 bg-luxury-gold/10 sonar-ring-3"></span>
             
-            <!-- Central Golden Beacon Dot -->
-            <span class="relative inline-flex rounded-full h-6 w-6 bg-gradient-to-r from-luxury-gold to-[#FFE8B8] border-2 border-[#0D121D] shadow-[0_0_20px_rgba(197,163,104,0.9)]"></span>
+            <span class="relative inline-flex rounded-full h-6 w-6 bg-gradient-to-r from-luxury-gold to-[#F3E5AB] border-2 border-black shadow-[0_0_15px_rgba(212,175,55,0.9)]"></span>
             
-            <!-- Floating Map Tooltip -->
-            <div class="absolute bottom-10 bg-[#161D2A]/95 backdrop-blur-md border border-luxury-gold px-4 py-2 rounded-xl text-[10px] tracking-wider uppercase font-bold text-white whitespace-nowrap shadow-2xl group-hover/marker:bg-luxury-gold group-hover/marker:text-luxury-bgDark transition-all duration-300 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-luxury-gold group-hover/marker:bg-luxury-bgDark animate-ping"></span>
+            <div class="absolute bottom-10 bg-[#060B19]/95 backdrop-blur-md border border-luxury-gold px-4 py-2 rounded-xl text-[10px] tracking-wider uppercase font-bold text-white whitespace-nowrap shadow-xl group-hover/marker:bg-luxury-gold group-hover/marker:text-black transition-all duration-300 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-luxury-gold group-hover/marker:bg-black animate-ping"></span>
               <span>Harmony Harikesh Site • Sola</span>
             </div>
           </a>
@@ -1501,70 +1420,200 @@
     </div>
   </section>
 
-  <!-- STAGE 8: LEAD CAPTURE & BESPOKE MODALS -->
+  <!-- STAGE 8: PRIVATE TOUR — HIGH CONVERSION SECTION -->
+  <section class="py-16 sm:py-24 md:py-32 scroll-mt-20 bg-[#040711] relative border-t border-white/5 overflow-hidden" id="private-tour">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-luxury-gold/5 blur-[160px] rounded-full pointer-events-none"></div>
 
-  <!-- Lead Capture Modal (High-Contrast Luxury Glassmorphism) -->
-  <div id="enquiry-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-xl transition-opacity duration-300">
-    <div class="w-full max-w-lg bg-[#0F1622] rounded-3xl overflow-hidden relative shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(197,163,104,0.2)] border border-luxury-gold/40 scale-95 transition-transform duration-300" id="modal-container">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <div class="text-center mb-10 sm:mb-16 section-header">
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-2">Experience Harmony Harikesh</span>
+        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-white">Schedule a Private Tour</h2>
+        <p class="text-slate-400 text-xs sm:text-sm font-light max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed">
+          Book an exclusive on-site briefing, high-altitude panoramic walkthrough, and personalized floor plan review with our luxury concierge.
+        </p>
+        <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
+      </div>
+
+      <!-- Luxury Form Card Container -->
+      <div class="spotlight-card bg-[#0B1326]/90 border border-luxury-gold/30 rounded-3xl p-6 sm:p-10 md:p-14 shadow-2xl">
+        <form id="inpage-tour-form" onsubmit="handleInpageTourSubmit(event)" class="space-y-5">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+                <i data-lucide="user" class="w-3.5 h-3.5 text-luxury-gold"></i> Full Name <span class="text-luxury-gold">*</span>
+              </label>
+              <input type="text" 
+                     id="tour-name" 
+                     required 
+                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                     placeholder="e.g. Ratan Patel">
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-luxury-gold"></i> Phone Number <span class="text-luxury-gold">*</span>
+              </label>
+              <input type="tel" 
+                     id="tour-phone" 
+                     required 
+                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                     placeholder="+91 98765 43210">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-luxury-gold"></i> Email Address <span class="text-luxury-gold">*</span>
+              </label>
+              <input type="email" 
+                     id="tour-email" 
+                     required 
+                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                     placeholder="e.g. ratan@example.com">
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+                <i data-lucide="home" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Residence
+              </label>
+              <div class="relative">
+                <select id="tour-preference" 
+                        class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 appearance-none text-sm cursor-pointer pr-10 shadow-sm">
+                  <option value="4bhk">4 BHK Sky Residence (Towers A & C)</option>
+                  <option value="3bhk">3 BHK Sky Residence (Tower B)</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-luxury-gold">
+                  <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Date
+              </label>
+              <input type="date" 
+                     id="tour-date" 
+                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 text-sm shadow-sm cursor-pointer">
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Time
+              </label>
+              <input type="time" 
+                     id="tour-time" 
+                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 text-sm shadow-sm cursor-pointer">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-luxury-gold"></i> Message / Special Requests
+            </label>
+            <textarea id="tour-message" 
+                      rows="3" 
+                      class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                      placeholder="Share any specific requirements, timing preferences, or questions..."></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" 
+                    class="btn-gold-shimmer w-full py-4 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/30 cursor-pointer flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-98">
+              <i data-lucide="calendar-check" class="w-4 h-4"></i>
+              <span>Schedule Private Tour</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="inpage-tour-success" class="hidden text-center py-8 space-y-4 animate-fade-in">
+          <div class="w-16 h-16 bg-luxury-gold/10 border border-luxury-gold rounded-full flex items-center justify-center mx-auto text-luxury-gold shadow-md">
+            <i data-lucide="check" class="w-8 h-8"></i>
+          </div>
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-1">Reservation Initiated</span>
+            <h4 class="font-serif text-2xl text-white font-semibold">Private Tour Request Transmitted</h4>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed max-w-md mx-auto font-light">
+            Thank you for registering. Your appointment details have been prepared for direct coordination with our site concierge.
+          </p>
+          <div class="pt-3 max-w-sm mx-auto">
+            <a id="inpage-wa-btn" href="https://wa.me/919998906506" target="_blank" class="w-full py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-lg flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Continue on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STAGE 9: MODALS & LIGHTBOXES -->
+
+  <!-- Lead Capture Modal -->
+  <div id="enquiry-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl transition-opacity duration-300">
+    <div class="w-full max-w-lg bg-[#070D1C] rounded-3xl overflow-hidden relative shadow-2xl border border-luxury-gold/40 scale-95 transition-transform duration-300" id="modal-container">
       
       <!-- Close Button -->
-      <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-300 hover:text-white transition-colors p-2.5 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 cursor-pointer z-20" aria-label="Close modal">
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors p-2.5 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 cursor-pointer z-20" aria-label="Close modal">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <!-- Modal Body -->
       <div class="p-6 sm:p-10">
         <span class="text-[10px] uppercase tracking-[0.3em] text-luxury-gold font-bold mb-1.5 block">Harmony Harikesh</span>
-        <h3 class="font-serif text-2xl sm:text-3xl font-bold gold-gradient-text mb-2">Schedule Private Tour</h3>
-        <p class="text-xs text-slate-300 uppercase tracking-widest mb-6">Register for bespoke briefing and layout walkthrough</p>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">Schedule Private Tour</h3>
+        <p class="text-xs text-slate-400 uppercase tracking-widest mb-6">Register for bespoke briefing and layout walkthrough</p>
         
         <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
-          <!-- Full Name Field -->
           <div>
-            <label class="block text-xs uppercase tracking-wider text-luxury-gold mb-1.5 font-bold flex items-center gap-1.5">
-              <i data-lucide="user" class="w-3.5 h-3.5 text-luxury-gold"></i> Full Name <span class="text-red-400">*</span>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="user" class="w-3.5 h-3.5 text-luxury-gold"></i> Full Name <span class="text-luxury-gold">*</span>
             </label>
             <input type="text" 
                    id="form-name" 
                    required 
-                   class="w-full bg-[#182232] border border-luxury-gold/35 focus:border-luxury-gold focus:bg-[#202D42] focus:ring-2 focus:ring-luxury-gold/40 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-400 outline-none transition-all duration-200 caret-luxury-gold text-sm shadow-inner" 
+                   class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
                    placeholder="e.g. Ratan Patel">
           </div>
 
-          <!-- Phone Number Field -->
           <div>
-            <label class="block text-xs uppercase tracking-wider text-luxury-gold mb-1.5 font-bold flex items-center gap-1.5">
-              <i data-lucide="phone" class="w-3.5 h-3.5 text-luxury-gold"></i> Phone Number <span class="text-red-400">*</span>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-luxury-gold"></i> Phone Number <span class="text-luxury-gold">*</span>
             </label>
             <input type="tel" 
                    id="form-phone" 
                    required 
-                   class="w-full bg-[#182232] border border-luxury-gold/35 focus:border-luxury-gold focus:bg-[#202D42] focus:ring-2 focus:ring-luxury-gold/40 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-400 outline-none transition-all duration-200 caret-luxury-gold text-sm shadow-inner" 
+                   class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
                    placeholder="+91 98765 43210">
           </div>
 
-          <!-- Email Address Field -->
           <div>
-            <label class="block text-xs uppercase tracking-wider text-luxury-gold mb-1.5 font-bold flex items-center gap-1.5">
-              <i data-lucide="mail" class="w-3.5 h-3.5 text-luxury-gold"></i> Email Address <span class="text-red-400">*</span>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-luxury-gold"></i> Email Address <span class="text-luxury-gold">*</span>
             </label>
             <input type="email" 
                    id="form-email" 
                    required 
-                   class="w-full bg-[#182232] border border-luxury-gold/35 focus:border-luxury-gold focus:bg-[#202D42] focus:ring-2 focus:ring-luxury-gold/40 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-400 outline-none transition-all duration-200 caret-luxury-gold text-sm shadow-inner" 
+                   class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
                    placeholder="e.g. ratan@example.com">
           </div>
 
-          <!-- Preferred Layout Dropdown -->
           <div>
-            <label class="block text-xs uppercase tracking-wider text-luxury-gold mb-1.5 font-bold flex items-center gap-1.5">
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
               <i data-lucide="home" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Residence
             </label>
             <div class="relative">
               <select id="form-preference" 
-                      class="w-full bg-[#182232] border border-luxury-gold/35 focus:border-luxury-gold focus:bg-[#202D42] focus:ring-2 focus:ring-luxury-gold/40 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 appearance-none text-sm cursor-pointer pr-10 shadow-inner">
-                <option value="4bhk" class="bg-[#121824] text-white py-2">4 BHK Sky Residence (Towers A & C)</option>
-                <option value="3bhk" class="bg-[#121824] text-white py-2">3 BHK Sky Residence (Tower B)</option>
+                      class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 appearance-none text-sm cursor-pointer pr-10 shadow-sm">
+                <option value="4bhk">4 BHK Sky Residence (Towers A & C)</option>
+                <option value="3bhk">3 BHK Sky Residence (Tower B)</option>
               </select>
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-luxury-gold">
                 <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -1572,16 +1621,14 @@
             </div>
           </div>
 
-          <!-- Submit Button -->
           <button type="submit" 
-                  class="btn-gold-shimmer w-full py-4 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold hover:opacity-95 text-luxury-bgDark font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/30 cursor-pointer flex items-center justify-center gap-2 mt-4 hover:scale-[1.02] active:scale-98">
+                  class="btn-gold-shimmer w-full py-4 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/30 cursor-pointer flex items-center justify-center gap-2 mt-4 hover:scale-[1.02] active:scale-98">
             <i data-lucide="calendar-check" class="w-4 h-4"></i> Request Callback & PDF Brochure
           </button>
         </form>
 
-        <!-- Success Message -->
         <div id="form-success" class="hidden text-center py-6 space-y-5 animate-fade-in">
-          <div class="w-16 h-16 bg-luxury-gold/15 border border-luxury-gold rounded-full flex items-center justify-center mx-auto text-luxury-gold shadow-lg shadow-luxury-gold/20">
+          <div class="w-16 h-16 bg-luxury-gold/10 border border-luxury-gold rounded-full flex items-center justify-center mx-auto text-luxury-gold shadow-md">
             <i data-lucide="check" class="w-8 h-8"></i>
           </div>
           <div>
@@ -1595,7 +1642,7 @@
             <a id="form-success-wa-btn" href="https://wa.me/919998906506" target="_blank" class="w-full py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-lg flex items-center justify-center gap-2">
               <i data-lucide="message-circle" class="w-4 h-4"></i> Continue on WhatsApp
             </a>
-            <button onclick="closeModal()" class="w-full py-3 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl border border-white/10 cursor-pointer">
+            <button onclick="closeModal()" class="w-full py-3 bg-white/10 hover:bg-white/15 text-white font-semibold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl border border-white/15 cursor-pointer">
               Close Window
             </button>
           </div>
@@ -1605,16 +1652,15 @@
   </div>
 
   <!-- Zoom Modal Floor Plan -->
-  <div id="zoom-modal" class="fixed inset-0 z-[101] hidden items-center justify-center p-4 bg-black/95">
-    <button onclick="closeZoomModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors p-3 bg-white/5 rounded-full border border-white/10 z-20 cursor-pointer" aria-label="Close zoom modal">
+  <div id="zoom-modal" class="fixed inset-0 z-[101] hidden items-center justify-center p-4 bg-black/95 backdrop-blur-md">
+    <button onclick="closeZoomModal()" class="absolute top-6 right-6 text-white hover:text-luxury-gold transition-colors p-3 bg-white/10 rounded-full border border-white/20 z-20 cursor-pointer" aria-label="Close zoom modal">
       <i data-lucide="x" class="w-8 h-8"></i>
     </button>
     <div class="max-w-5xl w-full p-4 flex justify-center">
       <img id="zoomed-plan-img" 
            src="./assets/images/floorplan-4bhk-unit.png" 
-           onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80';"
            alt="Zoomed Floor Plan" 
-           class="max-h-[85vh] w-auto object-contain bg-white/5 p-4 rounded-xl border border-white/10 shadow-2xl">
+           class="max-h-[85vh] w-auto object-contain bg-[#030610] p-4 rounded-2xl border border-luxury-gold/40 shadow-2xl">
     </div>
   </div>
 
@@ -1624,58 +1670,53 @@
       <i data-lucide="x" class="w-6 h-6"></i>
     </button>
     
-    <!-- Previous & Next Navigation Buttons -->
-    <button onclick="navigateGallery(-1)" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-white transition-colors p-3 bg-black/70 hover:bg-luxury-gold hover:text-luxury-bgDark rounded-full border border-luxury-gold/40 z-50 cursor-pointer" aria-label="Previous Image">
+    <button onclick="navigateGallery(-1)" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-white transition-colors p-3 bg-black/70 hover:bg-luxury-gold hover:text-black rounded-full border border-luxury-gold/40 z-50 cursor-pointer" aria-label="Previous Image">
       <i data-lucide="chevron-left" class="w-6 h-6"></i>
     </button>
-    <button onclick="navigateGallery(1)" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-white transition-colors p-3 bg-black/70 hover:bg-luxury-gold hover:text-luxury-bgDark rounded-full border border-luxury-gold/40 z-50 cursor-pointer" aria-label="Next Image">
+    <button onclick="navigateGallery(1)" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 text-luxury-gold hover:text-white transition-colors p-3 bg-black/70 hover:bg-luxury-gold hover:text-black rounded-full border border-luxury-gold/40 z-50 cursor-pointer" aria-label="Next Image">
       <i data-lucide="chevron-right" class="w-6 h-6"></i>
     </button>
 
     <div class="max-w-5xl w-full flex flex-col items-center justify-center relative z-20">
       <img id="gallery-lightbox-img" src="" alt="Gallery Preview" class="max-h-[75vh] w-auto object-contain rounded-2xl border border-luxury-gold/30 shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
       <div class="mt-4 text-center">
-        <p id="gallery-lightbox-title" class="font-serif text-xl sm:text-2xl font-bold gold-gradient-text"></p>
+        <p id="gallery-lightbox-title" class="font-serif text-xl sm:text-2xl font-bold text-white"></p>
         <p id="gallery-lightbox-cat" class="text-xs uppercase tracking-widest text-slate-400 mt-1"></p>
       </div>
     </div>
   </div>
 
   <!-- Amenity Detail Interactive Modal -->
-  <div id="amenity-detail-modal" class="fixed inset-0 z-[102] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-opacity duration-300">
-    <div class="w-full max-w-4xl bg-[#121824] rounded-2xl overflow-hidden relative shadow-2xl border border-luxury-gold/30 scale-95 transition-transform duration-300 flex flex-col md:flex-row max-h-[90vh]" id="amenity-modal-container">
+  <div id="amenity-detail-modal" class="fixed inset-0 z-[102] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
+    <div class="w-full max-w-4xl bg-[#070D1C] rounded-2xl overflow-hidden relative shadow-2xl border border-luxury-gold/30 scale-95 transition-transform duration-300 flex flex-col md:flex-row max-h-[90vh]" id="amenity-modal-container">
       
-      <!-- Close Button -->
-      <button onclick="closeAmenityModal()" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 z-50 bg-black/60 rounded-full border border-white/20 cursor-pointer" aria-label="Close amenity modal">
+      <button onclick="closeAmenityModal()" class="absolute top-4 right-4 text-white hover:text-luxury-gold transition-colors p-2 z-50 bg-black/60 rounded-full border border-white/20 cursor-pointer" aria-label="Close amenity modal">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <!-- Left: Image Preview -->
       <div class="w-full md:w-1/2 relative min-h-[240px] md:min-h-[420px] bg-black">
         <img id="amenity-detail-img" src="" alt="Amenity Preview" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#121824] md:from-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 md:from-transparent to-transparent"></div>
       </div>
 
-      <!-- Right: Content Information -->
       <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto">
         <div>
           <span id="amenity-detail-cat" class="text-[10px] uppercase tracking-[0.2em] text-luxury-gold font-bold mb-2 block"></span>
           <h3 id="amenity-detail-title" class="font-serif text-2xl md:text-3xl font-bold text-white mb-3 leading-tight"></h3>
           <p id="amenity-detail-desc" class="text-xs sm:text-sm font-light text-slate-300 leading-relaxed mb-6"></p>
           
-          <h4 class="text-xs uppercase tracking-widest text-luxury-gold font-semibold mb-3 flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4"></i> Curated Specifications & Highlights
+          <h4 class="text-xs uppercase tracking-widest text-white font-bold mb-3 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-luxury-gold"></i> Curated Specifications & Highlights
           </h4>
           <ul id="amenity-detail-highlights" class="space-y-2 text-xs text-slate-300">
-            <!-- Dynamically populated -->
           </ul>
         </div>
 
         <div class="mt-8 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
-          <button onclick="closeAmenityModal(); openModal();" class="flex-1 py-3.5 bg-gradient-to-r from-luxury-gold to-luxury-bronze text-luxury-bgDark font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-lg text-center hover:opacity-95 cursor-pointer">
+          <button onclick="closeAmenityModal(); openModal();" class="flex-1 py-3.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-lg text-center hover:opacity-95 cursor-pointer">
             Schedule Private Tour
           </button>
-          <a id="amenity-detail-wa" href="https://wa.me/919998906506" target="_blank" class="px-5 py-3.5 bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl text-center flex items-center justify-center gap-1.5">
+          <a id="amenity-detail-wa" href="https://wa.me/919998906506" target="_blank" class="px-5 py-3.5 bg-[#25D366]/15 border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl text-center flex items-center justify-center gap-1.5">
             WhatsApp
           </a>
         </div>
@@ -1684,8 +1725,8 @@
   </div>
 
   <!-- FLOATING QUICK CONVERSION DOCK FOR MOBILE PHONES -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#080C14]/95 backdrop-blur-xl border-t border-luxury-gold/30 px-4 py-2.5 safe-area-pb shadow-[0_-10px_25px_rgba(0,0,0,0.7)] flex items-center justify-between gap-2.5">
-    <a href="tel:+919998906506" class="flex-1 py-3 bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider rounded-xl border border-white/15 flex items-center justify-center gap-1.5 transition-transform active:scale-95">
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#060B19]/95 backdrop-blur-xl border-t border-white/10 px-4 py-2.5 safe-area-pb shadow-[0_-10px_25px_rgba(0,0,0,0.8)] flex items-center justify-between gap-2.5">
+    <a href="tel:+919998906506" class="flex-1 py-3 bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider rounded-xl border border-white/10 flex items-center justify-center gap-1.5 transition-transform active:scale-95">
       <i data-lucide="phone" class="w-4 h-4 text-luxury-gold"></i>
       <span>Call</span>
     </a>
@@ -1693,23 +1734,21 @@
       <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.457 5.704 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span>WhatsApp</span>
     </a>
-    <button onclick="openModal()" class="btn-gold-shimmer flex-1 py-3 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-luxury-gold/20 flex items-center justify-center transition-transform active:scale-95 cursor-pointer">
+    <button onclick="openModal()" class="btn-gold-shimmer flex-1 py-3 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-luxury-gold/20 flex items-center justify-center transition-transform active:scale-95 cursor-pointer">
       <span>Enquire</span>
     </button>
   </div>
 
   <!-- FLOATING DESKTOP ACTIONS & BACK TO TOP WIDGET -->
   <div class="fixed bottom-20 md:bottom-8 right-5 sm:right-8 z-40 flex flex-col items-center space-y-3">
-    <!-- Scroll To Top Button with Circular Progress Ring -->
-    <button id="back-to-top-btn" onclick="scrollToTop()" class="opacity-0 pointer-events-none transition-all duration-300 w-12 h-12 rounded-full bg-[#161D2A] border border-luxury-gold/40 text-luxury-gold flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer group relative" title="Scroll to Top">
+    <button id="back-to-top-btn" onclick="scrollToTop()" class="opacity-0 pointer-events-none transition-all duration-300 w-12 h-12 rounded-full bg-[#060B19] border border-white/20 text-luxury-gold flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 cursor-pointer group relative" title="Scroll to Top">
       <svg class="w-12 h-12 absolute inset-0 -rotate-90 pointer-events-none" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="20" stroke="rgba(197, 163, 104, 0.2)" stroke-width="2.5" fill="none" />
-        <circle id="back-to-top-progress" cx="24" cy="24" r="20" stroke="#C5A368" stroke-width="2.5" fill="none" stroke-dasharray="125.6" stroke-dashoffset="125.6" stroke-linecap="round" />
+        <circle cx="24" cy="24" r="20" stroke="rgba(212, 175, 55, 0.2)" stroke-width="2.5" fill="none" />
+        <circle id="back-to-top-progress" cx="24" cy="24" r="20" stroke="#D4AF37" stroke-width="2.5" fill="none" stroke-dasharray="125.6" stroke-dashoffset="125.6" stroke-linecap="round" />
       </svg>
       <i data-lucide="arrow-up" class="w-5 h-5 text-luxury-gold group-hover:-translate-y-0.5 transition-transform"></i>
     </button>
 
-    <!-- Desktop WhatsApp Action Button -->
     <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20please%20provide%20more%20info%20about%20Harmony%20Harikesh." target="_blank" class="hidden md:flex p-3.5 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 items-center justify-center border border-[#25D366]/30 group" title="Chat on WhatsApp">
       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.457 5.704 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1717,24 +1756,11 @@
   </div>
 
   <!-- Advanced Animated Luxury Footer -->
-  <footer class="bg-[#06090F] border-t border-luxury-gold/30 pt-16 pb-28 md:py-24 text-slate-400 relative overflow-hidden" id="main-footer">
-    
-    <!-- Animated Glowing Aurora Top Border Line -->
+  <footer class="bg-[#02040A] border-t border-luxury-gold/20 pt-16 pb-28 md:py-24 text-slate-400 relative overflow-hidden" id="main-footer">
     <div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-luxury-gold to-transparent opacity-80 animate-pulse"></div>
-
-    <!-- Ambient Gold Radial Backdrop Glow -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-luxury-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
 
-    <!-- Subtle Floating Architectural Skyline Background Vector -->
-    <div class="absolute bottom-0 inset-x-0 h-44 opacity-10 pointer-events-none flex items-end justify-center overflow-hidden">
-      <svg class="w-full h-full text-luxury-gold stroke-current fill-none stroke-[0.8]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,120 L0,90 L60,90 L60,60 L90,60 L90,30 L110,30 L110,120 L200,120 L200,70 L240,70 L240,40 L270,40 L270,120 L400,120 L400,20 L420,10 L440,20 L440,120 L550,120 L550,65 L580,65 L580,120 L700,120 L700,45 L730,45 L730,120 L850,120 L850,30 L870,20 L890,30 L890,120 L1000,120 L1000,55 L1040,55 L1040,120 L1200,120 Z" />
-      </svg>
-    </div>
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
-      
-      <!-- Brand & Description -->
       <div class="md:col-span-5 space-y-5 sm:space-y-6 footer-col">
         <a href="#" class="flex flex-col group cursor-pointer">
           <span class="font-serif text-3xl font-bold tracking-widest gold-gradient-text transition-all duration-300 group-hover:scale-105 inline-block origin-left">HARMONY</span>
@@ -1744,7 +1770,6 @@
           Harmony Harikesh brings world-class construction, design aesthetics, and exclusive structural safety credentials to Sola's skyline. Crafted by Mahaprabhu Residency LLP.
         </p>
 
-        <!-- Live Concierge Status Indicator -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/50 border border-emerald-500/40 text-emerald-400 text-[11px] font-semibold">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -1755,14 +1780,13 @@
 
         <div>
           <p class="text-xs uppercase tracking-widest text-luxury-gold mb-2 font-semibold">Office & Site Location</p>
-          <a href="https://maps.app.goo.gl/nip9LvoDkG8MxWst5" target="_blank" class="text-xs sm:text-sm text-slate-200 font-medium hover:text-luxury-gold transition-colors flex items-start gap-2 group/addr">
+          <a href="https://maps.app.goo.gl/nip9LvoDkG8MxWst5" target="_blank" class="text-xs sm:text-sm text-slate-300 font-medium hover:text-luxury-gold transition-colors flex items-start gap-2 group/addr">
             <i data-lucide="map-pin" class="w-4 h-4 text-luxury-gold shrink-0 mt-0.5 group-hover/addr:animate-bounce"></i>
             <span>Harmony Harikesh<br>Science City Rd, near Super Bungalows, Sola, Ahmedabad, Gujarat 380060</span>
           </a>
         </div>
       </div>
 
-      <!-- Quick Directory -->
       <div class="md:col-span-3 space-y-4 footer-col">
         <h4 class="font-serif text-lg text-white font-semibold tracking-wider flex items-center gap-2">
           <span>Directory</span>
@@ -1778,14 +1802,12 @@
         </ul>
       </div>
 
-      <!-- Contact Directory & Action Cards -->
       <div class="md:col-span-4 space-y-4 footer-col">
         <h4 class="font-serif text-lg text-white font-semibold tracking-wider flex items-center gap-2">
           <span>Direct Enquiries</span>
           <span class="w-8 h-[1px] bg-luxury-gold/40"></span>
         </h4>
         <div class="space-y-3">
-          <!-- Phone Card -->
           <a href="tel:+919998906506" class="p-3.5 rounded-xl bg-white/5 hover:bg-luxury-gold/10 border border-white/10 hover:border-luxury-gold/50 flex items-center gap-3 transition-all duration-300 group">
             <div class="p-2 rounded-lg bg-luxury-gold/20 text-luxury-gold group-hover:scale-110 transition-transform">
               <i data-lucide="phone" class="w-4 h-4"></i>
@@ -1796,7 +1818,6 @@
             </div>
           </a>
 
-          <!-- Email Card -->
           <a href="mailto:marketing.harmonyharikesh2022@gmail.com" class="p-3.5 rounded-xl bg-white/5 hover:bg-luxury-gold/10 border border-white/10 hover:border-luxury-gold/50 flex items-center gap-3 transition-all duration-300 group">
             <div class="p-2 rounded-lg bg-luxury-gold/20 text-luxury-gold group-hover:scale-110 transition-transform">
               <i data-lucide="mail" class="w-4 h-4"></i>
@@ -1808,19 +1829,13 @@
           </a>
         </div>
       </div>
-
     </div>
 
-    <!-- Bottom Legals & Back to Top Link -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 md:mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-[11px] sm:text-xs text-slate-500 relative z-10">
       <p>&copy; 2026 Mahaprabhu Residency LLP. All Rights Reserved.</p>
       <div class="flex items-center space-x-6 mt-4 md:mt-0">
         <a href="#" class="hover:text-luxury-gold transition-colors">Disclaimer</a>
         <a href="#" class="hover:text-luxury-gold transition-colors">Privacy Policy</a>
-        <button onclick="scrollToTop()" class="hover:text-luxury-gold transition-colors inline-flex items-center gap-1 cursor-pointer">
-          <span>Back to top</span>
-          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
-        </button>
       </div>
     </div>
   </footer>
@@ -1936,10 +1951,10 @@
       particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
       const particleMat = new THREE.PointsMaterial({
-        color: 0xE8DCC4,
+        color: 0xFCD34D,
         size: isMobile ? 1.0 : 1.2,
         transparent: true,
-        opacity: 0.5,
+        opacity: 0.65,
         blending: THREE.AdditiveBlending
       });
       const particleCloud = new THREE.Points(particleGeo, particleMat);
@@ -2316,11 +2331,11 @@
       const btn3 = document.getElementById('btn-3bhk');
 
       if (type === '4bhk') {
-        btn4.className = 'px-5 sm:px-8 py-2.5 sm:py-3 text-xs md:text-sm font-bold uppercase tracking-wider rounded-lg transition-all duration-300 bg-luxury-gold text-luxury-bgDark cursor-pointer shadow-md';
-        btn3.className = 'px-5 sm:px-8 py-2.5 sm:py-3 text-xs md:text-sm font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-slate-400 hover:text-white cursor-pointer';
+        btn4.className = 'flex-1 sm:flex-initial px-4 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] cursor-pointer shadow-md text-center';
+        btn3.className = 'flex-1 sm:flex-initial px-4 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 text-slate-300 hover:text-white cursor-pointer text-center';
       } else {
-        btn3.className = 'px-5 sm:px-8 py-2.5 sm:py-3 text-xs md:text-sm font-bold uppercase tracking-wider rounded-lg transition-all duration-300 bg-luxury-gold text-luxury-bgDark cursor-pointer shadow-md';
-        btn4.className = 'px-5 sm:px-8 py-2.5 sm:py-3 text-xs md:text-sm font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-slate-400 hover:text-white cursor-pointer';
+        btn3.className = 'flex-1 sm:flex-initial px-4 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] cursor-pointer shadow-md text-center';
+        btn4.className = 'flex-1 sm:flex-initial px-4 sm:px-10 py-2.5 sm:py-3 text-[11px] sm:text-sm font-bold uppercase tracking-wider rounded-lg sm:rounded-xl transition-all duration-300 text-slate-300 hover:text-white cursor-pointer text-center';
       }
 
       if (wrapper) {
@@ -2701,6 +2716,50 @@
       });
     }
 
+    // In-Page Private Tour Booking Handler
+    function handleInpageTourSubmit(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('inpage-tour-form');
+      const success = document.getElementById('inpage-tour-success');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      if (submitBtn.disabled) return;
+      submitBtn.disabled = true;
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = `<span>Transmitting to WhatsApp...</span>`;
+
+      const name = document.getElementById('tour-name').value;
+      const phone = document.getElementById('tour-phone').value;
+      const email = document.getElementById('tour-email').value;
+      const layout = document.getElementById('tour-preference').value;
+      const date = document.getElementById('tour-date').value || 'Flexible';
+      const time = document.getElementById('tour-time').value || 'Flexible';
+      const msg = document.getElementById('tour-message').value || 'None';
+      
+      const message = `Hello Harmony Harikesh, I would like to schedule a Private Tour:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Layout:* ${layout === '4bhk' ? '4 BHK Sky Residence' : '3 BHK Sky Residence'}\n*Preferred Date:* ${date}\n*Preferred Time:* ${time}\n*Message:* ${msg}`;
+      const encodedText = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/919998906506?text=${encodedText}`;
+
+      window.open(whatsappUrl, '_blank');
+
+      const inpageWaBtn = document.getElementById('inpage-wa-btn');
+      if (inpageWaBtn) {
+        inpageWaBtn.href = whatsappUrl;
+      }
+
+      gsap.to(form, {
+        opacity: 0,
+        duration: 0.25,
+        onComplete: () => {
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+          gsap.fromTo(success, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+          if (window.lucide) lucide.createIcons();
+        }
+      });
+    }
+
     // Accordion Toggle
     function toggleAccordion(index) {
       const content = document.getElementById(`acc-content-${index}`);
@@ -2723,19 +2782,50 @@
       }
     }
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle with Scroll-Locking
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const btn = document.getElementById('mobile-menu-btn');
       if (!menu) return;
       menu.classList.toggle('hidden');
       const isHidden = menu.classList.contains('hidden');
+      
+      if (!isHidden) {
+        document.body.classList.add('overflow-hidden');
+        gsap.fromTo(menu, { opacity: 0, y: -10, scale: 0.98 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: 'power2.out' });
+      } else {
+        document.body.classList.remove('overflow-hidden');
+      }
+
       if (btn) {
         btn.innerHTML = isHidden ? '<i data-lucide="menu" class="w-6 h-6"></i>' : '<i data-lucide="x" class="w-6 h-6"></i>';
         if (window.lucide) lucide.createIcons();
       }
     }
     document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
+
+    // Lightbox Mobile Touch Swipe Gestures
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const galleryLightboxModal = document.getElementById('gallery-lightbox-modal');
+    if (galleryLightboxModal) {
+      galleryLightboxModal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      galleryLightboxModal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diffX = touchEndX - touchStartX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            navigateGallery(1); // Swipe left -> Next
+          } else {
+            navigateGallery(-1); // Swipe right -> Prev
+          }
+        }
+      }, { passive: true });
+    }
 
     // Smooth Anchor Scroll Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

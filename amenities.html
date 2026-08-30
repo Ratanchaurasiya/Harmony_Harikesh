@@ -7,7 +7,7 @@
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="Explore the full suite of ultra-luxury amenities at Harmony Harikesh, Sola, Ahmedabad. Featuring Sky Walk Bridge, Harikesh Clubhouse, Children's Creche, and Mind Games Lounge.">
-  <meta name="theme-color" content="#090D14">
+  <meta name="theme-color" content="#040711">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,12 +26,19 @@
           },
           colors: {
             luxury: {
-              gold: '#C5A368',
-              goldLight: '#E8DCC4',
-              bronze: '#B69D7A',
-              bgDark: '#090D14',
-              bgCard: '#161D2A',
-              accent: '#D9C5A0',
+              gold: '#D4AF37',
+              goldLight: '#FDF4DC',
+              goldPale: '#FFFDF9',
+              goldDark: '#8F6E14',
+              bronze: '#B8860B',
+              cyan: '#0EA5E9',
+              cyanLight: '#38BDF8',
+              emerald: '#10B981',
+              bgDark: '#030712',
+              bgCanvas: '#060B19',
+              bgCard: '#0B1326',
+              bgSurface: '#0F1A34',
+              accent: '#E5C378',
             }
           }
         }
@@ -48,26 +55,43 @@
   
   <style>
     :root {
-      --gold-primary: #C5A368;
-      --gold-light: #E8DCC4;
-      --gold-dark: #90764C;
-      --bg-dark: #090D14;
-      --bg-card: #161D2A;
+      --gold-primary: #D4AF37;
+      --gold-light: #FDF4DC;
+      --gold-dark: #8F6E14;
+      --cyan-light: #38BDF8;
+      --bg-dark: #030712;
+      --bg-canvas: #060B19;
+      --bg-card: #0B1326;
+      --bg-surface: #0F1A34;
     }
 
     html {
-      background-color: #090D14;
+      font-size: 16px;
+      background-color: #030712;
       color: #F8FAFC;
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (max-width: 640px) {
+      html {
+        font-size: 14.5px;
+      }
     }
 
     body {
-      background-color: #090D14;
+      background-color: #060B19;
       color: #F8FAFC;
       overflow-x: hidden;
+      width: 100%;
+      position: relative;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       cursor: auto;
+    }
+
+    button, a, input, select, textarea {
+      touch-action: manipulation;
     }
 
     /* Custom Scrollbar */
@@ -75,10 +99,10 @@
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #090D14;
+      background: #030712;
     }
     ::-webkit-scrollbar-thumb {
-      background: #C5A368;
+      background: linear-gradient(180deg, #D4AF37, #0EA5E9);
       border-radius: 4px;
     }
 
@@ -89,30 +113,30 @@
       left: 0;
       height: 3px;
       width: 0%;
-      background: linear-gradient(90deg, #B69D7A, #C5A368, #FFE8B8, #C5A368);
+      background: linear-gradient(90deg, #8F6E14, #D4AF37, #FDF4DC, #38BDF8);
       z-index: 1000;
-      box-shadow: 0 0 12px rgba(197, 163, 104, 0.8);
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.9);
       transition: width 0.1s ease-out;
       pointer-events: none;
     }
 
     /* Glassmorphism Classes */
     .glass-nav {
-      background: rgba(9, 13, 20, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(197, 163, 104, 0.2);
+      background: rgba(6, 11, 25, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     }
     .glass-card {
-      background: rgba(22, 29, 42, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(197, 163, 104, 0.2);
+      background: rgba(11, 19, 38, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
     }
 
     /* Text Gold Gradient */
     .gold-gradient-text {
-      background: linear-gradient(135deg, #FFF5DF 0%, #E8DCC4 30%, #C5A368 70%, #90764C 100%);
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDF4DC 25%, #D4AF37 65%, #C5A059 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -124,16 +148,16 @@
     }
     .spotlight-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(197, 163, 104, 0.65);
-      box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(197, 163, 104, 0.2);
+      border-color: rgba(212, 175, 55, 0.55);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.2);
     }
 
     /* Shimmering Badge */
     .gold-glow-badge {
-      box-shadow: 0 0 20px rgba(197, 163, 104, 0.25);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
     }
 
-    /* Luxury Gold Button Shimmering Sheen (Subtle & Purposeful) */
+    /* Luxury Gold Button Shimmering Sheen */
     @keyframes goldSheen {
       0% { transform: translateX(-120%) skewX(-20deg); }
       30%, 100% { transform: translateX(220%) skewX(-20deg); }
@@ -152,7 +176,7 @@
       background: linear-gradient(
         90deg,
         transparent 0%,
-        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0.4) 50%,
         transparent 100%
       );
       transform: translateX(-120%) skewX(-20deg);
@@ -160,41 +184,85 @@
       pointer-events: none;
     }
 
-    /* Smooth Mobile Tap & Haptic Feedback */
-    @media (hover: none) and (pointer: coarse) {
-      .spotlight-card:active {
-        transform: scale(0.985);
-        transition: transform 0.15s ease;
-      }
-      button:active, a:active {
-        transform: scale(0.97);
-        transition: transform 0.12s ease;
-      }
-    }
-
-    /* Safe padding for bottom bar on mobile phones */
     .safe-area-pb {
       padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
     }
+
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 5.5rem;
+      }
+      #navbar-wrapper {
+        top: 0.5rem !important;
+        left: 0.5rem !important;
+        right: 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+        max-width: 100% !important;
+      }
+      #main-nav {
+        padding: 0.35rem 0.65rem !important;
+      }
+      #page-title, h1 {
+        font-size: clamp(1.85rem, 6.5vw, 3rem) !important;
+        line-height: 1.25 !important;
+      }
+      #page-subtext {
+        font-size: 0.85rem !important;
+        line-height: 1.55 !important;
+      }
+      #amenities-container {
+        padding-top: 2rem !important;
+        padding-bottom: 3rem !important;
+      }
+      .amenity-card-item .relative {
+        max-height: 240px !important;
+      }
+      .amenity-card-item a {
+        min-height: 46px !important;
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    }
   </style>
 </head>
-<body class="font-sans antialiased bg-[#090D14] text-slate-100 selection:bg-luxury-gold selection:text-luxury-bgDark">
+<body class="font-sans antialiased bg-[#060B19] text-slate-100 selection:bg-luxury-gold selection:text-luxury-bgDark">
 
   <!-- Top Scroll Progress Bar -->
   <div id="scroll-progress"></div>
 
   <!-- Floating Minimal Luxury Capsule Navbar -->
   <header class="fixed top-4 inset-x-0 mx-auto max-w-5xl w-[92%] z-50 transition-all duration-300" id="navbar-wrapper">
-    <nav class="bg-[#090E18]/90 backdrop-blur-xl border border-luxury-gold/30 rounded-full px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_20px_rgba(197,163,104,0.12)] transition-all duration-300" id="main-nav">
+    <nav class="bg-[#060B19]/85 backdrop-blur-2xl border border-white/10 rounded-full px-4 sm:px-7 py-2 sm:py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_20px_rgba(212,175,55,0.12)] transition-all duration-300" id="main-nav">
       
       <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-2.5 group cursor-pointer">
-        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-luxury-gold/15 border border-luxury-gold/60 flex items-center justify-center text-luxury-gold group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(197,163,104,0.3)]">
+      <a href="index.html" class="flex items-center gap-2 group cursor-pointer">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-luxury-gold/15 border border-luxury-gold/60 flex items-center justify-center text-luxury-gold group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(212,175,55,0.35)]">
           <span class="font-serif text-sm sm:text-base font-bold gold-gradient-text">H</span>
         </div>
         <div class="flex flex-col">
-          <span class="font-serif text-base sm:text-lg font-bold tracking-widest gold-gradient-text leading-none">HARMONY</span>
-          <span class="text-[8px] uppercase tracking-[0.3em] text-luxury-gold/80 font-semibold mt-0.5">Harikesh</span>
+          <span class="font-serif text-sm sm:text-lg font-bold tracking-widest gold-gradient-text leading-none">HARMONY</span>
+          <span class="text-[7.5px] sm:text-[8px] uppercase tracking-[0.3em] text-luxury-gold/90 font-semibold mt-0.5">Harikesh</span>
         </div>
       </a>
       
@@ -202,73 +270,73 @@
       <div class="hidden md:flex items-center space-x-7 lg:space-x-8">
         <a href="index.html#about" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Architecture</a>
         <a href="index.html#tower-odyssey" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">The Ascent</a>
-        <a href="index.html#amenities" class="text-xs font-semibold uppercase tracking-widest text-luxury-gold transition-colors py-1">Amenities</a>
+        <a href="amenities.html" class="text-xs font-semibold uppercase tracking-widest text-luxury-gold font-bold transition-colors py-1">Amenities</a>
         <a href="index.html#floor-plans" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Floor Plans</a>
+        <a href="gallery.html" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Gallery</a>
         <a href="index.html#location" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Location</a>
       </div>
 
       <!-- Action Button -->
-      <div class="flex items-center space-x-3">
-        <a href="index.html" class="inline-flex items-center gap-2 px-5 py-2 sm:py-2.5 bg-gradient-to-r from-luxury-gold via-[#D4B57E] to-luxury-gold hover:opacity-95 text-luxury-bgDark font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-lg shadow-luxury-gold/25 hover:scale-105 active:scale-95">
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <a href="index.html" class="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest rounded-full transition-all shadow-lg shadow-luxury-gold/25 hover:scale-105 active:scale-95 min-h-[38px] sm:min-h-[44px]">
           <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-          <span>Back to Home</span>
+          <span><span class="hidden xs:inline sm:inline">Back to </span>Home</span>
         </a>
       </div>
     </nav>
   </header>
 
-  <!-- Hero Banner with Particle Glow -->
-  <header class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-[#121824] to-[#090D14] border-b border-luxury-gold/10 text-center px-4">
-    <!-- Ambient Gold Glow Orb -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-luxury-gold/10 blur-[130px] rounded-full pointer-events-none"></div>
+  <!-- Hero Banner with Soft Ambient Glow -->
+  <header class="relative pt-28 pb-12 sm:pt-36 sm:pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#040711] border-b border-white/5 text-center px-4">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-luxury-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
 
-    <div class="max-w-4xl mx-auto space-y-4 relative z-10">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-luxury-gold/40 text-luxury-gold text-xs uppercase tracking-[0.25em] font-bold gold-glow-badge">
+    <div class="max-w-4xl mx-auto space-y-3 sm:space-y-4 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1326] border border-luxury-gold/40 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-bold gold-glow-badge">
         <span class="w-2 h-2 rounded-full bg-luxury-gold animate-ping"></span>
         <span>Exclusive Resident Sanctuaries</span>
       </div>
-      <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-white tracking-wide" id="page-title">
+      <h1 class="font-serif text-2xl sm:text-5xl md:text-6xl font-bold text-white tracking-wide" id="page-title">
         The Full Amenities Showcase
       </h1>
-      <p class="text-slate-300 text-sm sm:text-base font-light max-w-2xl mx-auto leading-relaxed" id="page-subtext">
+      <p class="text-slate-300 text-xs sm:text-base font-light max-w-2xl mx-auto leading-relaxed px-2" id="page-subtext">
         Every detail at Harmony Harikesh is curated for high-altitude leisure, wellness, family recreation, and private community celebrations.
       </p>
 
-      <!-- Category Filter Tabs -->
-      <div class="pt-6 flex flex-wrap justify-center gap-2 max-w-2xl mx-auto" id="amenity-filters">
-        <button onclick="filterAmenities('all')" class="filter-btn active px-4 py-2 bg-luxury-gold text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md">All (5)</button>
-        <button onclick="filterAmenities('sky')" class="filter-btn px-4 py-2 bg-[#161D2A] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all">Sky Life</button>
-        <button onclick="filterAmenities('club')" class="filter-btn px-4 py-2 bg-[#161D2A] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all">Club & Social</button>
-        <button onclick="filterAmenities('kids')" class="filter-btn px-4 py-2 bg-[#161D2A] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all">Junior Care</button>
-        <button onclick="filterAmenities('sports')" class="filter-btn px-4 py-2 bg-[#161D2A] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all">Games & Mind</button>
+      <!-- Category Filter Tabs (Swipeable on Mobile) -->
+      <div class="pt-4 sm:pt-6 overflow-x-auto no-scrollbar pb-2 px-2 flex sm:flex-wrap sm:justify-center gap-2 max-w-2xl mx-auto" id="amenity-filters">
+        <button onclick="filterAmenities('all')" class="filter-btn active shrink-0 px-4 py-2.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md min-h-[42px]">All (5)</button>
+        <button onclick="filterAmenities('sky')" class="filter-btn shrink-0 px-4 py-2.5 bg-[#0B1326] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm min-h-[42px]">Sky Life</button>
+        <button onclick="filterAmenities('club')" class="filter-btn shrink-0 px-4 py-2.5 bg-[#0B1326] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm min-h-[42px]">Club & Social</button>
+        <button onclick="filterAmenities('kids')" class="filter-btn shrink-0 px-4 py-2.5 bg-[#0B1326] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm min-h-[42px]">Junior Care</button>
+        <button onclick="filterAmenities('sports')" class="filter-btn shrink-0 px-4 py-2.5 bg-[#0B1326] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm min-h-[42px]">Games & Mind</button>
       </div>
     </div>
   </header>
 
   <!-- Showcase List -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 space-y-16 md:space-y-24" id="amenities-container">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-24 space-y-10 sm:space-y-16 md:space-y-24" id="amenities-container">
     
     <!-- 1. Sky Walk Bridge -->
-    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center bg-[#121824] rounded-3xl p-6 sm:p-10 border border-luxury-gold/20 shadow-2xl spotlight-card" data-cat="sky">
-      <div class="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[4/3] bg-black">
-        <img src="./assets/images/sky-deck-aerial.jpg" alt="Sky Walk Bridge" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-        <div class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
+    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 md:gap-12 items-center bg-[#0B1326]/90 rounded-2xl sm:rounded-3xl p-5 sm:p-10 border border-white/10 shadow-2xl hover:border-luxury-gold spotlight-card" data-cat="sky">
+      <div class="lg:col-span-6 relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] bg-black">
+        <img src="./assets/images/sky-deck-aerial.jpg" alt="Sky Walk Bridge" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+        <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/50 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-md">
           High-Altitude Sky Life
         </div>
       </div>
-      <div class="lg:col-span-6 space-y-4">
-        <span class="text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold">Signature Landmark</span>
-        <h2 class="font-serif text-2xl sm:text-4xl text-white font-bold">Sky Walk & Observation Deck</h2>
+      <div class="lg:col-span-6 space-y-3 sm:space-y-4">
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-luxury-gold font-bold">Signature Landmark</span>
+        <h2 class="font-serif text-xl sm:text-3xl md:text-4xl text-white font-bold">Sky Walk & Observation Deck</h2>
         <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
           Suspended high in the skyline linking the towers, the signature Sky Walk offers dynamic 360-degree vistas across Ahmedabad. Engineered with wind-tunnel certified resilience by RWDI.
         </p>
-        <ul class="space-y-2 text-xs text-slate-300 pt-2">
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Suspended mid-air connection bridge</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Ambient evening up-lighting</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> RWDI Wind-tunnel tested safety</li>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs text-slate-300 pt-1 sm:pt-2">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Suspended mid-air connection bridge</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Ambient evening up-lighting</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> RWDI Wind-tunnel tested safety</li>
         </ul>
-        <div class="pt-3">
-          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Sky%20Walk." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-luxury-gold/20 border border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl transition-all">
+        <div class="pt-2 sm:pt-3">
+          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Sky%20Walk." target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold hover:bg-luxury-gold hover:text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md min-h-[44px]">
             <span>Enquire on WhatsApp</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
@@ -277,26 +345,26 @@
     </article>
 
     <!-- 2. Clubhouse Lounge -->
-    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center bg-[#121824] rounded-3xl p-6 sm:p-10 border border-luxury-gold/20 shadow-2xl spotlight-card" data-cat="club">
-      <div class="lg:col-span-6 lg:order-2 relative rounded-2xl overflow-hidden aspect-[4/3] bg-black">
-        <img src="./assets/images/clubhouse-lounge.jpg" alt="Clubhouse Lounge" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-        <div class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
+    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 md:gap-12 items-center bg-[#0B1326]/90 rounded-2xl sm:rounded-3xl p-5 sm:p-10 border border-white/10 shadow-2xl hover:border-luxury-gold spotlight-card" data-cat="club">
+      <div class="lg:col-span-6 lg:order-2 relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] bg-black">
+        <img src="./assets/images/clubhouse-lounge.jpg" alt="Clubhouse Lounge" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+        <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/50 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-md">
           Social Hub
         </div>
       </div>
-      <div class="lg:col-span-6 lg:order-1 space-y-4">
-        <span class="text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold">Resident Community</span>
-        <h2 class="font-serif text-2xl sm:text-4xl text-white font-bold">The Harikesh Clubhouse & Lounge</h2>
+      <div class="lg:col-span-6 lg:order-1 space-y-3 sm:space-y-4">
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-luxury-gold font-bold">Resident Community</span>
+        <h2 class="font-serif text-xl sm:text-3xl md:text-4xl text-white font-bold">The Harikesh Clubhouse & Lounge</h2>
         <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
           Sophisticated private club lounge for resident networking, business executive hubs, private coffee meetings, and grand family celebrations with Italian marble architecture.
         </p>
-        <ul class="space-y-2 text-xs text-slate-300 pt-2">
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Multi-purpose banquet hall</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Private business coffee lounge</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Italian marble luxury finishes</li>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs text-slate-300 pt-1 sm:pt-2">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Multi-purpose banquet hall</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Private business coffee lounge</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Italian marble luxury finishes</li>
         </ul>
-        <div class="pt-3">
-          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Clubhouse." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-luxury-gold/20 border border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl transition-all">
+        <div class="pt-2 sm:pt-3">
+          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Clubhouse." target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold hover:bg-luxury-gold hover:text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md min-h-[44px]">
             <span>Enquire on WhatsApp</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
@@ -305,26 +373,26 @@
     </article>
 
     <!-- 3. Children's Creche -->
-    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center bg-[#121824] rounded-3xl p-6 sm:p-10 border border-luxury-gold/20 shadow-2xl spotlight-card" data-cat="kids">
-      <div class="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[4/3] bg-black">
-        <img src="./assets/images/kids-creche.jpg" alt="Children Play Area" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-        <div class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
+    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 md:gap-12 items-center bg-[#0B1326]/90 rounded-2xl sm:rounded-3xl p-5 sm:p-10 border border-white/10 shadow-2xl hover:border-luxury-gold spotlight-card" data-cat="kids">
+      <div class="lg:col-span-6 relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] bg-black">
+        <img src="./assets/images/kids-creche.jpg" alt="Children Play Area" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+        <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/50 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-md">
           Junior Care
         </div>
       </div>
-      <div class="lg:col-span-6 space-y-4">
-        <span class="text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold">Junior Sanctuary</span>
-        <h2 class="font-serif text-2xl sm:text-4xl text-white font-bold">Children's Creche & Play Zone</h2>
+      <div class="lg:col-span-6 space-y-3 sm:space-y-4">
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-luxury-gold font-bold">Junior Sanctuary</span>
+        <h2 class="font-serif text-xl sm:text-3xl md:text-4xl text-white font-bold">Children's Creche & Play Zone</h2>
         <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
           Safe, air-conditioned playroom with soft padding, Montessori toys, and 24/7 CCTV surveillance connection for absolute peace of mind.
         </p>
-        <ul class="space-y-2 text-xs text-slate-300 pt-2">
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Air-conditioned indoor playroom</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Educational Montessori toys</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> 24/7 Live CCTV security</li>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs text-slate-300 pt-1 sm:pt-2">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Air-conditioned indoor playroom</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Educational Montessori toys</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> 24/7 Live CCTV security</li>
         </ul>
-        <div class="pt-3">
-          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Kids%20Creche." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-luxury-gold/20 border border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl transition-all">
+        <div class="pt-2 sm:pt-3">
+          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Kids%20Creche." target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold hover:bg-luxury-gold hover:text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md min-h-[44px]">
             <span>Enquire on WhatsApp</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
@@ -333,26 +401,26 @@
     </article>
 
     <!-- 4. Indoor Games -->
-    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center bg-[#121824] rounded-3xl p-6 sm:p-10 border border-luxury-gold/20 shadow-2xl spotlight-card" data-cat="sports">
-      <div class="lg:col-span-6 lg:order-2 relative rounded-2xl overflow-hidden aspect-[4/3] bg-black">
-        <img src="./assets/images/amenity-indoor-games.png" alt="Indoor Games Activity Room" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-        <div class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
+    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 md:gap-12 items-center bg-[#0B1326]/90 rounded-2xl sm:rounded-3xl p-5 sm:p-10 border border-white/10 shadow-2xl hover:border-luxury-gold spotlight-card" data-cat="sports">
+      <div class="lg:col-span-6 lg:order-2 relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] bg-black">
+        <img src="./assets/images/amenity-indoor-games.png" alt="Indoor Games Activity Room" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+        <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/50 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-md">
           Active Recreation
         </div>
       </div>
-      <div class="lg:col-span-6 lg:order-1 space-y-4">
-        <span class="text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold">Indoor Recreation</span>
-        <h2 class="font-serif text-2xl sm:text-4xl text-white font-bold">Indoor Games & Activity Room</h2>
+      <div class="lg:col-span-6 lg:order-1 space-y-3 sm:space-y-4">
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-luxury-gold font-bold">Indoor Recreation</span>
+        <h2 class="font-serif text-xl sm:text-3xl md:text-4xl text-white font-bold">Indoor Games & Activity Room</h2>
         <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
           Equipped with professional tournament-grade table tennis, handcrafted polished wooden carrom tables, and colorful kids indoor slide zones for all-weather recreation.
         </p>
-        <ul class="space-y-2 text-xs text-slate-300 pt-2">
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Professional-grade table tennis tables</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Handcrafted wood carrom boards</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Climate-controlled game room</li>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs text-slate-300 pt-1 sm:pt-2">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Professional-grade table tennis tables</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Handcrafted wood carrom boards</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Climate-controlled game room</li>
         </ul>
-        <div class="pt-3">
-          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Indoor%20Games." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-luxury-gold/20 border border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl transition-all">
+        <div class="pt-2 sm:pt-3">
+          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Indoor%20Games." target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold hover:bg-luxury-gold hover:text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md min-h-[44px]">
             <span>Enquire on WhatsApp</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
@@ -361,26 +429,26 @@
     </article>
 
     <!-- 5. Mind Games & Chess -->
-    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center bg-[#121824] rounded-3xl p-6 sm:p-10 border border-luxury-gold/20 shadow-2xl spotlight-card" data-cat="sports">
-      <div class="lg:col-span-6 relative rounded-2xl overflow-hidden aspect-[4/3] bg-black">
-        <img src="./assets/images/amenity-chess.jpg" alt="Chess and Mind Lounge" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-        <div class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/40 rounded-full text-[10px] uppercase tracking-widest text-luxury-gold font-bold">
+    <article class="amenity-card-item grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 md:gap-12 items-center bg-[#0B1326]/90 rounded-2xl sm:rounded-3xl p-5 sm:p-10 border border-white/10 shadow-2xl hover:border-luxury-gold spotlight-card" data-cat="sports">
+      <div class="lg:col-span-6 relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] bg-black">
+        <img src="./assets/images/amenity-chess.jpg" alt="Chess and Mind Lounge" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+        <div class="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1 bg-black/80 backdrop-blur-md border border-luxury-gold/50 rounded-full text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-gold font-bold shadow-md">
           Cognitive Sports
         </div>
       </div>
-      <div class="lg:col-span-6 space-y-4">
-        <span class="text-xs uppercase tracking-[0.3em] text-luxury-gold font-bold">Focus & Strategy</span>
-        <h2 class="font-serif text-2xl sm:text-4xl text-white font-bold">Mind Games & Chess Lounge</h2>
+      <div class="lg:col-span-6 space-y-3 sm:space-y-4">
+        <span class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-luxury-gold font-bold">Focus & Strategy</span>
+        <h2 class="font-serif text-xl sm:text-3xl md:text-4xl text-white font-bold">Mind Games & Chess Lounge</h2>
         <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
           Dedicated cognitive sports sanctuary with custom inlaid tables, official tournament clocks, and acoustic isolation for inter-society board game championships.
         </p>
-        <ul class="space-y-2 text-xs text-slate-300 pt-2">
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Official tournament chess tables</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Tournament-spec clocks & weighted pieces</li>
-          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold"></i> Acoustic isolation for deep focus</li>
+        <ul class="space-y-1.5 sm:space-y-2 text-xs text-slate-300 pt-1 sm:pt-2">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Official tournament chess tables</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Tournament-spec clocks & weighted pieces</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-luxury-gold shrink-0"></i> Acoustic isolation for deep focus</li>
         </ul>
-        <div class="pt-3">
-          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Chess%20Lounge." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-luxury-gold/20 border border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl transition-all">
+        <div class="pt-2 sm:pt-3">
+          <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Chess%20Lounge." target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold hover:bg-luxury-gold hover:text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md min-h-[44px]">
             <span>Enquire on WhatsApp</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
@@ -391,27 +459,22 @@
   </main>
 
   <!-- Advanced Animated Luxury Footer -->
-  <footer class="bg-[#080B10] border-t border-luxury-gold/30 pt-16 pb-28 md:py-24 text-slate-400 relative overflow-hidden" id="main-footer">
-    
-    <!-- Animated Glowing Aurora Top Border Line -->
+  <footer class="bg-[#02040A] border-t border-luxury-gold/20 pt-14 pb-24 md:py-24 text-slate-400 relative overflow-hidden" id="main-footer">
     <div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-luxury-gold to-transparent opacity-80 animate-pulse"></div>
-
-    <!-- Ambient Gold Radial Backdrop Glow -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-luxury-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 relative z-10">
       
       <!-- Brand & Description -->
-      <div class="md:col-span-5 space-y-5 footer-col">
+      <div class="md:col-span-5 space-y-4 sm:space-y-5 footer-col">
         <a href="index.html" class="flex flex-col group cursor-pointer">
-          <span class="font-serif text-3xl font-bold tracking-widest gold-gradient-text transition-all duration-300 group-hover:scale-105 inline-block origin-left">HARMONY</span>
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-widest gold-gradient-text transition-all duration-300 group-hover:scale-105 inline-block origin-left">HARMONY</span>
           <span class="text-xs uppercase tracking-[0.3em] text-luxury-gold/90 font-semibold">Harikesh</span>
         </a>
         <p class="text-xs sm:text-sm font-light leading-relaxed max-w-sm text-slate-400">
           Harmony Harikesh brings world-class construction, design aesthetics, and exclusive structural safety credentials to Sola's skyline. Crafted by Mahaprabhu Residency LLP.
         </p>
 
-        <!-- Live Concierge Status Indicator -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/50 border border-emerald-500/40 text-emerald-400 text-[11px] font-semibold">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -422,42 +485,44 @@
       </div>
 
       <!-- Quick Directory -->
-      <div class="md:col-span-3 space-y-4 footer-col">
-        <h4 class="font-serif text-lg text-white font-semibold tracking-wider flex items-center gap-2">
+      <div class="md:col-span-3 space-y-3 sm:space-y-4 footer-col">
+        <h4 class="font-serif text-base sm:text-lg text-white font-semibold tracking-wider flex items-center gap-2">
           <span>Navigation</span>
           <span class="w-8 h-[1px] bg-luxury-gold/40"></span>
         </h4>
-        <ul class="space-y-3 text-xs sm:text-sm font-light">
+        <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm font-light">
           <li><a href="index.html#about" class="hover:text-luxury-gold transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1.5 group"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity"></i> Architectural Overview</a></li>
           <li><a href="index.html#tower-odyssey" class="hover:text-luxury-gold transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1.5 group"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity"></i> The 31-Storey Ascent</a></li>
-          <li><a href="index.html#amenities" class="hover:text-luxury-gold transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1.5 group"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity"></i> Amenities & Lifestyle</a></li>
+          <li><a href="amenities.html" class="hover:text-luxury-gold transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1.5 text-luxury-gold font-semibold group"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity"></i> Amenities & Lifestyle</a></li>
           <li><a href="index.html#floor-plans" class="hover:text-luxury-gold transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1.5 group"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity"></i> 4 & 3 BHK Layouts</a></li>
+          <li><a href="gallery.html" class="hover:text-luxury-gold transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1.5 text-luxury-gold font-semibold group"><i data-lucide="arrow-right" class="w-3.5 h-3.5 text-luxury-gold group-hover:translate-x-1 transition-transform"></i> Architectural Gallery Page</a></li>
           <li><a href="index.html#location" class="hover:text-luxury-gold transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1.5 group"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-luxury-gold opacity-0 group-hover:opacity-100 transition-opacity"></i> Proximity Radar & Map</a></li>
         </ul>
       </div>
 
       <!-- Direct Contact Cards -->
-      <div class="md:col-span-4 space-y-4 footer-col">
-        <h4 class="font-serif text-lg text-white font-semibold tracking-wider flex items-center gap-2">
+      <div class="md:col-span-4 space-y-3 sm:space-y-4 footer-col">
+        <h4 class="font-serif text-base sm:text-lg text-white font-semibold tracking-wider flex items-center gap-2">
           <span>Direct Enquiries</span>
           <span class="w-8 h-[1px] bg-luxury-gold/40"></span>
         </h4>
-        <div class="space-y-3">
-          <a href="tel:+919998906506" class="p-3.5 rounded-xl bg-white/5 hover:bg-luxury-gold/10 border border-white/10 hover:border-luxury-gold/50 flex items-center gap-3 transition-all duration-300 group">
+        <div class="space-y-2.5 sm:space-y-3">
+          <a href="tel:+919998906506" class="p-3 sm:p-3.5 rounded-xl bg-white/5 hover:bg-luxury-gold/10 border border-white/10 hover:border-luxury-gold/50 flex items-center gap-3 transition-all duration-300 group">
             <div class="p-2 rounded-lg bg-luxury-gold/20 text-luxury-gold group-hover:scale-110 transition-transform">
               <i data-lucide="phone" class="w-4 h-4"></i>
             </div>
             <div>
-              <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Call Concierge</p>
+              <p class="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-400 font-bold">Call Concierge</p>
               <p class="text-xs sm:text-sm font-semibold text-white group-hover:text-luxury-gold transition-colors">+91 99989 06506</p>
             </div>
           </a>
-          <a href="mailto:marketing.harmonyharikesh2022@gmail.com" class="p-3.5 rounded-xl bg-white/5 hover:bg-luxury-gold/10 border border-white/10 hover:border-luxury-gold/50 flex items-center gap-3 transition-all duration-300 group">
+
+          <a href="mailto:marketing.harmonyharikesh2022@gmail.com" class="p-3 sm:p-3.5 rounded-xl bg-white/5 hover:bg-luxury-gold/10 border border-white/10 hover:border-luxury-gold/50 flex items-center gap-3 transition-all duration-300 group">
             <div class="p-2 rounded-lg bg-luxury-gold/20 text-luxury-gold group-hover:scale-110 transition-transform">
               <i data-lucide="mail" class="w-4 h-4"></i>
             </div>
             <div>
-              <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Official Sales Desk</p>
+              <p class="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-400 font-bold">Official Sales Desk</p>
               <p class="text-[11px] sm:text-xs font-semibold text-white group-hover:text-luxury-gold transition-colors break-all">marketing.harmonyharikesh2022@gmail.com</p>
             </div>
           </a>
@@ -467,14 +532,29 @@
     </div>
 
     <!-- Bottom Legals -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 md:mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-[11px] sm:text-xs text-slate-500 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 md:mt-16 pt-5 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-[11px] sm:text-xs text-slate-500 relative z-10 gap-3">
       <p>&copy; 2026 Mahaprabhu Residency LLP. All Rights Reserved.</p>
-      <div class="flex items-center space-x-6 mt-4 md:mt-0">
+      <div class="flex items-center space-x-6">
         <a href="#" class="hover:text-luxury-gold transition-colors">Disclaimer</a>
         <a href="#" class="hover:text-luxury-gold transition-colors">Privacy Policy</a>
       </div>
     </div>
   </footer>
+
+  <!-- FLOATING QUICK CONVERSION DOCK FOR MOBILE PHONES -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#060B19]/95 backdrop-blur-xl border-t border-white/10 px-4 py-2.5 safe-area-pb shadow-[0_-10px_25px_rgba(0,0,0,0.8)] flex items-center justify-between gap-2.5">
+    <a href="tel:+919998906506" class="flex-1 py-3 bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider rounded-xl border border-white/10 flex items-center justify-center gap-1.5 transition-transform active:scale-95 min-h-[46px]">
+      <i data-lucide="phone" class="w-4 h-4 text-luxury-gold"></i>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20want%20to%20enquire%20about%20the%20Amenities." target="_blank" class="flex-1 py-3 bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-[#25D366]/20 transition-transform active:scale-95 min-h-[46px]">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.457 5.704 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="index.html#floor-plans" class="btn-gold-shimmer flex-1 py-3 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-luxury-gold/20 flex items-center justify-center transition-transform active:scale-95 cursor-pointer min-h-[46px]">
+      <span>Floor Plans</span>
+    </a>
+  </div>
 
   <!-- Native JavaScript System -->
   <script>
@@ -495,13 +575,13 @@
 
     gsap.utils.toArray('.amenity-card-item').forEach(card => {
       gsap.from(card, {
-        y: 45,
+        y: 40,
         opacity: 0,
-        duration: 0.9,
+        duration: 0.85,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: card,
-          start: 'top 85%',
+          start: 'top 88%',
           once: true
         }
       });
@@ -511,9 +591,9 @@
     function filterAmenities(category) {
       const btns = document.querySelectorAll('.filter-btn');
       btns.forEach(b => {
-        b.className = 'filter-btn px-4 py-2 bg-[#161D2A] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all';
+        b.className = 'filter-btn shrink-0 px-4 py-2.5 bg-[#0B1326] text-slate-300 hover:text-white border border-white/10 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm min-h-[42px]';
       });
-      event.target.className = 'filter-btn active px-4 py-2 bg-luxury-gold text-luxury-bgDark font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md';
+      event.target.className = 'filter-btn active shrink-0 px-4 py-2.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md min-h-[42px]';
 
       const cards = document.querySelectorAll('.amenity-card-item');
       cards.forEach(card => {
