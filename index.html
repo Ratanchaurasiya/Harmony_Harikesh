@@ -1324,19 +1324,98 @@
         <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
       </div>
 
-      <!-- Luxury Form Card Container -->
-      <div class="spotlight-card bg-[#0B1326]/90 border border-luxury-gold/30 rounded-3xl p-6 sm:p-10 md:p-14 shadow-2xl">
-        <form id="inpage-tour-form" onsubmit="handleInpageTourSubmit(event)" class="space-y-5">
+      <!-- Luxury Experience Showcase Card (Replaces giant inline form) -->
+      <div class="spotlight-card bg-gradient-to-b from-[#0B1326] to-[#060B18] border border-luxury-gold/30 rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl text-center relative overflow-hidden">
+        
+        <!-- Ambient Decorative Lighting -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-luxury-gold/15 blur-3xl rounded-full pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto space-y-8">
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <!-- VIP Experience Feature Badges -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#040711]/80 border border-white/10 hover:border-luxury-gold/40 transition-all duration-300 shadow-md">
+              <div class="w-10 h-10 rounded-xl bg-luxury-gold/15 text-luxury-gold flex items-center justify-center mb-3">
+                <i data-lucide="building" class="w-5 h-5"></i>
+              </div>
+              <h4 class="font-serif text-sm sm:text-base font-bold text-white mb-1">Architecture Walkthrough</h4>
+              <p class="text-[11px] text-slate-400 font-light leading-relaxed">Exclusive on-site 1-on-1 walkthrough of the 31-storey engineering profile.</p>
+            </div>
+
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#040711]/80 border border-white/10 hover:border-luxury-gold/40 transition-all duration-300 shadow-md">
+              <div class="w-10 h-10 rounded-xl bg-luxury-gold/15 text-luxury-gold flex items-center justify-center mb-3">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <h4 class="font-serif text-sm sm:text-base font-bold text-white mb-1">Skywalk & Views</h4>
+              <p class="text-[11px] text-slate-400 font-light leading-relaxed">Level 15 suspended bridge and high-altitude panoramic horizon previews.</p>
+            </div>
+
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#040711]/80 border border-white/10 hover:border-luxury-gold/40 transition-all duration-300 shadow-md">
+              <div class="w-10 h-10 rounded-xl bg-luxury-gold/15 text-luxury-gold flex items-center justify-center mb-3">
+                <i data-lucide="coffee" class="w-5 h-5"></i>
+              </div>
+              <h4 class="font-serif text-sm sm:text-base font-bold text-white mb-1">Concierge Hospitality</h4>
+              <p class="text-[11px] text-slate-400 font-light leading-relaxed">Private lounge briefing, physical blueprints, and refreshments provided.</p>
+            </div>
+          </div>
+
+          <!-- Schedule Tour CTA Button -->
+          <div class="pt-2 flex flex-col items-center justify-center space-y-3">
+            <button onclick="openTourModal()" 
+                    class="btn-gold-shimmer px-8 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 rounded-2xl shadow-2xl shadow-luxury-gold/40 cursor-pointer flex items-center justify-center gap-3 hover:scale-105 active:scale-95">
+              <i data-lucide="calendar-check" class="w-5 h-5"></i>
+              <span>Schedule a Private Tour</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </button>
+            <p class="text-[11px] text-slate-400 font-light">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 inline text-luxury-gold mr-1"></i> Complimentary valet parking & bespoke private briefing
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STAGE 9: MODALS & LIGHTBOXES -->
+
+  <!-- Dedicated Private Tour Booking Modal -->
+  <div id="tour-modal" class="fixed inset-0 z-[105] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl transition-opacity duration-300">
+    <div class="w-full max-w-2xl bg-[#070D1C] rounded-3xl overflow-hidden relative shadow-2xl border border-luxury-gold/50 scale-95 transition-transform duration-300 max-h-[92vh] flex flex-col" id="tour-modal-container">
+      
+      <!-- Top Decorative Ambient Glow -->
+      <div class="absolute -top-24 -right-24 w-60 h-60 bg-luxury-gold/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Close Button -->
+      <button onclick="closeTourModal()" class="absolute top-4 sm:top-5 right-4 sm:right-5 text-slate-400 hover:text-white transition-colors p-2.5 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 cursor-pointer z-20" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="p-6 sm:p-8 pb-3 sm:pb-4 border-b border-white/10 relative z-10">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-luxury-gold/15 border border-luxury-gold/30 text-luxury-gold text-[10px] uppercase tracking-widest font-bold mb-2">
+          <i data-lucide="calendar" class="w-3 h-3 text-luxury-gold"></i>
+          <span>VIP On-Site Experience</span>
+        </div>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-wide">Schedule Private Tour</h3>
+        <p class="text-xs text-slate-300 mt-1 font-light">Book an exclusive briefing, suspended skywalk walkthrough, and floor plan review.</p>
+      </div>
+
+      <!-- Modal Scrollable Content -->
+      <div class="p-6 sm:p-8 overflow-y-auto custom-scrollbar flex-1 relative z-10">
+        <form id="tour-booking-form" onsubmit="handleTourModalSubmit(event)" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
                 <i data-lucide="user" class="w-3.5 h-3.5 text-luxury-gold"></i> Full Name <span class="text-luxury-gold">*</span>
               </label>
               <input type="text" 
-                     id="tour-name" 
+                     id="tour-modal-name" 
                      required 
-                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                     class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
                      placeholder="e.g. Ratan Patel">
             </div>
 
@@ -1345,22 +1424,22 @@
                 <i data-lucide="phone" class="w-3.5 h-3.5 text-luxury-gold"></i> Phone Number <span class="text-luxury-gold">*</span>
               </label>
               <input type="tel" 
-                     id="tour-phone" 
+                     id="tour-modal-phone" 
                      required 
-                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                     class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
                      placeholder="+91 98765 43210">
             </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
                 <i data-lucide="mail" class="w-3.5 h-3.5 text-luxury-gold"></i> Email Address <span class="text-luxury-gold">*</span>
               </label>
               <input type="email" 
-                     id="tour-email" 
+                     id="tour-modal-email" 
                      required 
-                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                     class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
                      placeholder="e.g. ratan@example.com">
             </div>
 
@@ -1369,8 +1448,8 @@
                 <i data-lucide="home" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Residence
               </label>
               <div class="relative">
-                <select id="tour-preference" 
-                        class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 appearance-none text-sm cursor-pointer pr-10 shadow-sm">
+                <select id="tour-modal-preference" 
+                        class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium outline-none transition-all duration-200 appearance-none text-sm cursor-pointer pr-10 shadow-sm">
                   <option value="4bhk">4 BHK Sky Residence (Towers A & C)</option>
                   <option value="3bhk">3 BHK Sky Residence (Tower B)</option>
                 </select>
@@ -1381,14 +1460,14 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
-                <i data-lucide="calendar" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Date
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Tour Date
               </label>
               <input type="date" 
-                     id="tour-date" 
-                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 text-sm shadow-sm cursor-pointer">
+                     id="tour-modal-date" 
+                     class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium outline-none transition-all duration-200 text-sm shadow-sm cursor-pointer">
             </div>
 
             <div>
@@ -1396,8 +1475,8 @@
                 <i data-lucide="clock" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Time
               </label>
               <input type="time" 
-                     id="tour-time" 
-                     class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3.5 text-white font-medium outline-none transition-all duration-200 text-sm shadow-sm cursor-pointer">
+                     id="tour-modal-time" 
+                     class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium outline-none transition-all duration-200 text-sm shadow-sm cursor-pointer">
             </div>
           </div>
 
@@ -1405,45 +1484,44 @@
             <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
               <i data-lucide="message-square" class="w-3.5 h-3.5 text-luxury-gold"></i> Message / Special Requests
             </label>
-            <textarea id="tour-message" 
-                      rows="3" 
-                      class="w-full bg-[#060B18] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
-                      placeholder="Share any specific requirements, timing preferences, or questions..."></textarea>
+            <textarea id="tour-modal-message" 
+                      rows="2.5" 
+                      class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-2.5 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" 
+                      placeholder="Special timing requests, family group size, or questions..."></textarea>
           </div>
 
           <div class="pt-2">
             <button type="submit" 
                     class="btn-gold-shimmer w-full py-4 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/30 cursor-pointer flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-98">
               <i data-lucide="calendar-check" class="w-4 h-4"></i>
-              <span>Schedule Private Tour</span>
+              <span>Confirm & Request Private Tour</span>
             </button>
           </div>
         </form>
 
-        <div id="inpage-tour-success" class="hidden text-center py-8 space-y-4 animate-fade-in">
+        <div id="tour-modal-success" class="hidden text-center py-6 space-y-4 animate-fade-in">
           <div class="w-16 h-16 bg-luxury-gold/10 border border-luxury-gold rounded-full flex items-center justify-center mx-auto text-luxury-gold shadow-md">
             <i data-lucide="check" class="w-8 h-8"></i>
           </div>
           <div>
-            <span class="text-[10px] uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-1">Reservation Initiated</span>
+            <span class="text-[10px] uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-1">Appointment Initiated</span>
             <h4 class="font-serif text-2xl text-white font-semibold">Private Tour Request Transmitted</h4>
           </div>
-          <p class="text-sm text-slate-300 leading-relaxed max-w-md mx-auto font-light">
-            Thank you for registering. Your appointment details have been prepared for direct coordination with our site concierge.
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md mx-auto font-light">
+            Thank you! Your appointment request has been scheduled with our on-site luxury concierge.
           </p>
-          <div class="pt-3 max-w-sm mx-auto">
-            <a id="inpage-wa-btn" href="https://wa.me/919998906506" target="_blank" class="w-full py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-lg flex items-center justify-center gap-2">
+          <div class="pt-2 flex flex-col gap-2.5 max-w-sm mx-auto">
+            <a id="tour-modal-wa-btn" href="https://wa.me/919998906506" target="_blank" class="w-full py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-lg flex items-center justify-center gap-2">
               <i data-lucide="message-circle" class="w-4 h-4"></i> Continue on WhatsApp
             </a>
+            <button onclick="closeTourModal()" class="w-full py-2.5 bg-white/10 hover:bg-white/15 text-white font-semibold text-xs tracking-widest uppercase rounded-xl border border-white/15 cursor-pointer">
+              Close Window
+            </button>
           </div>
         </div>
-
       </div>
-
     </div>
-  </section>
-
-  <!-- STAGE 9: MODALS & LIGHTBOXES -->
+  </div>
 
   <!-- Lead Capture Modal -->
   <div id="enquiry-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl transition-opacity duration-300">
@@ -2636,26 +2714,63 @@
       });
     }
 
-    // In-Page Private Tour Booking Handler
-    function handleInpageTourSubmit(event) {
+    // ==========================================
+    // 13. DEDICATED PRIVATE TOUR MODAL HANDLERS
+    // ==========================================
+    function openTourModal() {
+      const modal = document.getElementById('tour-modal');
+      const container = document.getElementById('tour-modal-container');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.25 });
+      gsap.fromTo(container, { scale: 0.9, y: 25 }, { scale: 1, y: 0, duration: 0.35, ease: 'back.out(1.5)' });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeTourModal() {
+      const modal = document.getElementById('tour-modal');
+      if (!modal) return;
+      gsap.to(modal, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          const form = document.getElementById('tour-booking-form');
+          const success = document.getElementById('tour-modal-success');
+          if (form) {
+            form.classList.remove('hidden');
+            form.reset();
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<i data-lucide="calendar-check" class="w-4 h-4"></i><span>Confirm & Request Private Tour</span>';
+            }
+          }
+          if (success) success.classList.add('hidden');
+        }
+      });
+    }
+
+    function handleTourModalSubmit(event) {
       event.preventDefault();
       
-      const form = document.getElementById('inpage-tour-form');
-      const success = document.getElementById('inpage-tour-success');
+      const form = document.getElementById('tour-booking-form');
+      const success = document.getElementById('tour-modal-success');
       const submitBtn = form.querySelector('button[type="submit"]');
 
       if (submitBtn.disabled) return;
       submitBtn.disabled = true;
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = `<span>Transmitting to WhatsApp...</span>`;
+      submitBtn.innerHTML = `<span>Connecting to Concierge...</span>`;
 
-      const name = document.getElementById('tour-name').value;
-      const phone = document.getElementById('tour-phone').value;
-      const email = document.getElementById('tour-email').value;
-      const layout = document.getElementById('tour-preference').value;
-      const date = document.getElementById('tour-date').value || 'Flexible';
-      const time = document.getElementById('tour-time').value || 'Flexible';
-      const msg = document.getElementById('tour-message').value || 'None';
+      const name = document.getElementById('tour-modal-name').value;
+      const phone = document.getElementById('tour-modal-phone').value;
+      const email = document.getElementById('tour-modal-email').value;
+      const layout = document.getElementById('tour-modal-preference').value;
+      const date = document.getElementById('tour-modal-date').value || 'Flexible';
+      const time = document.getElementById('tour-modal-time').value || 'Flexible';
+      const msg = document.getElementById('tour-modal-message').value || 'None';
       
       const message = `Hello Harmony Harikesh, I would like to schedule a Private Tour:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Layout:* ${layout === '4bhk' ? '4 BHK Sky Residence' : '3 BHK Sky Residence'}\n*Preferred Date:* ${date}\n*Preferred Time:* ${time}\n*Message:* ${msg}`;
       const encodedText = encodeURIComponent(message);
@@ -2663,18 +2778,18 @@
 
       window.open(whatsappUrl, '_blank');
 
-      const inpageWaBtn = document.getElementById('inpage-wa-btn');
-      if (inpageWaBtn) {
-        inpageWaBtn.href = whatsappUrl;
+      const tourWaBtn = document.getElementById('tour-modal-wa-btn');
+      if (tourWaBtn) {
+        tourWaBtn.href = whatsappUrl;
       }
 
       gsap.to(form, {
         opacity: 0,
-        duration: 0.25,
+        duration: 0.2,
         onComplete: () => {
           form.classList.add('hidden');
           success.classList.remove('hidden');
-          gsap.fromTo(success, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+          gsap.fromTo(success, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3 });
           if (window.lucide) lucide.createIcons();
         }
       });
@@ -2793,6 +2908,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeModal();
+        closeTourModal();
         closeZoomModal();
         closeAmenityModal();
         closeGalleryModal();
