@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Vertical Architecture | The 31-Storey Ascent - Harmony Harikesh</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore the full 31-Storey Vertical Odyssey at Harmony Harikesh, Sola, Ahmedabad. Double-Height Foyer, Level 15 Suspended Skywalk, Level 25 Sky Residences, and Level 31 Crown Star Lounge.">
+  <meta name="theme-color" content="#040711">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            luxury: {
+              gold: '#D4AF37',
+              goldLight: '#FDF4DC',
+              goldPale: '#FFFDF9',
+              goldDark: '#8F6E14',
+              bronze: '#B8860B',
+              cyan: '#0EA5E9',
+              cyanLight: '#38BDF8',
+              emerald: '#10B981',
+              bgDark: '#030712',
+              bgCanvas: '#060B19',
+              bgCard: '#0B1326',
+              bgSurface: '#0F1A34',
+              accent: '#E5C378',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <style>
+    :root {
+      --gold-primary: #D4AF37;
+      --gold-light: #FDF4DC;
+      --gold-dark: #8F6E14;
+      --cyan-light: #38BDF8;
+      --bg-dark: #030712;
+      --bg-canvas: #060B19;
+      --bg-card: #0B1326;
+      --bg-surface: #0F1A34;
+    }
+
+    html {
+      font-size: 16px;
+      background-color: #030712;
+      color: #F8FAFC;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (max-width: 640px) {
+      html {
+        font-size: 14.5px;
+      }
+    }
+
+    body {
+      background-color: #060B19;
+      color: #F8FAFC;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    button, a, input, select, textarea {
+      touch-action: manipulation;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #D4AF37, #0EA5E9);
+      border-radius: 4px;
+    }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #8F6E14, #D4AF37, #FDF4DC, #38BDF8);
+      z-index: 1000;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.9);
+      transition: width 0.1s ease-out;
+      pointer-events: none;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDF4DC 25%, #D4AF37 65%, #C5A059 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .spotlight-card {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+      will-change: transform;
+    }
+    .spotlight-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.55);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.2);
+    }
+
+    /* Luxury Gold Button Shimmering Sheen */
+    @keyframes goldSheen {
+      0% { transform: translateX(-120%) skewX(-20deg); }
+      30%, 100% { transform: translateX(220%) skewX(-20deg); }
+    }
+    .btn-gold-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold-shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+      );
+      transform: translateX(-120%) skewX(-20deg);
+      animation: goldSheen 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+      #navbar-wrapper {
+        top: 0.5rem !important;
+        left: 0.5rem !important;
+        right: 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+        max-width: 100% !important;
+      }
+      #main-nav {
+        padding: 0.35rem 0.65rem !important;
+      }
+      #page-title, h1 {
+        font-size: clamp(1.85rem, 6.5vw, 3rem) !important;
+        line-height: 1.25 !important;
+      }
+      #page-subtext {
+        font-size: 0.85rem !important;
+        line-height: 1.55 !important;
+      }
+      .ascent-milestone .spotlight-card img {
+        max-height: 240px !important;
+        object-fit: cover !important;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-[#060B19] text-slate-100 selection:bg-luxury-gold selection:text-luxury-bgDark">
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Floating Minimal Luxury Capsule Navbar -->
+  <header class="fixed top-4 inset-x-0 mx-auto max-w-5xl w-[92%] z-50 transition-all duration-300" id="navbar-wrapper">
+    <nav class="bg-[#060B19]/85 backdrop-blur-2xl border border-white/10 rounded-full px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_20px_rgba(212,175,55,0.12)] transition-all duration-300" id="main-nav">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 group cursor-pointer">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-luxury-gold/15 border border-luxury-gold/60 flex items-center justify-center text-luxury-gold group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(212,175,55,0.35)]">
+          <span class="font-serif text-sm sm:text-base font-bold gold-gradient-text">H</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-base sm:text-lg font-bold tracking-widest gold-gradient-text leading-none">HARMONY</span>
+          <span class="text-[8px] uppercase tracking-[0.3em] text-luxury-gold/90 font-semibold mt-0.5">Harikesh</span>
+        </div>
+      </a>
+      
+      <!-- Clean Minimal Links (Desktop) -->
+      <div class="hidden md:flex items-center space-x-7 lg:space-x-8" id="nav-links">
+        <a href="index.html#about" class="nav-item text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Architecture</a>
+        <a href="ascent.html" class="nav-item text-xs font-semibold uppercase tracking-widest text-luxury-gold font-bold transition-colors py-1">The Ascent</a>
+        <a href="amenities.html" class="nav-item text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Amenities</a>
+        <a href="index.html#floor-plans" class="nav-item text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Floor Plans</a>
+        <a href="gallery.html" class="nav-item text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Gallery</a>
+        <a href="index.html#location" class="nav-item text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-1">Location</a>
+      </div>
+
+      <!-- Single Elegant CTA & Mobile Trigger -->
+      <div class="flex items-center space-x-3">
+        <button onclick="openModal()" class="btn-gold-shimmer px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-full shadow-lg shadow-luxury-gold/25 hover:scale-105 active:scale-95 cursor-pointer">
+          Enquire
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden p-2 text-slate-300 hover:text-luxury-gold transition-colors rounded-full bg-white/5 border border-white/10" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Curved Luxury Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden mt-2 w-full bg-[#060B19]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 flex flex-col space-y-2 shadow-2xl transition-all duration-300">
+      <a href="index.html#about" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+        <span>Architecture</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
+      </a>
+      <a href="ascent.html" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+        <span>The 31-Storey Ascent</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
+      </a>
+      <a href="amenities.html" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+        <span>Amenities</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
+      </a>
+      <a href="index.html#floor-plans" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+        <span>Floor Plans</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
+      </a>
+      <a href="gallery.html" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+        <span>Architectural Gallery</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
+      </a>
+      <a href="index.html#location" onclick="toggleMobileMenu()" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-luxury-gold transition-colors py-2.5 border-b border-white/5 flex items-center justify-between">
+        <span>Location</span>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-luxury-gold/70"></i>
+      </a>
+      <div class="pt-2 grid grid-cols-2 gap-2">
+        <a href="tel:+919998906506" class="py-2.5 bg-white/10 hover:bg-white/15 text-white font-bold text-xs tracking-widest uppercase rounded-full border border-white/10 flex items-center justify-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-luxury-gold"></i> Call
+        </a>
+        <button onclick="toggleMobileMenu(); openModal();" class="btn-gold-shimmer py-2.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs tracking-widest uppercase rounded-full shadow-lg shadow-luxury-gold/25 cursor-pointer">
+          Enquire
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner with Soft Ambient Glow -->
+  <header class="relative pt-28 pb-12 sm:pt-36 sm:pb-16 md:pt-44 md:pb-24 overflow-hidden bg-[#040711] border-b border-white/5 text-center px-4">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-luxury-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto space-y-3 sm:space-y-4 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1326] border border-luxury-gold/40 text-luxury-gold text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-bold shadow-md">
+        <span class="w-2 h-2 rounded-full bg-luxury-gold animate-ping"></span>
+        <span>Vertical Architecture Showcase</span>
+      </div>
+      <h1 class="font-serif text-2xl sm:text-5xl md:text-6xl font-bold text-white tracking-wide" id="page-title">
+        The 31-Storey Vertical Ascent
+      </h1>
+      <p class="text-slate-300 text-xs sm:text-base font-light max-w-2xl mx-auto leading-relaxed px-2" id="page-subtext">
+        Ascend through the complete signature milestones of Harmony Harikesh from the grand arrival court to the high-sky terrace.
+      </p>
+
+      <div class="w-16 sm:w-20 h-[2px] bg-luxury-gold mx-auto mt-4 sm:mt-5"></div>
+    </div>
+  </header>
+
+  <!-- Complete 31-Storey Vertical Ascent Timeline (Same Format as Homepage) -->
+  <section class="py-12 sm:py-20 md:py-28 relative bg-[#060B19] overflow-hidden" id="tower-odyssey">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <div class="relative max-w-5xl mx-auto space-y-8 sm:space-y-16 md:space-y-20">
+        
+        <!-- Central Glowing Laser Beam -->
+        <div class="absolute top-0 bottom-0 left-4 md:left-1/2 w-[2px] bg-gradient-to-b from-luxury-gold/20 via-luxury-gold to-luxury-gold/20 -translate-x-1/2 shadow-[0_0_12px_rgba(212,175,55,0.6)] z-0"></div>
+
+        <!-- Level 00 -->
+        <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
+          <div class="md:col-span-5 md:text-right space-y-2 sm:space-y-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+              <i data-lucide="building" class="w-3 h-3 md:hidden text-luxury-gold"></i>
+              <span>Level 00 • 0 FT Elevation</span>
+            </div>
+            <h3 class="font-serif text-lg sm:text-2xl text-white font-bold">Double-Height Grand Marble Foyer</h3>
+            <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+              Soaring 22-foot clear ceiling with Italian marble flooring, 24/7 concierge reception, and dedicated biometric private elevator bays.
+            </p>
+            <div class="inline-flex flex-wrap gap-2 sm:gap-3 text-[11px] sm:text-xs text-luxury-gold font-semibold pt-0.5">
+              <span>• 22 Ft Clear Foyer</span>
+              <span>• 5 High-Speed Lifts</span>
+            </div>
+          </div>
+
+          <div class="hidden md:flex md:col-span-2 items-center justify-center relative">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
+              <i data-lucide="building" class="w-5 h-5"></i>
+            </div>
+          </div>
+
+          <div class="md:col-span-5">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+              <img src="./assets/images/entrance-foyer.jpg" alt="Ground Level Foyer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 15 -->
+        <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
+          <div class="md:col-span-5 md:order-3 md:text-left space-y-2 sm:space-y-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+              <i data-lucide="footprints" class="w-3 h-3 md:hidden text-luxury-gold"></i>
+              <span>Level 15 • 150+ FT Elevation</span>
+            </div>
+            <h3 class="font-serif text-lg sm:text-2xl text-white font-bold">Inter-Tower Suspended Skywalk</h3>
+            <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+              The signature suspended pedestrian sky bridge connecting the residential towers in mid-air with wind-tunnel certified resilience.
+            </p>
+            <div class="inline-flex flex-wrap gap-2 sm:gap-3 text-[11px] sm:text-xs text-luxury-gold font-semibold pt-0.5">
+              <span>• RWDI Certified</span>
+              <span>• Mid-Air Skyline Views</span>
+            </div>
+          </div>
+
+          <div class="hidden md:flex md:col-span-2 md:order-2 items-center justify-center relative">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
+              <i data-lucide="footprints" class="w-5 h-5"></i>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 md:order-1">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+              <img src="./assets/images/towers-skywalk.jpg" alt="Skywalk Bridge" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 25 -->
+        <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
+          <div class="md:col-span-5 md:text-right space-y-2 sm:space-y-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+              <i data-lucide="sun" class="w-3 h-3 md:hidden text-luxury-gold"></i>
+              <span>Level 25 • 265 FT Elevation</span>
+            </div>
+            <h3 class="font-serif text-lg sm:text-2xl text-white font-bold">Panoramic Balcony Sky Living</h3>
+            <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+              Expansive 11-foot clear ceiling residences with deep outdoor view decks, acoustic glass balustrades, and lifelong unobstructed vistas.
+            </p>
+            <div class="inline-flex flex-wrap gap-2 sm:gap-3 text-[11px] sm:text-xs text-luxury-gold font-semibold pt-0.5">
+              <span>• 11 Ft Ceilings</span>
+              <span>• 100% Open Horizons</span>
+            </div>
+          </div>
+
+          <div class="hidden md:flex md:col-span-2 items-center justify-center relative">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
+              <i data-lucide="sun" class="w-5 h-5"></i>
+            </div>
+          </div>
+
+          <div class="md:col-span-5">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+              <img src="./assets/images/balcony-view.png" alt="Balcony Sky Living" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 31 -->
+        <div class="ascent-milestone relative pl-8 md:pl-0 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-center z-10">
+          <div class="md:col-span-5 md:order-3 md:text-left space-y-2 sm:space-y-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-luxury-gold/15 border border-luxury-gold/40 text-luxury-gold text-[9px] sm:text-[10px] font-bold uppercase tracking-widest rounded-full">
+              <i data-lucide="crown" class="w-3 h-3 md:hidden text-luxury-gold"></i>
+              <span>Level 31 • 330 FT Apex</span>
+            </div>
+            <h3 class="font-serif text-lg sm:text-2xl text-white font-bold">The Crown Sky Deck & Star Lounge</h3>
+            <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+              The highest residential vantage point in Sola. An open-air midnight observation deck offering celestial views and private community gatherings.
+            </p>
+            <div class="pt-1.5">
+              <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20would%20like%20to%20book%20a%20private%20tour%20of%20The%2031-Storey%20Ascent." target="_blank" class="btn-gold-shimmer inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] text-[#030712] font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg hover:scale-105 active:scale-95 cursor-pointer min-h-[44px]">
+                <i data-lucide="compass" class="w-4 h-4"></i>
+                <span>Book A Private Ascent Tour</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hidden md:flex md:col-span-2 md:order-2 items-center justify-center relative">
+            <div class="w-12 h-12 rounded-full bg-[#0B1326] border-2 border-luxury-gold flex items-center justify-center text-luxury-gold shadow-lg z-20">
+              <i data-lucide="crown" class="w-5 h-5"></i>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 md:order-1">
+            <div class="spotlight-card rounded-2xl overflow-hidden border border-white/10 shadow-xl aspect-[16/10] sm:aspect-[4/3] bg-black">
+              <img src="./assets/images/sky-deck-aerial.jpg" alt="The Crown Sky Deck" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specs Summary Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <div class="p-6 sm:p-10 rounded-3xl bg-[#0B1326]/90 border border-luxury-gold/30 shadow-2xl">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-[10px] uppercase tracking-[0.3em] text-luxury-gold font-bold block mb-1">Structural Integrity</span>
+        <h3 class="font-serif text-xl sm:text-3xl font-bold text-white">Engineered For Lifelong Safety</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-300 text-xs sm:text-sm">
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-luxury-gold/20 text-luxury-gold flex items-center justify-center mb-3">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-serif text-base text-white font-bold">Wind-Tunnel Tested</h4>
+          <p class="font-light text-slate-400 leading-relaxed">Certified by RWDI Canada for advanced aerodynamic response and zero resonant sway at high altitudes.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-luxury-cyan/20 text-luxury-cyan flex items-center justify-center mb-3">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-serif text-base text-white font-bold">Earthquake Shear Wall</h4>
+          <p class="font-light text-slate-400 leading-relaxed">Engineered to exceed Zone III seismic codes using monolithic concrete shear wall technology.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-luxury-emerald/20 text-luxury-emerald flex items-center justify-center mb-3">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-serif text-base text-white font-bold">High-Speed Lifeline</h4>
+          <p class="font-light text-slate-400 leading-relaxed">5 rapid-transit elevators per tower with automatic rescue devices and dedicated backup generators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#02040A] border-t border-luxury-gold/20 pt-14 pb-14 text-slate-400 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <p class="font-serif text-2xl font-bold tracking-widest gold-gradient-text">HARMONY HARIKESH</p>
+        <p class="text-xs text-slate-500 mt-1">&copy; 2026 Mahaprabhu Residency LLP. All Rights Reserved.</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="px-6 py-2.5 rounded-full border border-white/15 bg-white/5 hover:bg-luxury-gold hover:text-[#030712] text-white font-bold text-xs uppercase tracking-wider transition-all">Back to Home</a>
+        <a href="gallery.html" class="px-6 py-2.5 rounded-full border border-luxury-gold/40 text-luxury-gold hover:bg-luxury-gold hover:text-[#030712] font-bold text-xs uppercase tracking-wider transition-all">View Gallery</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTIONS & WHATSAPP TRIGGER -->
+  <div class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex flex-col items-center space-y-3 pointer-events-auto">
+    <a href="https://wa.me/919998906506?text=Hello%20Harmony%20Harikesh%2C%20I%20would%20like%20to%20enquire%20about%20the%2031-Storey%20Ascent." target="_blank" rel="noopener noreferrer" class="relative w-12 h-12 sm:w-13 sm:h-13 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-[0_8px_25px_rgba(37,211,102,0.45)] hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center border border-white/20 group" aria-label="Chat directly on WhatsApp" title="Chat on WhatsApp">
+      <span class="absolute inset-0 rounded-full bg-[#25D366]/40 animate-ping pointer-events-none -z-10"></span>
+      <svg class="w-6 h-6 sm:w-6.5 sm:h-6.5 fill-current drop-shadow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.457 5.704 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <!-- Premium Enquiry Modal (Lead Capture) -->
+  <div id="enquiry-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-300">
+    <div class="w-full max-w-lg bg-[#070D1C] rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative shadow-2xl border border-luxury-gold/40 scale-95 transition-transform duration-300 overflow-hidden" id="modal-container">
+      
+      <div class="absolute -top-24 -right-24 w-48 h-48 bg-luxury-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5 cursor-pointer z-10" aria-label="Close enquiry modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="relative z-10">
+        <div class="mb-5 text-center">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-luxury-gold/15 border border-luxury-gold/30 text-luxury-gold text-[10px] uppercase tracking-widest font-bold mb-2">
+            <i data-lucide="sparkles" class="w-3 h-3 text-luxury-gold"></i>
+            <span>Exclusive Access</span>
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold tracking-wide">Request Private Experience</h3>
+          <p class="text-xs text-slate-300 mt-1 font-light">Experience the height of architectural mastery at Harmony Harikesh.</p>
+        </div>
+
+        <form id="lead-form" class="space-y-3.5" onsubmit="handleFormSubmit(event)">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="user" class="w-3.5 h-3.5 text-luxury-gold"></i> Full Name <span class="text-luxury-gold">*</span>
+            </label>
+            <input type="text" id="form-name" required class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" placeholder="e.g. Harikesh Sharma">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-luxury-gold"></i> Phone Number <span class="text-luxury-gold">*</span>
+            </label>
+            <input type="tel" id="form-phone" required class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" placeholder="+91 98765 43210">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-luxury-gold"></i> Email Address <span class="text-luxury-gold">*</span>
+            </label>
+            <input type="email" id="form-email" required class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 outline-none transition-all duration-200 text-sm shadow-sm" placeholder="e.g. client@example.com">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1.5 font-bold flex items-center gap-1.5">
+              <i data-lucide="home" class="w-3.5 h-3.5 text-luxury-gold"></i> Preferred Residence
+            </label>
+            <div class="relative">
+              <select id="form-preference" class="w-full bg-[#030712] border border-white/15 focus:border-luxury-gold focus:ring-2 focus:ring-luxury-gold/30 rounded-xl px-4 py-3 text-white font-medium outline-none transition-all duration-200 appearance-none text-sm cursor-pointer pr-10 shadow-sm">
+                <option value="4bhk">4 BHK Sky Residence (Towers A & C)</option>
+                <option value="3bhk">3 BHK Sky Residence (Tower B)</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-luxury-gold">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-gold-shimmer w-full py-3.5 bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C5A059] hover:opacity-95 text-[#030712] font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-xl shadow-xl shadow-luxury-gold/30 cursor-pointer flex items-center justify-center gap-2 mt-2 hover:scale-[1.02] active:scale-98">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i> Request Callback & PDF Brochure
+          </button>
+        </form>
+
+        <div id="form-success" class="hidden text-center py-6 space-y-4">
+          <div class="w-14 h-14 bg-luxury-gold/10 border border-luxury-gold rounded-full flex items-center justify-center mx-auto text-luxury-gold shadow-md">
+            <i data-lucide="check" class="w-7 h-7"></i>
+          </div>
+          <div>
+            <h4 class="font-serif text-2xl text-white font-semibold">Inquiry Registered</h4>
+            <p class="text-xs text-slate-300 mt-1 font-light">Thank you! Your private tour request has been received.</p>
+          </div>
+          <div class="pt-2 flex flex-col gap-2.5">
+            <a id="form-success-wa-btn" href="https://wa.me/919998906506" target="_blank" class="w-full py-3 bg-[#25D366] text-white font-bold text-xs tracking-widest uppercase rounded-xl flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Continue on WhatsApp
+            </a>
+            <button onclick="closeModal()" class="w-full py-2.5 bg-white/10 text-white font-semibold text-xs tracking-widest uppercase rounded-xl border border-white/15">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Scroll Progress Bar & Sticky Navbar Elevation
+    const navbarWrapper = document.getElementById('navbar-wrapper');
+    const mainNav = document.getElementById('main-nav');
+
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progressPercent = (scrollPos / totalHeight) * 100;
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) progressBar.style.width = progressPercent + '%';
+
+      if (mainNav) {
+        if (scrollPos > 30) {
+          mainNav.classList.add('shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_25px_rgba(212,175,55,0.2)]', 'border-luxury-gold/30', 'bg-[#040711]/95');
+        } else {
+          mainNav.classList.remove('shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_25px_rgba(212,175,55,0.2)]', 'border-luxury-gold/30', 'bg-[#040711]/95');
+        }
+      }
+    }, { passive: true });
+
+    // GSAP Scroll Entrance
+    gsap.from('#page-title', { y: 35, opacity: 0, duration: 1.0, ease: 'power3.out' });
+    gsap.from('#page-subtext', { y: 20, opacity: 0, duration: 0.8, delay: 0.2, ease: 'power2.out' });
+
+    gsap.utils.toArray('.ascent-milestone').forEach(card => {
+      gsap.from(card, {
+        y: 40,
+        opacity: 0,
+        duration: 0.85,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          once: true
+        }
+      });
+    });
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      if (!menu) return;
+      menu.classList.toggle('hidden');
+      const isHidden = menu.classList.contains('hidden');
+      if (!isHidden) {
+        document.body.classList.add('overflow-hidden');
+        gsap.fromTo(menu, { opacity: 0, y: -10, scale: 0.98 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: 'power2.out' });
+      } else {
+        document.body.classList.remove('overflow-hidden');
+      }
+      if (btn) {
+        btn.innerHTML = isHidden ? '<i data-lucide="menu" class="w-4 h-4"></i>' : '<i data-lucide="x" class="w-4 h-4"></i>';
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+
+    // Modal Operations
+    function openModal() {
+      const modal = document.getElementById('enquiry-modal');
+      const container = document.getElementById('modal-container');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.25 });
+      gsap.fromTo(container, { scale: 0.9, y: 20 }, { scale: 1, y: 0, duration: 0.3, ease: 'back.out(1.5)' });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('enquiry-modal');
+      gsap.to(modal, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          const form = document.getElementById('lead-form');
+          if (form) {
+            form.classList.remove('hidden');
+            form.reset();
+          }
+          document.getElementById('form-success')?.classList.add('hidden');
+        }
+      });
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const phone = document.getElementById('form-phone').value;
+      const email = document.getElementById('form-email').value;
+      const pref = document.getElementById('form-preference').value;
+
+      const waMsg = `Hello Harmony Harikesh, I am ${name} (${phone}, ${email}). I am interested in ${pref === '4bhk' ? '4 BHK Sky Residence' : '3 BHK Sky Residence'} at The 31-Storey Ascent. Please send the brochure.`;
+      const waUrl = `https://wa.me/919998906506?text=${encodeURIComponent(waMsg)}`;
+      
+      const waBtn = document.getElementById('form-success-wa-btn');
+      if (waBtn) waBtn.href = waUrl;
+
+      document.getElementById('lead-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
